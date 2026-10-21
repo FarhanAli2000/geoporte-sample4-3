@@ -389,6 +389,7 @@ p{margin:0}
 .lbx{position:absolute;top:calc(20px + env(safe-area-inset-top,0px));right:max(20px,env(safe-area-inset-right,0px));width:46px;height:46px;border-radius:50%;background:var(--amber);color:#111;display:grid;place-items:center}
 .lbx svg{width:18px;height:18px}
 
+
 /* ---------- responsive ---------- */
 @media (max-width:1100px){
   .menu,.nav-r .vsep,.nav-r .pill{display:none}
@@ -428,7 +429,29 @@ p{margin:0}
   .srow{grid-template-columns:30px minmax(0,1fr) auto;gap:12px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}}
+/* footer: content from geoporte.com.au */
+.fgrid{grid-template-columns:minmax(0,1.25fr) minmax(0,.6fr) minmax(0,.85fr) minmax(0,.8fr) minmax(0,1.2fr)}
+.fmail{display:flex;gap:12px;align-items:center;margin-top:22px}
+.fmail b{display:block;font:300 1rem var(--f-display);word-break:break-word;transition:color .3s}
+.fmail small{display:block;font-size:.72rem;color:var(--muted)}
+.fmail:hover b{color:var(--amber)}
+.fic,.fpin{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--amber);color:var(--amber);display:grid;place-items:center;flex:none}
+.fic svg,.fpin svg{width:14px;height:14px}
+.fphones li a{display:grid;gap:1px}
+.fphones span{font-variant-numeric:tabular-nums}
+.fphones small{font-size:.54rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.foffices{gap:14px!important}
+.foffices li{display:flex;gap:12px;align-items:flex-start}
+.foffices .fpin{width:28px;height:28px;border-color:var(--line-2)}
+.foffices .fpin svg{width:12px;height:12px}
+.foffices b{display:block;font:300 .95rem var(--f-display)}
+.foffices b small{font:700 .52rem var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-left:4px}
+.foffices p{font-size:.76rem;color:var(--muted);margin-top:2px;line-height:1.5;max-width:none}
+@media (max-width:1100px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.fgrid .fcol:first-child,.fgrid .fcol:last-child{grid-column:1/-1}.foffices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}.foffices{grid-template-columns:1fr}}
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 
@@ -449,10 +472,10 @@ p{margin:0}
     <a href="#home" class="brand" aria-label="Geoporte home"><img src="images/geoporte-logo.png" alt="Geoporte logo"><span>GE<em>O</em>PORTE</span></a>
     <ul class="menu" id="menu">
       <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#band">About</a></li>
+      <li><a href="about-us.html">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#sectors">Sectors</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="#process">Careers</a></li>
       <li><a href="#contact">Contact</a></li>
       <span class="ink" id="ink"></span>
@@ -466,7 +489,7 @@ p{margin:0}
   </div>
 </header>
 <nav class="mmenu" aria-label="Mobile">
-  <a href="#home">Home</a><a href="#band">About</a><a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#projects">Projects</a><a href="#process">Careers</a><a href="#contact">Contact</a>
+  <a href="#home">Home</a><a href="about-us.html">About</a><a href="#services">Services</a><a href="#sectors">Sectors</a><a href="projects.html">Projects</a><a href="#process">Careers</a><a href="#contact">Contact</a>
 </nav>
 
 <div class="search" id="search" role="dialog" aria-label="Search">
@@ -477,7 +500,7 @@ p{margin:0}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="zvid" id="zvid"><video id="zVid" src="videos/hero-bridge.mp4" poster="images/hero-video-poster.jpg" muted playsinline loop autoplay preload="auto" aria-label="Aerial footage along a steel truss bridge"></video></div>
-  <div class="zmask" id="zmask" aria-hidden="true"><div class="zword" id="zword"><span>G</span><span>E</span><span class="zo" id="zO">O</span><span>P</span><span>O</span><span>R</span><span>T</span><span>E</span></div></div>
+  <div class="zmask" id="zmask" aria-hidden="true"><div class="zword" id="zword"><span>B</span><span>E</span><span>Y</span><span class="zo" id="zO">O</span><span>N</span><span>D</span></div></div>
   <div class="zshine" aria-hidden="true"></div>
   <div class="zintro" id="zintro" aria-hidden="true"><div class="zintro-in"><div class="hero-eyebrow">Engineering for a connected tomorrow</div><p>Design · Engineering · Advisory</p></div></div>
   <div class="zshade" id="zshade"></div>
@@ -538,7 +561,7 @@ p{margin:0}
         <div class="sec-head"><div class="cap">Featured projects</div><h2 class="split">Real projects. Lasting impact.</h2></div>
         <div class="ctrls rv"><button class="carr" id="pPrev" aria-label="Previous project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button><button class="carr" id="pNext" aria-label="Next project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button></div>
       </div>
-      <a href="#contact" class="tlink rv">View all projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="projects.html" class="tlink rv">View all projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="slider" id="pSlider" data-cursor="Drag"><div class="track" id="pTrack"></div></div>
     <div class="sbar"><i id="pBar"></i></div>
@@ -574,7 +597,7 @@ p{margin:0}
     <h2 id="bandTitle"><span class="line"><span>Complex challenges.</span></span><span class="line"><span>Considered <span class="a">solutions.</span></span></span></h2>
     <div class="band-side rv">
       <p>We work with our clients to navigate complexity, manage risk and deliver engineering outcomes that make a difference.</p>
-      <a href="#contact" class="pill pill-o magnetic">About Geoporte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="about-us.html" class="pill pill-o magnetic">About Geoporte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -586,9 +609,11 @@ p{margin:0}
       <div class="sec-head"><div class="cap">Get in touch</div><h2 class="split">Let’s talk about your next project.</h2></div>
       <p class="lead rv">Tell us what you’re planning and the right engineer will get back to you within one business day.</p>
       <div class="offices" id="offices">
-        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Brisbane, Australia</b><p>Level 3, 320 Adelaide Street, Brisbane QLD 4000</p><a href="tel:+61738514535">+61 7 3851 4535</a></div></div>
-        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Auckland, New Zealand</b><p>Suite 7, 110 Symonds Street, Auckland 1010</p><a href="tel:+6492821758">+64 9 282 1758</a></div></div>
-        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><b>Email</b><p><a href="mailto:enquiries@geoporte.com.au">enquiries@geoporte.com.au</a></p></div></div>
+        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Melbourne, Australia</b><p>Tower 5, Collins Square, 727 Collins Street, Melbourne, VIC, 3008, Australia</p></div></div>
+        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Sydney, Australia</b><p>Three International Towers, 300 Barangaroo Ave, Barangaroo NSW, Australia 2000</p></div></div>
+        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Perth, Australia</b><p>108 St Georges Terrace, Perth, WA, Australia 6000</p></div></div>
+        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Auckland, New Zealand</b><p>110 Carlton Gore Road, New Market, Auckland, New Zealand 1023</p></div></div>
+        <div class="office"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><b>Email</b><p><a href="mailto:enquiries@geoporte.com.au">enquiries@geoporte.com.au</a> · We reply within 24 hours</p><p><a href="tel:+61431554626">+61 (0) 431 55 4626</a> · <a href="tel:+61388217758">+61 (0) 388 21 7758</a> (Australia)</p><p><a href="tel:+64212870714">+64 (0) 212 87 0714</a> (New Zealand)</p></div></div>
       </div>
     </div>
     <form class="form rv" id="form" novalidate>
@@ -602,21 +627,22 @@ p{margin:0}
       <p class="fmsg" id="fmsg" role="status"></p>
     </form>
   </div>
+  <div class="wrap" style="margin-top:44px"><div class="c-map rv" id="officeMap"></div></div>
 </section>
 </main>
 
 <footer class="footer">
   <div class="wrap">
     <div class="fgrid">
-      <div class="fcol rv"><a href="#home" class="brand"><img src="images/geoporte-logo.png" alt="Geoporte logo"><span>GE<em>O</em>PORTE</span></a><p>Independent, risk-based design and management of complex engineering projects across Australia and New Zealand.</p>
-        <div class="soc"><a href="https://www.linkedin.com" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a><a href="https://www.youtube.com" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.8 3.1z"/></svg></a><a href="https://www.instagram.com" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a></div></div>
-      <div class="fcol rv"><h4>Company</h4><ul><li><a href="#band">About</a></li><li><a href="#process">Careers</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      <div class="fcol rv"><h4>Services</h4><ul><li><a href="#services">Civil</a></li><li><a href="#services">Geotechnical</a></li><li><a href="#services">Structural</a></li><li><a href="#services">Advisory</a></li></ul></div>
-      <div class="fcol rv"><h4>Sectors</h4><ul><li><a href="#sectors">Transportation</a></li><li><a href="#sectors">Building</a></li><li><a href="#sectors">Water</a></li><li><a href="#sectors">Energy</a></li></ul></div>
-      <div class="fcol rv"><h4>Insights</h4><p style="margin-top:0">Project updates and engineering insights, once a month.</p><form class="news" id="news" novalidate><input id="nEmail" type="email" placeholder="Your email address" aria-label="Your email address"><button aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></form><div class="nmsg" id="nmsg" role="status"></div></div>
+      <div class="fcol rv"><a href="#home" class="brand"><img src="images/geoporte-logo.png" alt="Geoporte logo"><span>GE<em>O</em>PORTE</span></a><p>Geoporte provides design consultancy services mainly in the fields of Civil Engineering, Geotechnical Engineering and Telecom Engineering.</p>
+        <a class="fmail" href="mailto:enquiries@geoporte.com.au"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><b>enquiries@geoporte.com.au</b><small>We reply within 24 hours</small></span></a></div>
+      <div class="fcol rv"><h4>Company</h4><ul><li><a href="#home">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="about-us.html#people">Our Team</a></li><li><a href="projects.html">Projects</a></li><li><a href="publications.html">Publications</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+      <div class="fcol rv"><h4>Services</h4><ul><li><a href="civil-engineering.html">Civil Engineering</a></li><li><a href="design-and-drafting.html">Design and Drafting</a></li><li><a href="#services">Geotechnical Engineering</a></li><li><a href="structural-engineering.html">Structural Engineering</a></li><li><a href="#services">Stormwater and Flood Modelling</a></li><li><a href="#services">Project Control Services</a></li><li><a href="#services">Advisory Services</a></li><li><a href="#services">Telecom Services</a></li></ul></div>
+      <div class="fcol rv"><h4>Have any questions?</h4><ul class="fphones"><li><a href="tel:+61431554626"><span>+61 (0) 431 55 4626</span><small>Australia</small></a></li><li><a href="tel:+61388217758"><span>+61 (0) 388 21 7758</span><small>Australia</small></a></li><li><a href="tel:+64212870714"><span>+64 (0) 212 87 0714</span><small>New Zealand</small></a></li></ul></div>
+      <div class="fcol rv"><h4>Office locations</h4><ul class="foffices"><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Melbourne <small>Australia</small></b><p>Tower 5, Collins Square, 727 Collins Street, Melbourne, VIC, 3008, Australia</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Sydney <small>Australia</small></b><p>Three International Towers, 300 Barangaroo Ave, Barangaroo NSW, Australia 2000</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Perth <small>Australia</small></b><p>108 St Georges Terrace, Perth, WA, Australia 6000</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Auckland <small>New Zealand</small></b><p>110 Carlton Gore Road, New Market, Auckland, New Zealand 1023</p></div></li></ul></div>
     </div>
     <div class="bigword" id="bigword" aria-hidden="true"><span>G</span><span>E</span><span>O</span><span>P</span><span>O</span><span>R</span><span>T</span><span>E</span></div>
-    <div class="fbot"><span>© <span id="yr">2026</span> Geoporte. All rights reserved.</span><nav><a href="#home">Privacy</a><a href="#home">Terms</a><a href="#home">Sitemap</a></nav></div>
+    <div class="fbot"><span>Copyright © <span id="yr">2026</span> Geoporte. All rights reserved.</span><nav><a href="#home">Privacy Policy</a></nav></div>
   </div>
 </footer>
 
@@ -647,11 +673,11 @@ p{margin:0}
     tel:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14v14M12 28l4-14 4 14"/><circle cx="16" cy="11" r="2"/><path d="M10 6a9 9 0 0 0 0 10M22 6a9 9 0 0 1 0 10"/></svg>'
   };
   const services=[
-    ['Civil Engineering','Practical, innovative and sustainable civil solutions.','civil','images/coastal-bridge.jpg','50% 60%'],
-    ['Design and Drafting','High-quality design, drafting and BIM support.','design','images/service-2.jpg','50% 40%'],
+    ['Civil Engineering','Practical, innovative and sustainable civil solutions.','civil','images/coastal-bridge.jpg','50% 60%','civil-engineering.html'],
+    ['Design and Drafting','High-quality design, drafting and BIM support.','design','images/service-2.jpg','50% 40%','design-and-drafting.html'],
     ['Geotechnical Engineering','Ground knowledge for smarter decisions.','geo','images/geotech-wide.jpg','50% 40%'],
     ['Telecom Services','Engineering support for a more connected world.','tel','images/service-8.jpg','50% 25%'],
-    ['Structural Engineering','Safe, efficient structures built to last.','struct','images/cable-bridge-wide.jpg','50% 40%'],
+    ['Structural Engineering','Safe, efficient structures built to last.','struct','images/cable-bridge-wide.jpg','50% 40%','structural-engineering.html'],
     ['Stormwater & Flood Modelling','Catchment, drainage and flood risk modelling.','storm','images/dam-spillway.jpg','50% 40%'],
     ['Project Management','Programme, cost and delivery control on site.','pm','images/engineers.jpg','50% 35%'],
     ['Advisory Services','Risk-based technical and transaction advice.','adv','images/service-7.jpg','50% 50%']
@@ -673,7 +699,7 @@ p{margin:0}
   ];
   const caps=['Steel truss river crossing','Bridges in motion','Dam spillway','Cable-stayed bridge','Water infrastructure'];
   const tags=['Transportation','Bridges','Water & Dams','Structures','Water'];
-  $('#sTrack').innerHTML=services.map((s,i)=>`<a href="#contact" class="scard"><span class="num">${pad(i+1)}</span><div class="img"><img src="${s[3]}" alt="" style="object-position:${s[4]}" loading="lazy"></div><div class="body"><span class="ic">${I[s[2]]}</span><h3>${s[0].replace('&','&amp;')}</h3><p>${s[1]}</p><span class="more">LEARN MORE ${ARW}</span></div><span class="edge"></span></a>`).join('');
+  $('#sTrack').innerHTML=services.map((s,i)=>`<a href="${s[5]||'#contact'}" class="scard"><span class="num">${pad(i+1)}</span><div class="img"><img src="${s[3]}" alt="" style="object-position:${s[4]}" loading="lazy"></div><div class="body"><span class="ic">${I[s[2]]}</span><h3>${s[0].replace('&','&amp;')}</h3><p>${s[1]}</p><span class="more">LEARN MORE ${ARW}</span></div><span class="edge"></span></a>`).join('');
   $('#pTrack').innerHTML=projects.map(p=>`<article class="pcard" data-cursor="View"><span class="loc">${p[2]}</span><div class="img"><img src="${p[3]}" alt="${p[0]}" loading="lazy"></div><span class="scan"></span><div class="body"><div><h3>${p[0]}</h3><small>${p[1]}</small></div><span class="ring">${ARW}</span></div></article>`).join('');
   $('#slist').innerHTML=sectors.map((s,i)=>`<li><button class="srow" data-i="${i}"><span class="n">${pad(i+1)}</span><span><b>${s[0].replace('&','&amp;')}</b><small>${s[1]}</small></span><span class="ring">${ARW}</span></button></li>`).join('');
   $('#floatImg').innerHTML=sectors.map(s=>`<img src="${s[2]}" alt="">`).join('');
@@ -730,7 +756,7 @@ p{margin:0}
 
   /* ---------- search ---------- */
   const S=$('#search'),SI=$('#sIn'),SR=$('#sRes');
-  const idx=[...services.map(s=>[s[0],'Service','#services']),...sectors.map(s=>[s[0],'Sector','#sectors']),...projects.map(p=>[p[0],'Project','#projects']),['How we work','Page','#process'],['Contact & offices','Page','#contact']];
+  const idx=[...services.map(s=>[s[0],'Service',s[5]||'#services']),...sectors.map(s=>[s[0],'Sector','#sectors']),...projects.map(p=>[p[0],'Project','#projects']),['How we work','Page','#process'],['Contact & offices','Page','#contact']];
   const render=q=>{const r=idx.filter(i=>i[0].toLowerCase().includes(q.toLowerCase()));SR.innerHTML=r.length?r.map(i=>`<li><a href="${i[2]}">${i[0].replace('&','&amp;')}<small>${i[1]}</small></a></li>`).join(''):'<li class="sempty">No matches. Try “rail”, “water” or “energy”.</li>';if(G&&!reduce)gsap.from('#sRes li',{y:10,opacity:0,duration:.35,stagger:.025})};
   function openSearch(){S.classList.add('open');render('');setTimeout(()=>SI.focus(),200);lenis&&lenis.stop()}
   function closeSearch(){if(!S.classList.contains('open'))return;S.classList.remove('open');SI.value='';lenis&&lenis.start()}
@@ -834,13 +860,12 @@ p{margin:0}
     if(!n||!/^\S+@\S+\.\S+$/.test(em)||!ms){m.className='fmsg err';m.textContent='Please add your name, a valid email and a few project details.';if(G)gsap.fromTo('#form',{x:-8},{x:0,duration:.5,ease:'elastic.out(1,.3)'});return}
     // TODO: connect to backend, e.g. fetch('/api/enquiry',{method:'POST',body:new FormData(e.target)})
     m.className='fmsg ok';m.textContent=`Thank you, ${n.split(' ')[0]}. The right engineer will reply within one business day.`;e.target.reset()});
-  $('#news').addEventListener('submit',e=>{e.preventDefault();const v=$('#nEmail').value.trim(),m=$('#nmsg');if(!/^\S+@\S+\.\S+$/.test(v)){m.style.color='#ffb27a';m.textContent='Enter a valid email address.';return}
-    // TODO: connect to mailing list provider
-    m.style.color='#7ee2a8';m.textContent='Thanks, you’re subscribed.';e.target.reset()});
 
   addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeSearch();document.body.classList.remove('menu-open')}if(e.key==='/'&&!/input|textarea/i.test(document.activeElement.tagName)){e.preventDefault();openSearch()}});
 })();
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="js/office-map.js"></script>
 </body>
 </html>
