@@ -11,7 +11,7 @@
     {city:'Perth',country:'Australia',addr:'108 St Georges Terrace, Perth, WA, Australia 6000',ll:[-31.9545,115.8566]},
     {city:'Auckland',country:'New Zealand',addr:'110 Carlton Gore Road, New Market, Auckland, New Zealand 1023',ll:[-36.8668,174.7795]}
   ];
-// data
+
   const css=`
 .c-map{position:relative;margin-top:2px;background:var(--card);border:1px solid var(--line);overflow:hidden}
 .c-map .map{height:clamp(340px,48vw,500px);background:#0d0e12}
