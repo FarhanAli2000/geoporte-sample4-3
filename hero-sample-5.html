@@ -111,6 +111,25 @@ p{margin:0}
 .menu a{display:block;padding:9px 13px;font-size:.78rem;color:rgba(242,240,236,.8);transition:color .3s}
 .menu a:hover,.menu a.active{color:var(--amber)}
 .ink{position:absolute;bottom:0;height:2px;background:var(--amber);border-radius:2px;box-shadow:0 0 10px var(--amber);transition:left .45s var(--ease),width .45s var(--ease)}
+/* ---------- services dropdown ---------- */
+.menu>li{position:relative}
+.has-dd>a{display:flex!important;align-items:center;gap:5px}
+.has-dd .caret{width:12px;height:12px;transition:rotate .35s var(--ease)}
+.has-dd:hover .caret,.has-dd:focus-within .caret{rotate:180deg}
+.dd{position:absolute;top:100%;left:0;padding-top:12px;opacity:0;visibility:hidden;translate:0 10px;transition:opacity .3s,translate .4s var(--ease),visibility .3s}
+.has-dd:hover>.dd,.has-dd:focus-within>.dd{opacity:1;visibility:visible;translate:0 0}
+.dd-list{list-style:none;margin:0;padding:8px;min-width:270px;background:rgba(17,18,22,.97);border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.dd-list>li{position:relative}
+.menu .dd a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 14px;font-size:.84rem;color:rgba(242,240,236,.82);transition:color .25s,background .25s}
+.menu .dd a:hover,.menu .dd a.cur,.dd .has-sub:hover>a,.dd .has-sub:focus-within>a{color:var(--amber);background:var(--amber-soft)}
+.dd .arrow{width:12px;height:12px;flex:none}
+.dd-sub{position:absolute;left:100%;top:-9px;padding-left:6px;opacity:0;visibility:hidden;translate:-8px 0;transition:opacity .3s,translate .4s var(--ease),visibility .3s}
+.has-sub:hover>.dd-sub,.has-sub:focus-within>.dd-sub{opacity:1;visibility:visible;translate:0 0}
+.dd-sub .dd-list{width:400px;max-height:calc(100vh - 140px);overflow-y:auto}
+.menu .dd-sub a{font-size:.8rem;padding:9px 14px;line-height:1.35}
+.msub{display:flex;flex-direction:column;gap:2px;margin:4px 0 12px 4px;padding-left:16px;border-left:1px solid var(--line-2)}
+.mmenu .msub a{font:300 1rem/1.5 var(--f-body);color:var(--muted)}
+.mmenu .msub a:hover,.mmenu .msub a.cur{color:var(--amber)}
 .nav-r{display:flex;align-items:center;gap:16px}
 .ibtn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:background .3s,rotate .5s var(--ease)}
 .ibtn:hover{background:var(--bg-3);rotate:-12deg}
@@ -123,7 +142,7 @@ p{margin:0}
 .menu-open .burger span:nth-child(2){opacity:0}
 .menu-open .burger span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 .menu-open .nav{background:transparent;border-color:transparent}
-.mmenu{position:fixed;inset:0;z-index:110;background:var(--bg-2);clip-path:circle(0% at calc(100% - 42px) 40px);transition:clip-path .9s var(--ease);display:flex;flex-direction:column;justify-content:center;padding:110px var(--gut-r) 40px var(--gut-l)}
+.mmenu{position:fixed;inset:0;z-index:110;background:var(--bg-2);overflow-y:auto;clip-path:circle(0% at calc(100% - 42px) 40px);transition:clip-path .9s var(--ease);display:flex;flex-direction:column;justify-content:safe center;padding:110px var(--gut-r) 40px var(--gut-l)}
 .menu-open .mmenu{clip-path:circle(150% at calc(100% - 42px) 40px)}
 .mmenu a{font:200 clamp(2rem,9vw,3rem)/1.25 var(--f-display);opacity:0;translate:0 30px;transition:opacity .5s,translate .7s var(--ease),color .3s}
 .mmenu a:hover{color:var(--amber)}
@@ -473,7 +492,18 @@ p{margin:0}
     <ul class="menu" id="menu">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="about-us.html">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li class="has-dd"><a href="#services" aria-haspopup="true">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dd"><ul class="dd-list">
+          <li><a href="civil-engineering.html">Civil Engineering</a></li>
+          <li><a href="design-and-drafting.html">Design and Drafting</a></li>
+          <li class="has-sub"><a href="#services">Geotechnical Engineering<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a><div class="dd-sub"><ul class="dd-list"><li><a href="proof-engineering-services-of-geotechnical-design.html">Proof Engineering Services of geotechnical design</a></li><li><a href="slope-stability-assessment-and-design-of-slope-stabilization-works.html">Slope Stability Assessment &amp; Stabilization Design</a></li><li><a href="reclamation-works-design.html">Reclamation works design</a></li><li><a href="road-subgrade-assessment-and-design.html">Road Subgrade Assessment and Design</a></li><li><a href="#services">Temporary Works Design</a></li><li><a href="#services">Retention Systems</a></li><li><a href="#services">Earthworks Design</a></li><li><a href="#services">Pipelines</a></li><li><a href="#services">Ground Settlement (Static and Seismic)</a></li><li><a href="#services">Ground Improvement design</a></li><li><a href="#services">Seismic hazard analyses and earthquake geotechnical design</a></li><li><a href="#services">Site Investigation Planning and Reporting</a></li><li><a href="#services">Forensic Geotechnical Engineering and investigating failures</a></li><li><a href="#services">Numerical Modelling</a></li><li><a href="#services">Pavement Profile Design</a></li><li><a href="#services">Desktop Studies and Geohazard Geotechnical Assessment</a></li></ul></div></li>
+          <li><a href="structural-engineering.html">Structural Engineering</a></li>
+          <li><a href="stormwater-and-flood-modelling.html">Stormwater and Flood Modelling</a></li>
+          <li><a href="project-control-services.html">Project Control Services</a></li>
+          <li><a href="advisory-services.html">Advisory Services</a></li>
+          <li><a href="telecom-services.html">Telecom Services</a></li>
+        </ul></div>
+      </li>
       <li><a href="#sectors">Sectors</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="#process">Careers</a></li>
@@ -489,7 +519,7 @@ p{margin:0}
   </div>
 </header>
 <nav class="mmenu" aria-label="Mobile">
-  <a href="#home">Home</a><a href="about-us.html">About</a><a href="#services">Services</a><a href="#sectors">Sectors</a><a href="projects.html">Projects</a><a href="#process">Careers</a><a href="#contact">Contact</a>
+  <a href="#home">Home</a><a href="about-us.html">About</a><a href="#services">Services</a><div class="msub"><a href="civil-engineering.html">Civil Engineering</a><a href="design-and-drafting.html">Design and Drafting</a><a href="#services">Geotechnical Engineering</a><a href="structural-engineering.html">Structural Engineering</a><a href="stormwater-and-flood-modelling.html">Stormwater and Flood Modelling</a><a href="project-control-services.html">Project Control Services</a><a href="advisory-services.html">Advisory Services</a><a href="telecom-services.html">Telecom Services</a></div><a href="#sectors">Sectors</a><a href="projects.html">Projects</a><a href="#process">Careers</a><a href="#contact">Contact</a>
 </nav>
 
 <div class="search" id="search" role="dialog" aria-label="Search">
@@ -637,7 +667,7 @@ p{margin:0}
       <div class="fcol rv"><a href="#home" class="brand"><img src="images/geoporte-logo.png" alt="Geoporte logo"><span>GE<em>O</em>PORTE</span></a><p>Geoporte provides design consultancy services mainly in the fields of Civil Engineering, Geotechnical Engineering and Telecom Engineering.</p>
         <a class="fmail" href="mailto:enquiries@geoporte.com.au"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><b>enquiries@geoporte.com.au</b><small>We reply within 24 hours</small></span></a></div>
       <div class="fcol rv"><h4>Company</h4><ul><li><a href="#home">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="about-us.html#people">Our Team</a></li><li><a href="projects.html">Projects</a></li><li><a href="publications.html">Publications</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
-      <div class="fcol rv"><h4>Services</h4><ul><li><a href="civil-engineering.html">Civil Engineering</a></li><li><a href="design-and-drafting.html">Design and Drafting</a></li><li><a href="#services">Geotechnical Engineering</a></li><li><a href="structural-engineering.html">Structural Engineering</a></li><li><a href="#services">Stormwater and Flood Modelling</a></li><li><a href="#services">Project Control Services</a></li><li><a href="#services">Advisory Services</a></li><li><a href="#services">Telecom Services</a></li></ul></div>
+      <div class="fcol rv"><h4>Services</h4><ul><li><a href="civil-engineering.html">Civil Engineering</a></li><li><a href="design-and-drafting.html">Design and Drafting</a></li><li><a href="#services">Geotechnical Engineering</a></li><li><a href="structural-engineering.html">Structural Engineering</a></li><li><a href="stormwater-and-flood-modelling.html">Stormwater and Flood Modelling</a></li><li><a href="project-control-services.html">Project Control Services</a></li><li><a href="advisory-services.html">Advisory Services</a></li><li><a href="telecom-services.html">Telecom Services</a></li></ul></div>
       <div class="fcol rv"><h4>Have any questions?</h4><ul class="fphones"><li><a href="tel:+61431554626"><span>+61 (0) 431 55 4626</span><small>Australia</small></a></li><li><a href="tel:+61388217758"><span>+61 (0) 388 21 7758</span><small>Australia</small></a></li><li><a href="tel:+64212870714"><span>+64 (0) 212 87 0714</span><small>New Zealand</small></a></li></ul></div>
       <div class="fcol rv"><h4>Office locations</h4><ul class="foffices"><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Melbourne <small>Australia</small></b><p>Tower 5, Collins Square, 727 Collins Street, Melbourne, VIC, 3008, Australia</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Sydney <small>Australia</small></b><p>Three International Towers, 300 Barangaroo Ave, Barangaroo NSW, Australia 2000</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Perth <small>Australia</small></b><p>108 St Georges Terrace, Perth, WA, Australia 6000</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Auckland <small>New Zealand</small></b><p>110 Carlton Gore Road, New Market, Auckland, New Zealand 1023</p></div></li></ul></div>
     </div>
@@ -676,11 +706,11 @@ p{margin:0}
     ['Civil Engineering','Practical, innovative and sustainable civil solutions.','civil','images/coastal-bridge.jpg','50% 60%','civil-engineering.html'],
     ['Design and Drafting','High-quality design, drafting and BIM support.','design','images/service-2.jpg','50% 40%','design-and-drafting.html'],
     ['Geotechnical Engineering','Ground knowledge for smarter decisions.','geo','images/geotech-wide.jpg','50% 40%'],
-    ['Telecom Services','Engineering support for a more connected world.','tel','images/service-8.jpg','50% 25%'],
+    ['Telecom Services','Engineering support for a more connected world.','tel','images/service-8.jpg','50% 25%','telecom-services.html'],
     ['Structural Engineering','Safe, efficient structures built to last.','struct','images/cable-bridge-wide.jpg','50% 40%','structural-engineering.html'],
-    ['Stormwater & Flood Modelling','Catchment, drainage and flood risk modelling.','storm','images/dam-spillway.jpg','50% 40%'],
-    ['Project Management','Programme, cost and delivery control on site.','pm','images/engineers.jpg','50% 35%'],
-    ['Advisory Services','Risk-based technical and transaction advice.','adv','images/service-7.jpg','50% 50%']
+    ['Stormwater & Flood Modelling','Catchment, drainage and flood risk modelling.','storm','images/dam-spillway.jpg','50% 40%','stormwater-and-flood-modelling.html'],
+    ['Project Management','Programme, cost and delivery control on site.','pm','images/engineers.jpg','50% 35%','project-control-services.html'],
+    ['Advisory Services','Risk-based technical and transaction advice.','adv','images/service-7.jpg','50% 50%','advisory-services.html']
   ];
   const projects=[
     ['Melbourne Airport','Aviation','VIC','images/geotech-site.jpg'],
@@ -748,9 +778,9 @@ p{margin:0}
   const nav=$('#nav'),prog=$('#progress'),tt=$('#totop'),ring=$('#topRing');let lastY=0;
   function onS(){const y=scrollY,m=document.documentElement.scrollHeight-innerHeight,p=m>0?y/m:0;nav.classList.toggle('scrolled',y>30);nav.classList.toggle('hide',y>lastY&&y>600&&!document.body.classList.contains('menu-open'));lastY=y;prog.style.transform=`scaleX(${p})`;tt.classList.toggle('show',y>700);ring.style.strokeDashoffset=144.5*(1-p)}
   addEventListener('scroll',onS,{passive:true});onS();
-  const links=$$('#menu a'),ink=$('#ink');const mv=a=>{if(!a)return;ink.style.left=a.offsetLeft+13+'px';ink.style.width=a.offsetWidth-26+'px'};
-  links.forEach(a=>a.addEventListener('mouseenter',()=>mv(a)));$('#menu').addEventListener('mouseleave',()=>mv($('#menu a.active')));setTimeout(()=>mv($('#menu a.active')),400);addEventListener('resize',()=>mv($('#menu a.active')));
-  const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));mv($('#menu a.active'))}}),{rootMargin:'-45% 0px -50% 0px'});
+  const links=$$('#menu > li > a'),ink=$('#ink');const mv=a=>{if(!a)return;ink.style.left=a.parentElement.offsetLeft+13+'px';ink.style.width=a.offsetWidth-26+'px'};
+  links.forEach(a=>a.addEventListener('mouseenter',()=>mv(a)));$('#menu').addEventListener('mouseleave',()=>mv($('#menu > li > a.active')));setTimeout(()=>mv($('#menu > li > a.active')),400);addEventListener('resize',()=>mv($('#menu > li > a.active')));
+  const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));mv($('#menu > li > a.active'))}}),{rootMargin:'-45% 0px -50% 0px'});
   ['home','services','process','projects','sectors','band','contact'].forEach(id=>sio.observe(document.getElementById(id)));
   $('#burger').addEventListener('click',()=>document.body.classList.toggle('menu-open'));
 
