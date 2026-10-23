@@ -1,11 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>[Hero sample 5] Geoporte</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Geoporte — risk-based design, engineering and advisory for complex infrastructure across Australia and New Zealand.">
+<title>Geoporte | Geotechnical &amp; Civil Engineering Consultants</title>
+<meta name="description" content="Geoporte provides geotechnical, civil, structural and telecom engineering design consultancy across Australia and New Zealand, from investigation to delivery.">
+<!-- SEO -->
+<link rel="canonical" href="https://geoporte.com.au/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Geoporte">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Geoporte | Geotechnical &amp; Civil Engineering Consultants">
+<meta property="og:description" content="Geoporte provides geotechnical, civil, structural and telecom engineering design consultancy across Australia and New Zealand, from investigation to delivery.">
+<meta property="og:url" content="https://geoporte.com.au/">
+<meta property="og:image" content="https://geoporte.com.au/images/hero-video-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Geoporte | Geotechnical &amp; Civil Engineering Consultants">
+<meta name="twitter:description" content="Geoporte provides geotechnical, civil, structural and telecom engineering design consultancy across Australia and New Zealand, from investigation to delivery.">
+<meta name="twitter:image" content="https://geoporte.com.au/images/hero-video-poster.jpg">
+<link rel="icon" href="/images/geoporte-logo.png" type="image/png">
+<!-- /SEO -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
@@ -392,7 +407,7 @@ p{margin:0}
 .bigword span{display:inline-block;background:linear-gradient(180deg,rgba(90,163,232,.5),rgba(90,163,232,0) 85%);-webkit-background-clip:text;background-clip:text;color:transparent;transition:translate .6s var(--ease)}
 .bigword span:hover{translate:0 -10px}
 .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:20px;border-top:1px solid var(--line);font-size:.74rem;color:var(--dim)}
-.fbot nav{display:flex;gap:18px}
+.fbot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
 .fbot a:hover{color:var(--amber)}
 .totop{position:fixed;z-index:90;right:max(22px,env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));width:50px;height:50px;border-radius:50%;background:var(--bg-3);border:1px solid var(--line-2);display:grid;place-items:center;translate:0 120px;transition:translate .5s var(--ease)}
 .totop.show{translate:0 0}
@@ -491,7 +506,12 @@ p{margin:0}
     <a href="#home" class="brand" aria-label="Geoporte home"><img src="images/geoporte-logo.png" alt="Geoporte logo"><span>GE<em>O</em>PORTE</span></a>
     <ul class="menu" id="menu">
       <li><a href="#home" class="active">Home</a></li>
-      <li><a href="about-us.html">About</a></li>
+      <li class="has-dd"><a href="about-us.html" aria-haspopup="true">About <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dd"><ul class="dd-list">
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+        </ul></div>
+      </li>
       <li class="has-dd"><a href="#services" aria-haspopup="true">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dd"><ul class="dd-list">
           <li><a href="civil-engineering.html">Civil Engineering</a></li>
@@ -519,7 +539,7 @@ p{margin:0}
   </div>
 </header>
 <nav class="mmenu" aria-label="Mobile">
-  <a href="#home">Home</a><a href="about-us.html">About</a><a href="#services">Services</a><div class="msub"><a href="civil-engineering.html">Civil Engineering</a><a href="design-and-drafting.html">Design and Drafting</a><a href="#services">Geotechnical Engineering</a><a href="structural-engineering.html">Structural Engineering</a><a href="stormwater-and-flood-modelling.html">Stormwater and Flood Modelling</a><a href="project-control-services.html">Project Control Services</a><a href="advisory-services.html">Advisory Services</a><a href="telecom-services.html">Telecom Services</a></div><a href="#sectors">Sectors</a><a href="projects.html">Projects</a><a href="#process">Careers</a><a href="#contact">Contact</a>
+  <a href="#home">Home</a><a href="about-us.html">About</a><div class="msub"><a href="about-us.html">About Us</a><a href="our-team.html">Our Team</a></div><a href="#services">Services</a><div class="msub"><a href="civil-engineering.html">Civil Engineering</a><a href="design-and-drafting.html">Design and Drafting</a><a href="#services">Geotechnical Engineering</a><a href="structural-engineering.html">Structural Engineering</a><a href="stormwater-and-flood-modelling.html">Stormwater and Flood Modelling</a><a href="project-control-services.html">Project Control Services</a><a href="advisory-services.html">Advisory Services</a><a href="telecom-services.html">Telecom Services</a></div><a href="#sectors">Sectors</a><a href="projects.html">Projects</a><a href="#process">Careers</a><a href="#contact">Contact</a>
 </nav>
 
 <div class="search" id="search" role="dialog" aria-label="Search">
@@ -672,7 +692,7 @@ p{margin:0}
       <div class="fcol rv"><h4>Office locations</h4><ul class="foffices"><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Melbourne <small>Australia</small></b><p>Tower 5, Collins Square, 727 Collins Street, Melbourne, VIC, 3008, Australia</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Sydney <small>Australia</small></b><p>Three International Towers, 300 Barangaroo Ave, Barangaroo NSW, Australia 2000</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Perth <small>Australia</small></b><p>108 St Georges Terrace, Perth, WA, Australia 6000</p></div></li><li><span class="fpin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Auckland <small>New Zealand</small></b><p>110 Carlton Gore Road, New Market, Auckland, New Zealand 1023</p></div></li></ul></div>
     </div>
     <div class="bigword" id="bigword" aria-hidden="true"><span>G</span><span>E</span><span>O</span><span>P</span><span>O</span><span>R</span><span>T</span><span>E</span></div>
-    <div class="fbot"><span>Copyright © <span id="yr">2026</span> Geoporte. All rights reserved.</span><nav><a href="#home">Privacy Policy</a></nav></div>
+    <div class="fbot"><span>Copyright © <span id="yr">2026</span> Geoporte. All rights reserved.</span><nav><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="cookie-policy.html">Cookie Policy</a><a href="disclaimer.html">Disclaimer</a></nav></div>
   </div>
 </footer>
 
@@ -713,9 +733,9 @@ p{margin:0}
     ['Advisory Services','Risk-based technical and transaction advice.','adv','images/service-7.jpg','50% 50%','advisory-services.html']
   ];
   const projects=[
-    ['Melbourne Airport','Aviation','VIC','images/geotech-site.jpg'],
+    ['Melbourne Airport','Aviation','VIC','images/real/airport-earthworks.jpg'],
     ['City Rail Link Auckland','Transportation','NZ','images/hero-video-poster.jpg'],
-    ['Healesville–Koo Wee Rup Road Upgrade','Transportation','VIC','images/hero-bridge.jpg'],
+    ['Healesville–Koo Wee Rup Road Upgrade','Transportation','VIC','images/real/aerial-road-straight-2.jpg'],
     ['AGL Torrens Island Battery Facility','Energy Infrastructure','SA','images/service-8.jpg'],
     ['Regional Dam Spillway Upgrade','Water','QLD','images/dam-spillway.jpg'],
     ['Cable-Stayed River Crossing','Transportation','NSW','images/cable-bridge.jpg']
