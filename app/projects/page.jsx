@@ -2,6 +2,7 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/projects';
 import Contact from '@/components/Contact';
+import { ArrowDown } from '@/components/icons';
 import '@/styles/projects.css';
 
 export const metadata = pageMeta({
@@ -51,10 +52,7 @@ export default function Page() {
               major and complex infrastructure projects.
             </p>
             <a href="#index" className="pill pill-o magnetic">
-              Browse projects{' '}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 5v14M6 13l6 6 6-6" />
-              </svg>
+              Browse projects <ArrowDown />
             </a>
           </div>
         </div>

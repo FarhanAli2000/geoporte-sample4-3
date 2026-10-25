@@ -2,7 +2,7 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/about';
 import Contact from '@/components/Contact';
-import { Arrow } from '@/components/icons';
+import { Arrow, ArrowDown } from '@/components/icons';
 import '@/styles/about.css';
 
 export const metadata = pageMeta({
@@ -48,10 +48,7 @@ export default function Page() {
               Engineering.
             </p>
             <a href="#why" className="pill pill-o magnetic">
-              Why choose us{' '}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 5v14M6 13l6 6 6-6" />
-              </svg>
+              Why choose us <ArrowDown />
             </a>
           </div>
         </div>

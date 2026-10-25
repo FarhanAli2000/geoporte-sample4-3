@@ -2,7 +2,7 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/publications';
 import Contact from '@/components/Contact';
-import { Close } from '@/components/icons';
+import { ArrowDown, Close } from '@/components/icons';
 import '@/styles/pages.css';
 
 export const metadata = pageMeta({
@@ -54,10 +54,7 @@ export default function Page() {
           <div className="phero-side" id="pSide">
             <p>Technical papers and conference presentations by Geoporte specialists on digital geotechnics and tunnel engineering.</p>
             <a href="#pubs" className="pill pill-o magnetic">
-              Read publications{' '}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 5v14M6 13l6 6 6-6" />
-              </svg>
+              Read publications <ArrowDown />
             </a>
           </div>
         </div>
