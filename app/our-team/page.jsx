@@ -25,10 +25,9 @@ export default function Page() {
           <div>
             <h1 id="pTitle">
               <span className="line">
-                <span>Our</span>
-              </span>
-              <span className="line">
-                <span className="a">Team</span>
+                <span>
+                  Our <span className="a">Team</span>
+                </span>
               </span>
             </h1>
           </div>
@@ -94,73 +93,6 @@ export default function Page() {
               </ul>
             </div>
           </article>
-        </div>
-      </section>
-      {/* IN THE FIELD */}
-      <section className="field" id="field">
-        <div className="wrap">
-          <div className="sec-head">
-            <div className="cap">In the field</div>
-            <h2 className="split">On site, in the room, on stage.</h2>
-          </div>
-          <div className="g-grid rv">
-            <figure className="g-it big">
-              <img
-                src="/images/real/grove-of-honour-team.jpg"
-                alt="Robinvale site investigation team with the Geoporte sign"
-                loading="lazy"
-              />
-              <figcaption>Robinvale site investigation team with the Geoporte sign</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/geoporte-vests-drilling.jpg" alt="Geoporte engineers supervising drilling" loading="lazy" />
-              <figcaption>Geoporte engineers supervising drilling</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/directors-site-visit.jpg" alt="Geoporte directors on a site visit" loading="lazy" />
-              <figcaption>Geoporte directors on a site visit</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/core-logging-team.jpg" alt="Logging rock core with the drilling crew" loading="lazy" />
-              <figcaption>Logging rock core with the drilling crew</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/office-team.jpg" alt="Back at the Geoporte office" loading="lazy" />
-              <figcaption>Back at the Geoporte office</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/walking-geoporte-vests.jpg" alt="Walking a site in Geoporte vests" loading="lazy" />
-              <figcaption>Walking a site in Geoporte vests</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/team-yellow-rig.jpg" alt="On site with the drilling rig" loading="lazy" />
-              <figcaption>On site with the drilling rig</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/reviewing-drawings.jpg" alt="Reviewing drawings on site" loading="lazy" />
-              <figcaption>Reviewing drawings on site</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/nz-site-visit.jpg" alt="Site visit in New Zealand" loading="lazy" />
-              <figcaption>Site visit in New Zealand</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/award-ags.jpg" alt="Accepting an award at an Australian Geomechanics Society event" loading="lazy" />
-              <figcaption>Accepting an award at an Australian Geomechanics Society event</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/conference-talk.jpg" alt="Presenting at a geotechnical industry event" loading="lazy" />
-              <figcaption>Presenting at a geotechnical industry event</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/drone-wave-car.jpg" alt="Geoporte team waving to the drone" loading="lazy" />
-              <figcaption>Geoporte team waving to the drone</figcaption>
-            </figure>
-            <figure className="g-it">
-              <img src="/images/real/team-creek-site.jpg" alt="Geoporte team at a creek bank remediation site" loading="lazy" />
-              <figcaption>Geoporte team at a creek bank remediation site</figcaption>
-            </figure>
-          </div>
         </div>
       </section>
       {/* ONE TEAM */}

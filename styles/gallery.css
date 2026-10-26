@@ -1,0 +1,47 @@
+/* "In the field" team photo gallery (components/FieldGallery.jsx): two marquee rows + full-screen viewer. */
+.gal{padding-block:110px;overflow:hidden}
+.gal-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:40px;align-items:end}
+.gal-head p{color:var(--muted);font-size:.92rem;max-width:30rem}
+.gal-rows{display:grid;gap:14px;margin-top:50px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.gal-row{overflow:hidden}
+.gal-track{display:flex;width:max-content;animation:galScroll 70s linear infinite}
+.gal-row.rev .gal-track{animation-direction:reverse;animation-duration:60s}
+.gal-rows:hover .gal-track,.gal-rows:focus-within .gal-track{animation-play-state:paused}
+@keyframes galScroll{to{transform:translateX(-50%)}}
+.gal-card{position:relative;flex:none;width:400px;height:280px;margin-right:14px;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);cursor:pointer;isolation:isolate}
+.gal-card img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:saturate(.9);transition:scale .9s var(--ease),filter .5s}
+.gal-card:hover img,.gal-card:focus-visible img{scale:1.07;filter:none}
+.gal-card::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 2px var(--amber);opacity:0;transition:opacity .4s}
+.gal-card:hover::after,.gal-card:focus-visible::after{opacity:1}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:36px 16px 14px;text-align:left;font-size:.78rem;line-height:1.4;color:#fff;background:linear-gradient(0deg,rgba(10,10,12,.88),transparent);opacity:0;translate:0 10px;transition:opacity .4s,translate .5s var(--ease)}
+.gal-card:hover .gal-cap,.gal-card:focus-visible .gal-cap{opacity:1;translate:0 0}
+
+.gal-lb{position:fixed;inset:0;z-index:600;display:grid;place-items:center;padding:70px 90px;background:rgba(6,6,8,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);animation:galFade .35s ease}
+@keyframes galFade{from{opacity:0}}
+.gal-lb figure{margin:0;display:grid;gap:14px;max-width:min(1200px,100%);animation:galZoom .45s var(--ease)}
+@keyframes galZoom{from{opacity:0;scale:.96}}
+.gal-lb img{max-width:100%;max-height:calc(100svh - 190px);object-fit:contain;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.gal-lb figcaption{display:flex;justify-content:space-between;gap:20px;font-size:.9rem;color:rgba(242,240,236,.85)}
+.gal-lb figcaption b{font:300 .9rem var(--f-display);color:var(--muted);white-space:nowrap}
+.gal-nav,.gal-x{position:absolute;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1px solid var(--line-2);background:rgba(18,19,24,.8);color:var(--fg);transition:background .3s,color .3s,border-color .3s}
+.gal-nav:hover,.gal-x:hover{background:var(--amber);border-color:var(--amber);color:#111}
+.gal-nav svg,.gal-x svg{width:20px;height:20px}
+.gal-nav{top:50%;translate:0 -50%}
+.gal-nav.prev{left:22px}
+.gal-nav.next{right:22px}
+.gal-x{top:22px;right:22px}
+
+@media (max-width:860px){
+  .gal{padding-block:80px}
+  .gal-head{grid-template-columns:1fr;gap:20px}
+  .gal-card{width:260px;height:190px}
+  .gal-cap{opacity:1;translate:0 0}
+  .gal-lb{padding:70px 16px 90px}
+  .gal-nav{top:auto;bottom:22px;translate:none}
+  .gal-nav.prev{left:calc(50% - 64px)}
+  .gal-nav.next{right:calc(50% - 64px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .gal-track{animation:none}
+  .gal-row{overflow-x:auto}
+}

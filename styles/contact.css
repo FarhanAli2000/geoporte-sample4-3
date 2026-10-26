@@ -32,3 +32,5 @@
   .enquiry .contact-grid{grid-template-columns:1fr;gap:34px}
   .form{grid-template-columns:1fr;padding:24px}
 }
+/* hero: keep the waving engineers in frame on narrow screens (photo's subject sits left of centre) */
+@media (max-width:860px){.phero-media img{object-position:28% 50%}}

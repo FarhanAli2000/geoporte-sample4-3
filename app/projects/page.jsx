@@ -2,14 +2,16 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/projects';
 import { ArrowDown } from '@/components/icons';
+import FieldGallery from '@/components/FieldGallery';
 import '@/styles/projects.css';
+import '@/styles/gallery.css';
 
 export const metadata = pageMeta({
   title: 'Projects | Transport, Energy & Water | Geoporte',
   description:
     'Explore projects delivered by Geoporte specialists across transport, built environment, energy, resources and water in Australia, NZ, the UAE and the UK.',
   path: '/projects',
-  image: 'https://geoporte.com.au/images/real/mountain-rock-cut.jpg',
+  image: 'https://geoporte.com.au/images/real/marine-port-aerial.jpg',
 });
 
 export default function Page() {
@@ -25,7 +27,7 @@ export default function Page() {
       {/* PAGE HERO */}
       <section className="phero" id="top">
         <div className="phero-media" id="pheroMedia">
-          <img src="/images/real/mountain-rock-cut.jpg" alt="Rock cut earthworks through mountainous terrain" />
+          <img src="/images/real/marine-port-aerial.jpg" alt="Aerial view of a port and land reclamation project" />
         </div>
         <div className="wrap phero-in">
           <div>
@@ -118,6 +120,8 @@ export default function Page() {
           <ul className="plist" id="plist" />
         </div>
       </section>
+      {/* IN THE FIELD (team photos) */}
+      <FieldGallery />
       {/* REACH */}
       <section className="band" id="reach">
         <div className="band-media" id="bandMedia">

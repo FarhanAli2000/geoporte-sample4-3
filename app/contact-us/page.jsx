@@ -12,7 +12,7 @@ export const metadata = pageMeta({
   description:
     'Contact Geoporte about civil, geotechnical and structural engineering projects. Send an enquiry or reach our offices in Melbourne, Sydney, Perth and Auckland.',
   path: '/contact-us',
-  image: 'https://geoporte.com.au/images/real/aerial-road-rail-bridge.jpg',
+  image: 'https://geoporte.com.au/images/real/contact-drone-team.jpg',
 });
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
       {/* PAGE HERO */}
       <section className="phero" id="top">
         <div className="phero-media" id="pheroMedia">
-          <img src="/images/real/aerial-road-rail-bridge.jpg" alt="Aerial view of a Geoporte site investigation at a road and rail bridge crossing" />
+          <img src="/images/real/contact-drone-team.jpg" alt="Drone view of two Geoporte engineers waving beside the company car on site" />
         </div>
         <div className="wrap phero-in">
           <div>
