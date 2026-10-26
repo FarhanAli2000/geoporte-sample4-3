@@ -131,13 +131,14 @@
 .zvid{position:absolute;inset:-4%;z-index:0}
 .zvid video{width:100%;height:100%;object-fit:cover}
 .zmask{position:absolute;inset:0;z-index:1;background:#0a0a0c;mix-blend-mode:multiply;display:grid;place-items:center;pointer-events:none}
-.zword{display:flex;font:900 clamp(4.2rem,17.5vw,19rem)/.86 var(--f-display);letter-spacing:-.045em;color:#fff;user-select:none}
+.zword{display:flex;flex-direction:column;align-items:center;font:900 clamp(2.2rem,8.6vw,9.5rem)/.86 var(--f-display);letter-spacing:-.045em;color:#fff;user-select:none}
+.zline{display:flex;white-space:nowrap}
 .zword span{display:inline-block}
 .zword .zo{color:#8cc8ff}
 .zshine{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%) no-repeat;background-size:250% 100%;background-position:150% 0;animation:shine 5.5s ease-in-out 2.4s infinite}
 @keyframes shine{0%{background-position:150% 0}45%,100%{background-position:-50% 0}}
 .zintro{position:absolute;inset:0;z-index:3;display:grid;place-items:center;pointer-events:none}
-.zintro-in{display:grid;justify-items:center;gap:calc(clamp(4.2rem,17.5vw,19rem)*.62 + 40px)}
+.zintro-in{display:grid;justify-items:center;gap:calc(clamp(2.2rem,8.6vw,9.5rem)*1.72 + 56px)}
 .zintro .hero-eyebrow,.zintro p{font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,240,236,.75);display:flex;align-items:center;gap:14px}
 .zintro .hero-eyebrow{color:var(--amber)}
 .zintro .hero-eyebrow::before,.zintro .hero-eyebrow::after{content:"";width:32px;height:1px;background:currentColor}
@@ -371,7 +372,7 @@
   .fgrid .fcol:first-child,.fgrid .fcol:last-child{grid-column:1/-1}
 }
 @media (max-width:860px){
-  .zintro-in{gap:calc(17.5vw*.62 + 34px)}
+  .zintro-in{gap:calc(clamp(2.2rem,8.6vw,9.5rem)*1.72 + 44px)}
   .zintro .hero-eyebrow::before,.zintro .hero-eyebrow::after{display:none}
   .zintro .hero-eyebrow{font-size:.54rem;letter-spacing:.22em}
   .zshade{background:linear-gradient(180deg,rgba(10,10,12,.5) 0%,rgba(10,10,12,.7) 55%,var(--bg) 100%)}

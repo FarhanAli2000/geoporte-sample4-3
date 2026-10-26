@@ -15,6 +15,10 @@ export const metadata = pageMeta({
   image: 'https://geoporte.com.au/images/hero-video-poster.jpg',
 });
 
+// Hero headline cut out of the dark mask; scrolling zooms through the blue O at ZOOM_O [line, char].
+const HERO_WORDS = ['GLOBAL EXPERTISE,', 'LOCAL COMMITMENT'];
+const ZOOM_O = [1, 7];
+
 export default function Page() {
   return (
     <Site
@@ -109,14 +113,19 @@ export default function Page() {
         </div>
         <div className="zmask" id="zmask" aria-hidden="true">
           <div className="zword" id="zword">
-            <span>B</span>
-            <span>E</span>
-            <span>Y</span>
-            <span className="zo" id="zO">
-              O
-            </span>
-            <span>N</span>
-            <span>D</span>
+            {HERO_WORDS.map((line, l) => (
+              <div className="zline" key={line}>
+                {[...line].map((c, i) =>
+                  l === ZOOM_O[0] && i === ZOOM_O[1] ? (
+                    <span key={i} className="zo" id="zO">
+                      {c}
+                    </span>
+                  ) : (
+                    <span key={i}>{c === ' ' ? ' ' : c}</span>
+                  ),
+                )}
+              </div>
+            ))}
           </div>
         </div>
         <div className="zshine" aria-hidden="true" />

@@ -156,7 +156,7 @@ function init() {
       .timeline({ defaults: { ease: 'power4.out' } })
       .from('.nav-in > *', { y: -26, opacity: 0, duration: 0.8, stagger: 0.08, clearProps: 'transform,opacity' })
       .from('.hslide.on img', { scale: 1.45, duration: 2.6, ease: 'power3.out' }, 0)
-      .from('#zword span', { yPercent: 60, opacity: 0, duration: 1.2, stagger: 0.06, ease: 'power4.out' }, 0.15)
+      .from('#zword span', { yPercent: 60, opacity: 0, duration: 1.2, stagger: 0.03, ease: 'power4.out' }, 0.15)
       .from('#zvid', { scale: 1.25, duration: 2.4, ease: 'power3.out' }, 0)
       .from('#zintro .hero-eyebrow,#zintro p', { y: 16, opacity: 0, duration: 0.8, stagger: 0.15 }, 0.7)
       .from('#zcue', { y: 16, opacity: 0, duration: 0.8 }, 1.1);
@@ -482,7 +482,7 @@ function init() {
       .fromTo(
         '#zmask',
         { scale: 1, transformOrigin: zOrigin },
-        { scale: 70, transformOrigin: zOrigin, ease: 'power3.in', duration: 0.5 },
+        { scale: 140, transformOrigin: zOrigin, ease: 'power3.in', duration: 0.5 }, // smaller two-line headline needs a deeper zoom to fill the screen
         0,
       )
       .to('#zmask', { opacity: 0, duration: 0.05 }, 0.48)
