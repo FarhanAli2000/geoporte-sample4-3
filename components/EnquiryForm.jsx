@@ -3,11 +3,10 @@
 import { useState } from 'react';
 import { gsap } from 'gsap';
 import { Arrow } from './icons';
+import { EMAIL } from '@/lib/nav';
 
 const SECTOR_CHIPS = ['Transportation', 'Building', 'Water', 'Ports & Marine', 'Energy'];
-const RECIPIENT = 'enquiries@geoporte.com';
-
-// Submissions are emailed to RECIPIENT through FormSubmit; the first one sends an activation email to that inbox.
+// Submissions go to /api/enquiry, which emails them to the admin inbox (see app/api/enquiry/route.js).
 export default function EnquiryForm() {
   const [sector, setSector] = useState(SECTOR_CHIPS[0]);
   const [status, setStatus] = useState({ type: '', text: '' });
@@ -28,20 +27,17 @@ export default function EnquiryForm() {
     setSending(true);
     setStatus({ type: '', text: 'Sending…' });
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${RECIPIENT}`, {
+      const res = await fetch('/api/enquiry', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name, email, organisation: field('organisation'), sector, message,
-          _subject: `New website enquiry from ${name}`, _replyto: email, _template: 'table', _captcha: 'false',
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, organisation: field('organisation'), sector, message, website: field('website') }),
       });
-      const data = await res.json();
-      if (!(data.success === true || data.success === 'true')) throw new Error('not sent');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error('not sent');
       setStatus({ type: 'ok', text: `Thank you, ${name.split(' ')[0]}. The right engineer will reply within one business day.` });
       form.reset();
     } catch {
-      setStatus({ type: 'err', text: `Sorry, your enquiry could not be sent. Please email ${RECIPIENT} directly.` });
+      setStatus({ type: 'err', text: `Sorry, your enquiry could not be sent. Please email ${EMAIL} directly.` });
     } finally {
       setSending(false);
     }
@@ -50,6 +46,8 @@ export default function EnquiryForm() {
   return (
     <form className="form rv" id="form" noValidate onSubmit={onSubmit}>
       <h3>Start a conversation</h3>
+      {/* Honeypot: hidden from people, bots that fill it are ignored by the server */}
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
       <div className="field"><input id="f-name" name="name" placeholder=" " autoComplete="name" /><label htmlFor="f-name">Full name</label><span className="ul"></span></div>
       <div className="field"><input id="f-email" name="email" type="email" placeholder=" " autoComplete="email" /><label htmlFor="f-email">Email</label><span className="ul"></span></div>
       <div className="field full"><input id="f-org" name="organisation" placeholder=" " autoComplete="organization" /><label htmlFor="f-org">Organisation</label><span className="ul"></span></div>
