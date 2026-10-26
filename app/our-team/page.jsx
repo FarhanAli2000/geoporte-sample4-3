@@ -24,13 +24,6 @@ export default function Page() {
         </div>
         <div className="wrap phero-in">
           <div>
-            <div className="crumb" id="crumb">
-              <a href="/">Home</a>
-              <i />
-              <a href="/about-us">About</a>
-              <i />
-              <b>Our Team</b>
-            </div>
             <h1 id="pTitle">
               <span className="line">
                 <span>Our</span>

@@ -90,10 +90,6 @@
 .phero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.6)}
 .phero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,10,12,.92) 0%,rgba(10,10,12,.55) 50%,rgba(10,10,12,.2) 100%),linear-gradient(0deg,var(--bg) 0%,rgba(10,10,12,0) 40%)}
 .phero-in{width:100%;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:end}
-.crumb{display:flex;align-items:center;gap:10px;font-size:.6rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,240,236,.6)}
-.crumb a:hover{color:var(--amber)}
-.crumb i{width:18px;height:1px;background:var(--amber)}
-.crumb b{color:var(--amber);font-weight:700}
 .phero h1{font-size:clamp(3rem,8vw,7rem);font-weight:200;line-height:.92;margin-top:26px}
 .phero h1 .line{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.12em}
 .phero h1 .line > span{display:inline-block}

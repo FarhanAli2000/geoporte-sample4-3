@@ -262,7 +262,6 @@ function init() {
       .timeline({ defaults: { ease: 'power4.out' } })
       .from('.nav-in > *', { y: -26, opacity: 0, duration: 0.8, stagger: 0.08, clearProps: 'transform,opacity' })
       .from('#pheroMedia img', { scale: 1.25, duration: 2.4, ease: 'power3.out' }, 0)
-      .from('#crumb', { x: -20, opacity: 0, duration: 0.8 }, 0.2)
       .from('#pTitle .line > span', { yPercent: 110, duration: 1.2, stagger: 0.12 }, 0.3)
       .from('#pSide', { y: 30, opacity: 0, duration: 1 }, 0.7);
     gsap.to('#pheroMedia', {

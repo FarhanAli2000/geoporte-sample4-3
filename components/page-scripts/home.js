@@ -149,8 +149,21 @@ function init() {
   }
 
   /* ---------- intro ---------- */
+  // Arriving from another page with a hash (e.g. /#process): the pinned hero adds scroll length after the
+  // browser's own jump, so scroll to the section once the loader has finished.
+  const toHash = () => {
+    let t = null;
+    try {
+      t = location.hash.length > 1 && $(location.hash);
+    } catch {}
+    if (!t) return;
+    if (G) ScrollTrigger.refresh();
+    lenis ? lenis.scrollTo(t, { offset: -60, immediate: true }) : scrollTo(0, t.getBoundingClientRect().top + scrollY - 60);
+  };
+
   function intro() {
     startHero();
+    setTimeout(toHash, 50);
     if (!G || reduce) return;
     gsap
       .timeline({ defaults: { ease: 'power4.out' } })
