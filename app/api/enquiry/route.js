@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { enquiryEmail } from '@/lib/enquiry-email';
 
 export const runtime = 'nodejs';
 
@@ -6,7 +7,6 @@ export const runtime = 'nodejs';
 // Needs GMAIL_USER and GMAIL_APP_PASSWORD (a Google app password); ENQUIRY_TO defaults to GMAIL_USER.
 
 const clean = (v, max) => String(v ?? '').trim().slice(0, max);
-const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const fail = (status, error) => Response.json({ ok: false, error }, { status });
 
 export async function POST(req) {
@@ -24,6 +24,7 @@ export async function POST(req) {
   const organisation = clean(data.organisation, 200);
   const sector = clean(data.sector, 60);
   const message = clean(data.message, 5000);
+  const page = clean(data.page, 200).replace(/[^\w\-/]/g, '');
   if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !message) return fail(400, 'Missing or invalid fields');
 
   const { GMAIL_USER, GMAIL_APP_PASSWORD, ENQUIRY_TO } = process.env;
@@ -32,12 +33,10 @@ export async function POST(req) {
     return fail(500, 'Email is not configured');
   }
 
-  const rows = [['Name', name], ['Email', email], ['Organisation', organisation || '—'], ['Sector', sector || '—']];
-  const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nProject details:\n${message}`;
-  const html =
-    `<table cellpadding="6" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">` +
-    rows.map(([k, v]) => `<tr><td style="color:#666"><b>${k}</b></td><td>${esc(v)}</td></tr>`).join('') +
-    `</table><p style="font-family:Arial,sans-serif;font-size:14px"><b>Project details</b><br>${esc(message).replace(/\n/g, '<br>')}</p>`;
+  // Logo and links need a public URL; local testing falls back to the live site.
+  const origin = new URL(req.url).origin;
+  const siteUrl = /localhost|127\.0\.0\.1/.test(origin) ? 'https://geoporte-sample4-3.vercel.app' : origin;
+  const { subject, html, text } = enquiryEmail({ name, email, organisation, sector, message, page, siteUrl });
 
   try {
     const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD } });
@@ -45,7 +44,7 @@ export async function POST(req) {
       from: { name: 'Geoporte website', address: GMAIL_USER },
       to: ENQUIRY_TO || GMAIL_USER,
       replyTo: { name, address: email },
-      subject: `New website enquiry from ${name}`,
+      subject,
       text,
       html,
     });

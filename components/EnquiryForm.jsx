@@ -30,7 +30,7 @@ export default function EnquiryForm() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, organisation: field('organisation'), sector, message, website: field('website') }),
+        body: JSON.stringify({ name, email, organisation: field('organisation'), sector, message, website: field('website'), page: location.pathname }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error('not sent');
