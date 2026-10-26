@@ -1,6 +1,6 @@
 import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
-import PageScript from '@/components/page-scripts/legal';
+import PageScript from '@/components/page-scripts/basic';
 import SideNav from '@/components/SideNav';
 import Contact from '@/components/Contact';
 import { Arrow } from '@/components/icons';

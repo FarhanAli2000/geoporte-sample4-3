@@ -3,7 +3,7 @@ import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/home';
 import { Arrow, ChevronLeft, ChevronRight, Close, Mail, Pin } from '@/components/icons';
 import ServiceIcon from '@/components/home/ServiceIcon';
-import EnquiryForm from '@/components/home/EnquiryForm';
+import EnquiryForm from '@/components/EnquiryForm';
 import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
 import '@/styles/home.css';
 
@@ -129,17 +129,26 @@ export default function Page() {
           </div>
         </div>
         <div className="zshine" aria-hidden="true" />
-        <div className="zintro" id="zintro" aria-hidden="true">
+        <div className="zintro" id="zintro">
           <div className="zintro-in">
-            <div className="hero-eyebrow">Engineering for a connected tomorrow</div>
-            <p>Design · Engineering · Advisory</p>
+            <div className="hero-eyebrow" aria-hidden="true">
+              Engineering for a connected tomorrow
+            </div>
+            <p aria-hidden="true">Design · Engineering · Advisory</p>
+          </div>
+          <div className="zfoot">
+            <p className="zsub">
+              Civil, geotechnical and structural engineering and advisory for councils, developers, contractors and infrastructure owners
+              across Australia. We bring international experience to local projects, with senior engineers who stay involved from
+              investigation through to construction.
+            </p>
+            <div className="zcue" id="zcue">
+              <span />
+              Scroll to enter
+            </div>
           </div>
         </div>
         <div className="zshade" id="zshade" />
-        <div className="zcue" id="zcue">
-          <span />
-          Scroll to enter
-        </div>
         <div className="wrap hero-in" id="hpanelIn">
           <div className="hero-eyebrow" id="heroEyebrow">
             <span>Engineering for a connected tomorrow</span>

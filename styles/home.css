@@ -137,12 +137,16 @@
 .zword .zo{color:#8cc8ff}
 .zshine{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%) no-repeat;background-size:250% 100%;background-position:150% 0;animation:shine 5.5s ease-in-out 2.4s infinite}
 @keyframes shine{0%{background-position:150% 0}45%,100%{background-position:-50% 0}}
-.zintro{position:absolute;inset:0;z-index:3;display:grid;place-items:center;pointer-events:none}
+/* rows: equal spacers keep the eyebrow/tagline centred on the headline; the bottom row stacks the supporting text and scroll cue */
+.zintro{position:absolute;inset:0;z-index:3;display:grid;grid-template-rows:minmax(0,1fr) auto minmax(0,1fr);justify-items:center;pointer-events:none}
+.zintro-in{grid-row:2}
+.zfoot{grid-row:3;align-self:stretch;min-height:0;display:flex;flex-direction:column;align-items:center;padding:0 20px 30px}
 .zintro-in{display:grid;justify-items:center;gap:calc(clamp(2.2rem,8.6vw,9.5rem)*1.72 + 56px)}
 .zintro .hero-eyebrow,.zintro p{font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,240,236,.75);display:flex;align-items:center;gap:14px}
 .zintro .hero-eyebrow{color:var(--amber)}
+.zintro p.zsub{max-width:40rem;margin-top:22px;display:block;text-align:center;font-size:1rem;font-weight:400;line-height:1.65;letter-spacing:0;text-transform:none;color:rgba(242,240,236,.84)}
 .zintro .hero-eyebrow::before,.zintro .hero-eyebrow::after{content:"";width:32px;height:1px;background:currentColor}
-.zcue{position:absolute;z-index:3;left:50%;bottom:30px;translate:-50% 0;display:grid;justify-items:center;gap:10px;font-size:.56rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,240,236,.7)}
+.zcue{margin-top:auto;padding-top:24px;display:grid;justify-items:center;gap:10px;font-size:.56rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,240,236,.7)}
 .zcue span{width:22px;height:36px;border:1.5px solid rgba(242,240,236,.5);border-radius:12px;position:relative}
 .zcue span::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--amber);animation:wheel 1.6s ease-in-out infinite}
 @keyframes wheel{0%{opacity:0;translate:0 -3px}30%{opacity:1}100%{opacity:0;translate:0 10px}}
@@ -164,6 +168,9 @@
 @keyframes blink{50%{opacity:.25}}
 /* no-scroll-animation fallback: plain full-video hero */
 .hero.flat .zmask,.hero.flat .zintro,.hero.flat .zcue,.hero.flat .zshine{display:none}
+/* short screens: no room for headline, supporting text and scroll cue together, so drop the cue rather than clip it */
+@media (min-width:861px) and (max-height:840px){.zcue{display:none}}
+@media (max-width:860px) and (max-height:760px){.zcue{display:none}}
 .hero.flat .zshade,.hero.flat .hero-in,.hero.flat .ztag{opacity:1;visibility:visible}
 /* ---------- ticker ---------- */
 .ticker{border-block:1px solid var(--line);overflow:hidden;padding-block:18px;background:var(--bg)}
@@ -375,6 +382,7 @@
   .zintro-in{gap:calc(clamp(2.2rem,8.6vw,9.5rem)*1.72 + 44px)}
   .zintro .hero-eyebrow::before,.zintro .hero-eyebrow::after{display:none}
   .zintro .hero-eyebrow{font-size:.54rem;letter-spacing:.22em}
+  .zintro p.zsub{font-size:.9rem;margin-top:18px}
   .zshade{background:linear-gradient(180deg,rgba(10,10,12,.5) 0%,rgba(10,10,12,.7) 55%,var(--bg) 100%)}
   .ztag{display:none}
   .head-row,.ph{grid-template-columns:1fr;gap:20px}

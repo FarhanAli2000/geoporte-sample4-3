@@ -21,7 +21,7 @@ export default function Footer({ home = false }) {
               <li><a href="/our-team">Our Team</a></li>
               <li><a href="/projects">Projects</a></li>
               <li><a href="/publications">Publications</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="/contact-us">Contact Us</a></li>
             </ul>
           </div>
           <div className="fcol rv">

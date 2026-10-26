@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { gsap } from 'gsap';
-import { Arrow } from '../icons';
+import { Arrow } from './icons';
 
 const SECTOR_CHIPS = ['Transportation', 'Building', 'Water', 'Ports & Marine', 'Energy'];
 const RECIPIENT = 'enquiries@geoporte.com';

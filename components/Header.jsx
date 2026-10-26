@@ -39,7 +39,7 @@ export default function Header({ home = false, section, current }) {
             <li><a href={h('#sectors')}>Sectors</a></li>
             <li><a href="/projects" className={active('projects')}>Projects</a></li>
             <li><a href={h('#process')}>Careers</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/contact-us" className={active('contact')}>Contact</a></li>
             <span className="ink" id="ink"></span>
           </ul>
           <div className="nav-r">
@@ -67,7 +67,7 @@ export default function Header({ home = false, section, current }) {
         <a href={h('#sectors')}>Sectors</a>
         <a href="/projects" className={active('projects')}>Projects</a>
         <a href={h('#process')}>Careers</a>
-        <a href="#contact">Contact</a>
+        <a href="/contact-us" className={active('contact')}>Contact</a>
       </nav>
     </>
   );

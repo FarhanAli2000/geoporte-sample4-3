@@ -7,7 +7,7 @@ import usePageScript, { onLoad } from '@/lib/usePageScript';
 import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS } from '@/lib/home-data';
 
 // Ported from the original static page: loader, scroll hero, sliders, search, cursor and GSAP animations.
-// The cards and enquiry form are rendered by React (app/page.jsx, components/home/EnquiryForm.jsx).
+// The cards and enquiry form are rendered by React (app/page.jsx, components/EnquiryForm.jsx).
 function init() {
   const $ = (s, c = document) => c.querySelector(s),
     $$ = (s, c = document) => [...c.querySelectorAll(s)];

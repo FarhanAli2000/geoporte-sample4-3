@@ -1,0 +1,75 @@
+import Site from '@/components/Site';
+import { pageMeta } from '@/lib/seo';
+import PageScript from '@/components/page-scripts/basic';
+import Contact from '@/components/Contact';
+import EnquiryForm from '@/components/EnquiryForm';
+import { ArrowDown } from '@/components/icons';
+import '@/styles/pages.css';
+import '@/styles/contact.css';
+
+export const metadata = pageMeta({
+  title: 'Contact Us | Geoporte',
+  description:
+    'Contact Geoporte about civil, geotechnical and structural engineering projects. Send an enquiry or reach our offices in Melbourne, Sydney, Perth and Auckland.',
+  path: '/contact-us',
+  image: 'https://geoporte.com.au/images/real/aerial-road-rail-bridge.jpg',
+});
+
+export default function Page() {
+  return (
+    <Site section="contact" current="contact-us">
+      {/* PAGE HERO */}
+      <section className="phero" id="top">
+        <div className="phero-media" id="pheroMedia">
+          <img src="/images/real/aerial-road-rail-bridge.jpg" alt="Aerial view of a Geoporte site investigation at a road and rail bridge crossing" />
+        </div>
+        <div className="wrap phero-in">
+          <div>
+            <div className="crumb" id="crumb">
+              <a href="/">Home</a>
+              <i />
+              <b>Contact Us</b>
+            </div>
+            <h1 id="pTitle">
+              <span className="line">
+                <span>Contact</span>
+              </span>
+              <span className="line">
+                <span className="a">Us</span>
+              </span>
+            </h1>
+          </div>
+          <div className="phero-side" id="pSide">
+            <p>Tell us what you’re planning and the right engineer will get back to you within one business day.</p>
+            <a href="#enquiry" className="pill pill-a magnetic">
+              Send an enquiry <ArrowDown />
+            </a>
+          </div>
+        </div>
+      </section>
+      {/* ENQUIRY */}
+      <section className="enquiry" id="enquiry">
+        <div className="wrap contact-grid">
+          <div>
+            <div className="sec-head">
+              <div className="cap">Start a project</div>
+              <h2 className="split">Let’s talk about your next project.</h2>
+            </div>
+            <p className="lead rv">
+              Civil, geotechnical and structural engineering and advisory for councils, developers, contractors and infrastructure owners.
+            </p>
+            <ul className="e-list rv">
+              <li>We reply within one business day</li>
+              <li>Senior engineers involved from investigation through to construction</li>
+              <li>Offices in Melbourne, Sydney, Perth and Auckland</li>
+            </ul>
+          </div>
+          <EnquiryForm />
+        </div>
+      </section>
+      {/* CONTACT DETAILS + MAP */}
+      <Contact />
+      <PageScript />
+    </Site>
+  );
+}

@@ -243,15 +243,6 @@ function init() {
       ease: 'power4.out',
       scrollTrigger: { trigger: '#bigword', start: 'top 98%' },
     });
-    gsap.from('.tcard', {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.05,
-      ease: 'power3.out',
-      clearProps: 'transform,opacity',
-      scrollTrigger: { trigger: '#tGrid', start: 'top 85%' },
-    });
     $$('.p-ph').forEach((el) =>
       gsap.from(el, {
         clipPath: 'inset(100% 0 0 0)',
