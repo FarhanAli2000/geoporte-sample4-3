@@ -4,7 +4,7 @@ import PageScript from '@/components/page-scripts/home';
 import { Arrow, ChevronLeft, ChevronRight, Close, Mail, Pin } from '@/components/icons';
 import ServiceIcon from '@/components/home/ServiceIcon';
 import EnquiryForm from '@/components/EnquiryForm';
-import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
+import { FEATURED_PROJECTS, PROCESS_STEPS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
 import '@/styles/home.css';
 
 export const metadata = pageMeta({
@@ -281,70 +281,23 @@ export default function Page() {
             </div>
           </div>
           <div className="proc-track" id="procTrack">
-            <article className="pstep">
-              <div className="pimg">
-                <img src="/images/real/site-meeting-creek.jpg" alt="Geoporte engineer in a site meeting" loading="lazy" />
-              </div>
-              <div className="pc">
-                <span className="big">01</span>
-                <h3>Understand</h3>
-                <p>Site visits, data review and stakeholder briefs to define the real problem and its risks.</p>
-                <ul>
-                  <li>Site walk</li>
-                  <li>Brief</li>
-                  <li>Risk register</li>
-                </ul>
-              </div>
-            </article>
-            <article className="pstep">
-              <div className="pimg">
-                <img src="/images/real/oval-team-drilling.jpg" alt="Geoporte engineers with the drilling crew on site" loading="lazy" />
-              </div>
-              <div className="pc">
-                <span className="big">02</span>
-                <h3>Investigate</h3>
-                <p>Surveys, geotechnical testing and modelling to test every option before we commit.</p>
-                <ul>
-                  <li>Boreholes</li>
-                  <li>Survey</li>
-                  <li>Flood models</li>
-                </ul>
-              </div>
-            </article>
-            <article className="pstep">
-              <div className="pimg">
-                <img
-                  src="/images/real/model-metro-station.jpg"
-                  alt="3D finite element models of an underground metro station"
-                  loading="lazy"
-                />
-              </div>
-              <div className="pc">
-                <span className="big">03</span>
-                <h3>Design</h3>
-                <p>Concept through detailed design, drawings, BIM models and authority approvals.</p>
-                <ul>
-                  <li>Concept</li>
-                  <li>Detailed</li>
-                  <li>Approvals</li>
-                </ul>
-              </div>
-            </article>
-            <article className="pstep">
-              <div className="pimg">
-                <img src="/images/cable-bridge.jpg" alt="Completed cable-stayed bridge" loading="lazy" />
-              </div>
-              <div className="pc">
-                <span className="big">04</span>
-                <h3>Deliver</h3>
-                <p>Project management, construction support and a clean, documented handover.</p>
-                <ul>
-                  <li>Programme</li>
-                  <li>Site support</li>
-                  <li>Handover</li>
-                </ul>
-              </div>
-            </article>
+            {PROCESS_STEPS.map((p, i) => (
+              <article className="pstep" key={p.title}>
+                <div className="pimg">
+                  <img src={p.img} alt={p.alt} loading="lazy" />
+                </div>
+                <div className="pc">
+                  <span className="big">{pad(i + 1)}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                  <ul>
+                    {p.tags.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
             <div className="pend">
               <h3>
                 Ready to start <span className="a">yours?</span>

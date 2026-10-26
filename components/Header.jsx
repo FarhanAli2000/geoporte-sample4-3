@@ -36,8 +36,8 @@ export default function Header({ home = false, section, current }) {
                 ))}
               </ul></div>
             </li>
-            <li><a href={h('#process')}>How We Work</a></li>
-            <li><a href={h('#sectors')}>Sectors</a></li>
+            <li><a href="/publications" className={active('publications')}>Publications</a></li>
+            <li><a href="/sectors" className={active('sectors')}>Sectors</a></li>
             <li><a href="/projects" className={active('projects')}>Projects</a></li>
             <li><a href="/contact-us" className={active('contact')}>Contact</a></li>
             <span className="ink" id="ink"></span>
@@ -64,8 +64,8 @@ export default function Header({ home = false, section, current }) {
         <div className="msub">
           {SERVICES.map(([slug, label]) => <a key={label} href={serviceHref(slug)} {...cur(slug)}>{label}</a>)}
         </div>
-        <a href={h('#process')}>How We Work</a>
-        <a href={h('#sectors')}>Sectors</a>
+        <a href="/publications" className={active('publications')}>Publications</a>
+        <a href="/sectors" className={active('sectors')}>Sectors</a>
         <a href="/projects" className={active('projects')}>Projects</a>
         <a href="/contact-us" className={active('contact')}>Contact</a>
       </nav>

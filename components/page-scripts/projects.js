@@ -56,7 +56,7 @@ function init() {
     ['Dammam Industrial City 3', 'Dammam', 'Saudi Arabia', 1, '/images/real/uae-earthworks-loader.jpg'],
     ['Sarb Artificial Islands', 'Abu Dhabi', 'UAE', 1, '/images/real/breakwater-construction.jpg'],
     ['Yas Island Development', 'Abu Dhabi', 'UAE', 1, '/images/real/uae-vibro-rig.jpg'],
-    ['AGL Torrens Island Battery Facility', 'Adelaide, South Australia', 'Australia', 2, '/images/service-8.jpg'],
+    ['AGL Torrens Island Battery Facility', 'Adelaide, South Australia', 'Australia', 2, '/images/telecom.jpg'],
     ['Strategic Tunnel Enhancement Programme (STEP)', 'Abu Dhabi', 'UAE', 2, '/images/geotech-site.jpg'],
     ['Pakistan Gasport Liquefied Natural Gas Berth', 'Karachi', 'Pakistan', 2, '/images/coastal-bridge.jpg'],
     ['Das Island Accommodation Project', 'Abu Dhabi', 'UAE', 2, '/images/service-7.jpg'],

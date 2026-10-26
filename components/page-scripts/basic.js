@@ -166,8 +166,17 @@ function init() {
     });
   }
 
+  /* ---------- band video (pages with the One Team band) ---------- */
+  const bv = $('#bandVideo');
+  if (bv) new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? bv.play().catch(() => {}) : bv.pause())), { threshold: 0.05 }).observe(bv);
+
   /* ---------- animations ---------- */
   if (G && !reduce) {
+    gsap.registerPlugin(ScrollTrigger);
+    if (bv) {
+      gsap.fromTo('#bandMedia', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: true } });
+      gsap.from('#bandTitle .line > span', { yPercent: 110, skewY: 5, duration: 1.2, stagger: 0.14, ease: 'power4.out', scrollTrigger: { trigger: '.band', start: 'top 70%' } });
+    }
     gsap.registerPlugin(ScrollTrigger);
     gsap
       .timeline({ defaults: { ease: 'power4.out' } })

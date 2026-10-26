@@ -1,8 +1,9 @@
 import { EMAIL, OFFICES, PHONES } from '@/lib/nav';
 import { Arrow, Mail, Pin } from './icons';
 
-// Standard contact block used on every page except home; `cta` adds the "Email us" strip (About page).
-export default function Contact({ cta = false }) {
+// Standard contact block used on every page except home; `cta` adds the "Email us" strip (About page),
+// `map` the office map (Contact Us page only).
+export default function Contact({ cta = false, map = false }) {
   return (
     <section className="contact" id="contact">
       <div className="wrap">
@@ -27,7 +28,7 @@ export default function Contact({ cta = false }) {
             </div>
           </div>
         </div>
-        <div className="c-map rv" id="officeMap"></div>
+        {map && <div className="c-map rv" id="officeMap"></div>}
         {cta && (
           <div className="c-cta rv"><p>Tell us about your next project.</p><a href={'mailto:' + EMAIL} className="pill pill-a magnetic">Email us <Arrow /></a></div>
         )}

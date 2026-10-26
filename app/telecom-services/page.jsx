@@ -61,7 +61,7 @@ export default function Page() {
             </div>
           </div>
           <div className="i-media" id="iMedia">
-            <img src="/images/service-8.jpg" alt="Telecommunications tower with antennas and microwave dishes" loading="lazy" />
+            <img src="/images/telecom.jpg" alt="Telecommunications tower with antennas and microwave dishes" loading="lazy" />
             <span className="lab">
               <b>Geoporte</b> · Telecom
             </span>

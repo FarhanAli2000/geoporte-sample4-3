@@ -168,7 +168,6 @@ function init() {
     gsap
       .timeline({ defaults: { ease: 'power4.out' } })
       .from('.nav-in > *', { y: -26, opacity: 0, duration: 0.8, stagger: 0.08, clearProps: 'transform,opacity' })
-      .from('.hslide.on img', { scale: 1.45, duration: 2.6, ease: 'power3.out' }, 0)
       .from('#zword span', { yPercent: 60, opacity: 0, duration: 1.2, stagger: 0.03, ease: 'power4.out' }, 0.15)
       .from('#zvid', { scale: 1.25, duration: 2.4, ease: 'power3.out' }, 0)
       .from('#zintro .hero-eyebrow,#zintro p', { y: 16, opacity: 0, duration: 0.8, stagger: 0.15 }, 0.7)

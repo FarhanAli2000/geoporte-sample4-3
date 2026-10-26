@@ -15,7 +15,7 @@ export const metadata = pageMeta({
 
 export default function Page() {
   return (
-    <Site
+    <Site section="publications"
       after={
         <>
           <div className="viewer" id="viewer" role="dialog" aria-label="Publication page" aria-hidden="true">

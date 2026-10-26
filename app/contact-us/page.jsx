@@ -62,7 +62,7 @@ export default function Page() {
         </div>
       </section>
       {/* CONTACT DETAILS + MAP */}
-      <Contact />
+      <Contact map />
       <PageScript />
     </Site>
   );
