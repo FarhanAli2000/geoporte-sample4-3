@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import usePageScript, { onLoad } from '@/lib/usePageScript';
-import { FEATURED_PROJECTS, SERVICE_CARDS } from '@/lib/home-data';
+import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS } from '@/lib/home-data';
 
 // Ported from the original static page: loader, scroll hero, sliders, search, cursor and GSAP animations.
 // The cards and enquiry form are rendered by React (app/page.jsx, components/EnquiryForm.jsx).
@@ -149,7 +149,7 @@ function init() {
   }
 
   /* ---------- intro ---------- */
-  // Arriving from another page with a hash (e.g. /#process): the pinned hero adds scroll length after the
+  // Arriving from another page with a hash (e.g. /#services): the pinned hero adds scroll length after the
   // browser's own jump, so scroll to the section once the loader has finished.
   const toHash = () => {
     let t = null;
@@ -230,7 +230,7 @@ function init() {
       }),
     { rootMargin: '-45% 0px -50% 0px' },
   );
-  ['home', 'services', 'process', 'projects', 'band', 'contact'].forEach((id) => sio.observe(document.getElementById(id)));
+  ['home', 'services', 'projects', 'sectors', 'band', 'contact'].forEach((id) => sio.observe(document.getElementById(id)));
   $('#burger').addEventListener('click', () => document.body.classList.toggle('menu-open'));
 
   /* ---------- search ---------- */
@@ -239,15 +239,15 @@ function init() {
     SR = $('#sRes');
   const idx = [
     ...SERVICE_CARDS.map((s) => [s.title, 'Service', s.href || '#services']),
+    ...SECTORS.map((s) => [s.title, 'Sector', '#sectors']),
     ...FEATURED_PROJECTS.map((p) => [p.title, 'Project', '#projects']),
-    ['How we work', 'Page', '#process'],
     ['Contact & offices', 'Page', '#contact'],
   ];
   const render = (q) => {
     const r = idx.filter((i) => i[0].toLowerCase().includes(q.toLowerCase()));
     SR.innerHTML = r.length
       ? r.map((i) => `<li><a href="${i[2]}">${i[0].replace('&', '&amp;')}<small>${i[1]}</small></a></li>`).join('')
-      : '<li class="sempty">No matches. Try “rail”, “water” or “structural”.</li>';
+      : '<li class="sempty">No matches. Try “rail”, “water” or “energy”.</li>';
     if (G && !reduce) gsap.from('#sRes li', { y: 10, opacity: 0, duration: 0.35, stagger: 0.025 });
   };
   function openSearch() {
@@ -270,12 +270,15 @@ function init() {
 
   /* ---------- cursor + magnetic + spotlight ---------- */
   const cur = $('#cursor'),
-    dot = $('#cursorDot');
+    dot = $('#cursorDot'),
+    fl = $('#floatImg');
   let mx = -200,
     my = -200;
   if (fine && !reduce) {
     let cx = mx,
-      cy = my;
+      cy = my,
+      fx = mx,
+      fy = my;
     addEventListener('mousemove', (e) => {
       mx = e.clientX;
       my = e.clientY;
@@ -285,6 +288,9 @@ function init() {
       cx += (mx - cx) * 0.16;
       cy += (my - cy) * 0.16;
       cur.style.transform = `translate(${cx}px,${cy}px)`;
+      fx += (mx - fx) * 0.1;
+      fy += (my - fy) * 0.1;
+      fl.style.transform = `translate(${fx + 30}px,${fy - 105}px) rotate(${(mx - fx) * 0.04}deg)`;
       requestAnimationFrame(l);
     })();
     document.addEventListener('mouseover', (e) => {
@@ -379,6 +385,26 @@ function init() {
     pS.set(pS.get() >= pS.max() ? 0 : pS.get() + 1);
   }, 5500);
 
+  /* ---------- sectors ---------- */
+  const rows = $$('.srow'),
+    fimgs = $$('#floatImg img'),
+    pimgs = $$('#secPreview img');
+  const showSec = (k) => {
+    rows.forEach((r, j) => r.classList.toggle('on', j === k));
+    fimgs.forEach((im, j) => im.classList.toggle('on', j === k));
+    pimgs.forEach((im, j) => im.classList.toggle('on', j === k));
+  };
+  rows.forEach((r, k) => {
+    r.addEventListener('mouseenter', () => {
+      showSec(k);
+      if (fine) fl.classList.add('show');
+    });
+    r.addEventListener('click', () => showSec(k));
+    r.addEventListener('focus', () => showSec(k));
+  });
+  $('#slist').addEventListener('mouseleave', () => fl.classList.remove('show'));
+  showSec(0);
+
   /* ---------- counters ---------- */
   const fmt = (n) => n.toLocaleString('en-US');
   const cio = new IntersectionObserver(
@@ -419,7 +445,6 @@ function init() {
   [zv, $('#bandVideo')].forEach((v) => v && vio.observe(v));
 
   /* ---------- scroll animations ---------- */
-  const steps = $$('.pstep');
   if (G && !reduce) {
     gsap.registerPlugin(ScrollTrigger);
     splits.forEach(({ el, words }) =>
@@ -505,51 +530,11 @@ function init() {
       ease: 'power3.inOut',
       scrollTrigger: { trigger: '.sbar', start: 'top 95%' },
     });
-    // horizontal pinned process
-    const mm = gsap.matchMedia();
-    mm.add('(min-width: 861px)', () => {
-      const tr = $('#procTrack');
-      const dist = () => Math.max(0, tr.scrollWidth - innerWidth + 40);
-      gsap.to(tr, {
-        x: () => -dist(),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#procPin',
-          start: 'top top',
-          end: () => '+=' + dist(),
-          pin: true,
-          scrub: 0.8,
-          invalidateOnRefresh: true,
-          onUpdate: (s) => {
-            $('#pMeter').style.transform = `scaleX(${s.progress})`;
-            const k = Math.min(steps.length - 1, Math.floor(s.progress * (steps.length + 0.6)));
-            $('#pStep').textContent = pad(k + 1);
-            steps.forEach((st, j) => st.classList.toggle('lit', j <= k));
-          },
-        },
-      });
-    });
-    mm.add('(max-width: 860px)', () => {
-      steps.forEach((st, j) =>
-        ScrollTrigger.create({
-          trigger: st,
-          start: 'top 70%',
-          onEnter: () => {
-            st.classList.add('lit');
-            $('#pStep').textContent = pad(j + 1);
-            $('#pMeter').style.transform = `scaleX(${(j + 1) / steps.length})`;
-          },
-        }),
-      );
-      gsap.from('.pstep', {
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '#procTrack', start: 'top 85%' },
-      });
-    });
+    // project experience: photo wipes in and drifts on scroll, stat cards rise, accent line draws
+    gsap.from('#expPhoto', { clipPath: 'inset(0 100% 0 0)', duration: 1.4, ease: 'power4.inOut', scrollTrigger: { trigger: '#experience', start: 'top 72%' } });
+    gsap.fromTo('#expPhoto img', { scale: 1.25, yPercent: -5 }, { scale: 1.05, yPercent: 5, ease: 'none', scrollTrigger: { trigger: '#experience', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.from('.exp-stat', { y: 70, opacity: 0, duration: 1.1, stagger: 0.15, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: '.exp-stats', start: 'top 92%' } });
+    gsap.from('.exp-rule', { scaleX: 0, duration: 1, ease: 'power3.inOut', scrollTrigger: { trigger: '.exp-rule', start: 'top 90%' } });
     gsap.from('.pcard', {
       y: 90,
       opacity: 0,
@@ -566,6 +551,15 @@ function init() {
       stagger: 0.1,
       ease: 'power4.inOut',
       scrollTrigger: { trigger: '#pSlider', start: 'top 88%' },
+    });
+    gsap.from('.srow', {
+      x: 80,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0.1,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity',
+      scrollTrigger: { trigger: '#slist', start: 'top 85%' },
     });
     gsap.from('.stat', {
       y: 40,
@@ -623,7 +617,6 @@ function init() {
     onLoad(() => ScrollTrigger.refresh());
     setTimeout(() => ScrollTrigger.refresh(), 4000);
   } else {
-    steps.forEach((s) => s.classList.add('lit'));
     $$('.stat .t2 i').forEach((i) => (i.style.transform = 'scaleX(1)'));
   }
 

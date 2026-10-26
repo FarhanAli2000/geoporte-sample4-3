@@ -4,7 +4,7 @@ import PageScript from '@/components/page-scripts/home';
 import { Arrow, ChevronLeft, ChevronRight, Close, Mail, Pin } from '@/components/icons';
 import ServiceIcon from '@/components/home/ServiceIcon';
 import EnquiryForm from '@/components/EnquiryForm';
-import { FEATURED_PROJECTS, PROCESS_STEPS, SERVICE_CARDS, pad } from '@/lib/home-data';
+import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
 import '@/styles/home.css';
 
 export const metadata = pageMeta({
@@ -55,11 +55,20 @@ export default function Page() {
           </div>
         </>
       }
+      beforeHeader={
+        <>
+          <div className="float-img" id="floatImg">
+            {SECTORS.map((s) => (
+              <img key={s.title} src={s.img} alt="" />
+            ))}
+          </div>
+        </>
+      }
       afterHeader={
         <>
           <div className="search" id="search" role="dialog" aria-label="Search">
             <div className="sbox">
-              <input id="sIn" type="search" placeholder="Search services and projects…" autoComplete="off" />
+              <input id="sIn" type="search" placeholder="Search services, sectors, projects…" autoComplete="off" />
               <ul className="sres" id="sRes" />
             </div>
           </div>
@@ -255,48 +264,49 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* PROCESS */}
-      <section className="process" id="process">
-        <div className="proc-pin" id="procPin">
-          <div className="wrap proc-head">
-            <div className="sec-head">
-              <div className="cap">How we work</div>
-              <h2 className="split">From first site visit to handover.</h2>
+      {/* PROJECT EXPERIENCE */}
+      <section className="exp" id="experience">
+        <div className="wrap exp-grid">
+          <div className="exp-media">
+            <div className="exp-photo" id="expPhoto">
+              <img src="/images/real/project-experience-team.jpg" alt="Geoporte engineers in hi-vis vests on a site visit" loading="lazy" />
             </div>
-            <div className="proc-meter">
-              <span id="pStep">01</span>
-              <span className="m">
-                <i id="pMeter" />
-              </span>
-              <span>04</span>
+            <div className="exp-stats">
+              <div className="exp-stat">
+                <b>
+                  <span className="count" data-to="100">
+                    100
+                  </span>
+                  <em>+</em>
+                </b>
+                <p>Projects completed by our staff</p>
+              </div>
+              <div className="exp-stat alt">
+                <b>
+                  <span className="count" data-to="20">
+                    20
+                  </span>
+                  <em>+</em>
+                </b>
+                <p>Countries of work experience by our staff</p>
+              </div>
             </div>
           </div>
-          <div className="proc-track" id="procTrack">
-            {PROCESS_STEPS.map((p, i) => (
-              <article className="pstep" key={p.title}>
-                <div className="pimg">
-                  <img src={p.img} alt={p.alt} loading="lazy" />
-                </div>
-                <div className="pc">
-                  <span className="big">{pad(i + 1)}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.text}</p>
-                  <ul>
-                    {p.tags.map((t) => (
-                      <li key={t}>{t}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-            <div className="pend">
-              <h3>
-                Ready to start <span className="a">yours?</span>
-              </h3>
-              <a href="#contact" className="pill pill-o magnetic">
-                Talk to an engineer <Arrow />
-              </a>
+          <div className="exp-copy">
+            <div className="sec-head">
+              <div className="cap">Experience &amp; Technology</div>
+              <h2 className="split">Project Experience</h2>
             </div>
+            <span className="exp-rule" />
+            <p className="rv">
+              GEOPORTE’s specialist staff have decades of extensive combined AU/NZ and global experience on major and complex infrastructure
+              projects. Our leaders had worked on various design and construction projects in the building, transport, telecom, energy, water,
+              and ports and marine sectors in Europe, Middle East, Asia, New Zealand, and Australia. The glimpses provided are from projects our
+              specialists have successfully contributed to while working for other major multinational engineering companies around the world.
+            </p>
+            <a href="/projects" className="pill pill-a magnetic">
+              Learn more <Arrow />
+            </a>
           </div>
         </div>
       </section>
@@ -347,6 +357,39 @@ export default function Page() {
           <div className="sbar">
             <i id="pBar" />
           </div>
+        </div>
+      </section>
+      {/* SECTORS */}
+      <section className="sectors" id="sectors">
+        <div className="wrap sec-grid">
+          <div>
+            <div className="sec-head">
+              <div className="cap">Sectors</div>
+              <h2 className="split">Where our engineering makes an impact.</h2>
+            </div>
+            <p className="rv">Five sectors, one integrated team. Hover a sector to see the work behind it.</p>
+            <div className="sec-preview" id="secPreview">
+              {SECTORS.map((s, i) => (
+                <img key={s.title} src={s.img} alt="" className={i ? '' : 'on'} loading="lazy" />
+              ))}
+            </div>
+          </div>
+          <ul className="slist" id="slist">
+            {SECTORS.map((s, i) => (
+              <li key={s.title}>
+                <button className="srow" data-i={i}>
+                  <span className="n">{pad(i + 1)}</span>
+                  <span>
+                    <b>{s.title}</b>
+                    <small>{s.text}</small>
+                  </span>
+                  <span className="ring">
+                    <Arrow />
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       {/* STATS */}

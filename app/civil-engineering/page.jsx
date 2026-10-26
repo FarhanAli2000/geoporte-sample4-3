@@ -11,7 +11,7 @@ export const metadata = pageMeta({
   description:
     'Practical, sustainable civil engineering design: earthworks, roads, pavements, stormwater drainage, culverts and water infrastructure, concept to construction.',
   path: '/civil-engineering',
-  image: 'https://geoporte.com.au/images/coastal-bridge.jpg',
+  image: 'https://geoporte.com.au/images/real/crane-excavation-dewatering.jpg',
 });
 
 export default function Page() {
@@ -20,7 +20,7 @@ export default function Page() {
       {/* PAGE HERO */}
       <section className="phero" id="top">
         <div className="phero-media" id="pheroMedia">
-          <img src="/images/coastal-bridge.jpg" alt="Coastal road bridge" />
+          <img src="/images/real/crane-excavation-dewatering.jpg" alt="Crawler crane and dewatering pumps at a civil excavation site" />
         </div>
         <div className="wrap phero-in">
           <div>
