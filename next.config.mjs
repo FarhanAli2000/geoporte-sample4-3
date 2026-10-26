@@ -5,6 +5,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/hero-sample-5.html', destination: '/', permanent: true },
+      { source: '/sectors', destination: '/', permanent: true }, // page was briefly live before Sectors was removed
       { source: '/:slug.html', destination: '/:slug', permanent: true },
     ];
   },

@@ -4,7 +4,7 @@ import PageScript from '@/components/page-scripts/home';
 import { Arrow, ChevronLeft, ChevronRight, Close, Mail, Pin } from '@/components/icons';
 import ServiceIcon from '@/components/home/ServiceIcon';
 import EnquiryForm from '@/components/EnquiryForm';
-import { FEATURED_PROJECTS, PROCESS_STEPS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
+import { FEATURED_PROJECTS, PROCESS_STEPS, SERVICE_CARDS, pad } from '@/lib/home-data';
 import '@/styles/home.css';
 
 export const metadata = pageMeta({
@@ -55,20 +55,11 @@ export default function Page() {
           </div>
         </>
       }
-      beforeHeader={
-        <>
-          <div className="float-img" id="floatImg">
-            {SECTORS.map((s) => (
-              <img key={s.title} src={s.img} alt="" />
-            ))}
-          </div>
-        </>
-      }
       afterHeader={
         <>
           <div className="search" id="search" role="dialog" aria-label="Search">
             <div className="sbox">
-              <input id="sIn" type="search" placeholder="Search services, sectors, projects…" autoComplete="off" />
+              <input id="sIn" type="search" placeholder="Search services and projects…" autoComplete="off" />
               <ul className="sres" id="sRes" />
             </div>
           </div>
@@ -356,39 +347,6 @@ export default function Page() {
           <div className="sbar">
             <i id="pBar" />
           </div>
-        </div>
-      </section>
-      {/* SECTORS */}
-      <section className="sectors" id="sectors">
-        <div className="wrap sec-grid">
-          <div>
-            <div className="sec-head">
-              <div className="cap">Sectors</div>
-              <h2 className="split">Where our engineering makes an impact.</h2>
-            </div>
-            <p className="rv">Five sectors, one integrated team. Hover a sector to see the work behind it.</p>
-            <div className="sec-preview" id="secPreview">
-              {SECTORS.map((s, i) => (
-                <img key={s.title} src={s.img} alt="" className={i ? '' : 'on'} loading="lazy" />
-              ))}
-            </div>
-          </div>
-          <ul className="slist" id="slist">
-            {SECTORS.map((s, i) => (
-              <li key={s.title}>
-                <button className="srow" data-i={i}>
-                  <span className="n">{pad(i + 1)}</span>
-                  <span>
-                    <b>{s.title}</b>
-                    <small>{s.text}</small>
-                  </span>
-                  <span className="ring">
-                    <Arrow />
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
       {/* STATS */}

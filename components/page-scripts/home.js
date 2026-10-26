@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import usePageScript, { onLoad } from '@/lib/usePageScript';
-import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS } from '@/lib/home-data';
+import { FEATURED_PROJECTS, SERVICE_CARDS } from '@/lib/home-data';
 
 // Ported from the original static page: loader, scroll hero, sliders, search, cursor and GSAP animations.
 // The cards and enquiry form are rendered by React (app/page.jsx, components/EnquiryForm.jsx).
@@ -230,7 +230,7 @@ function init() {
       }),
     { rootMargin: '-45% 0px -50% 0px' },
   );
-  ['home', 'services', 'process', 'projects', 'sectors', 'band', 'contact'].forEach((id) => sio.observe(document.getElementById(id)));
+  ['home', 'services', 'process', 'projects', 'band', 'contact'].forEach((id) => sio.observe(document.getElementById(id)));
   $('#burger').addEventListener('click', () => document.body.classList.toggle('menu-open'));
 
   /* ---------- search ---------- */
@@ -239,7 +239,6 @@ function init() {
     SR = $('#sRes');
   const idx = [
     ...SERVICE_CARDS.map((s) => [s.title, 'Service', s.href || '#services']),
-    ...SECTORS.map((s) => [s.title, 'Sector', '#sectors']),
     ...FEATURED_PROJECTS.map((p) => [p.title, 'Project', '#projects']),
     ['How we work', 'Page', '#process'],
     ['Contact & offices', 'Page', '#contact'],
@@ -248,7 +247,7 @@ function init() {
     const r = idx.filter((i) => i[0].toLowerCase().includes(q.toLowerCase()));
     SR.innerHTML = r.length
       ? r.map((i) => `<li><a href="${i[2]}">${i[0].replace('&', '&amp;')}<small>${i[1]}</small></a></li>`).join('')
-      : '<li class="sempty">No matches. Try “rail”, “water” or “energy”.</li>';
+      : '<li class="sempty">No matches. Try “rail”, “water” or “structural”.</li>';
     if (G && !reduce) gsap.from('#sRes li', { y: 10, opacity: 0, duration: 0.35, stagger: 0.025 });
   };
   function openSearch() {
@@ -271,15 +270,12 @@ function init() {
 
   /* ---------- cursor + magnetic + spotlight ---------- */
   const cur = $('#cursor'),
-    dot = $('#cursorDot'),
-    fl = $('#floatImg');
+    dot = $('#cursorDot');
   let mx = -200,
     my = -200;
   if (fine && !reduce) {
     let cx = mx,
-      cy = my,
-      fx = mx,
-      fy = my;
+      cy = my;
     addEventListener('mousemove', (e) => {
       mx = e.clientX;
       my = e.clientY;
@@ -289,9 +285,6 @@ function init() {
       cx += (mx - cx) * 0.16;
       cy += (my - cy) * 0.16;
       cur.style.transform = `translate(${cx}px,${cy}px)`;
-      fx += (mx - fx) * 0.1;
-      fy += (my - fy) * 0.1;
-      fl.style.transform = `translate(${fx + 30}px,${fy - 105}px) rotate(${(mx - fx) * 0.04}deg)`;
       requestAnimationFrame(l);
     })();
     document.addEventListener('mouseover', (e) => {
@@ -385,26 +378,6 @@ function init() {
     if (document.hidden || reduce) return;
     pS.set(pS.get() >= pS.max() ? 0 : pS.get() + 1);
   }, 5500);
-
-  /* ---------- sectors ---------- */
-  const rows = $$('.srow'),
-    fimgs = $$('#floatImg img'),
-    pimgs = $$('#secPreview img');
-  const showSec = (k) => {
-    rows.forEach((r, j) => r.classList.toggle('on', j === k));
-    fimgs.forEach((im, j) => im.classList.toggle('on', j === k));
-    pimgs.forEach((im, j) => im.classList.toggle('on', j === k));
-  };
-  rows.forEach((r, k) => {
-    r.addEventListener('mouseenter', () => {
-      showSec(k);
-      if (fine) fl.classList.add('show');
-    });
-    r.addEventListener('click', () => showSec(k));
-    r.addEventListener('focus', () => showSec(k));
-  });
-  $('#slist').addEventListener('mouseleave', () => fl.classList.remove('show'));
-  showSec(0);
 
   /* ---------- counters ---------- */
   const fmt = (n) => n.toLocaleString('en-US');
@@ -593,15 +566,6 @@ function init() {
       stagger: 0.1,
       ease: 'power4.inOut',
       scrollTrigger: { trigger: '#pSlider', start: 'top 88%' },
-    });
-    gsap.from('.srow', {
-      x: 80,
-      opacity: 0,
-      duration: 0.9,
-      stagger: 0.1,
-      ease: 'power3.out',
-      clearProps: 'transform,opacity',
-      scrollTrigger: { trigger: '#slist', start: 'top 85%' },
     });
     gsap.from('.stat', {
       y: 40,
