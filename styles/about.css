@@ -40,7 +40,7 @@
 .brand span{font:500 1.45rem/1 var(--f-display);letter-spacing:.05em}
 .brand span em{font-style:normal;color:var(--amber)}
 .menu{display:flex;gap:2px;margin:0 auto;padding:0;list-style:none;position:relative}
-.menu a{display:block;padding:9px 13px;font-size:.78rem;color:rgba(242,240,236,.8);transition:color .3s}
+.menu a{display:block;padding:9px 13px;font-size:.875rem;font-weight:500;color:rgba(242,240,236,.88);transition:color .3s}
 .menu a:hover,.menu a.active{color:var(--amber)}
 .ink{position:absolute;bottom:0;height:2px;background:var(--amber);border-radius:2px;box-shadow:0 0 10px var(--amber);transition:left .45s var(--ease),width .45s var(--ease)}
 /* ---------- services dropdown ---------- */
@@ -52,7 +52,7 @@
 .has-dd:hover>.dd,.has-dd:focus-within>.dd{opacity:1;visibility:visible;translate:0 0}
 .dd-list{list-style:none;margin:0;padding:8px;min-width:270px;background:rgba(17,18,22,.97);border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .dd-list>li{position:relative}
-.menu .dd a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 14px;font-size:.84rem;color:rgba(242,240,236,.82);transition:color .25s,background .25s}
+.menu .dd a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 14px;font-size:.88rem;font-weight:500;color:rgba(242,240,236,.82);transition:color .25s,background .25s}
 .menu .dd a:hover,.menu .dd a.cur,.dd .has-sub:hover>a,.dd .has-sub:focus-within>a{color:var(--amber);background:var(--amber-soft)}
 .dd .arrow{width:12px;height:12px;flex:none}
 .dd-sub{position:absolute;left:100%;top:-9px;padding-left:6px;opacity:0;visibility:hidden;translate:-8px 0;transition:opacity .3s,translate .4s var(--ease),visibility .3s}

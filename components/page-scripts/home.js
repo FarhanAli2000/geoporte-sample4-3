@@ -376,13 +376,23 @@ function init() {
     set(0);
     return { set, get: () => i, max };
   }
-  slider($('#sSlider'), $('#sTrack'), $('#sPrev'), $('#sNext'), $('#sBar'), $('#sCur'));
+  const sS = slider($('#sSlider'), $('#sTrack'), $('#sPrev'), $('#sNext'), $('#sBar'), $('#sCur'));
   const pS = slider($('#pSlider'), $('#pTrack'), $('#pPrev'), $('#pNext'), $('#pBar'));
   $('#sTot').textContent = pad(SERVICE_CARDS.length);
-  setInterval(() => {
-    if (document.hidden || reduce) return;
-    pS.set(pS.get() >= pS.max() ? 0 : pS.get() + 1);
-  }, 5500);
+  // Auto-advance both sliders, looping back to the start; hovering or dragging a slider pauses it.
+  const autoplay = (s, view, ms) => {
+    let hold = false;
+    view.addEventListener('pointerenter', () => (hold = true));
+    view.addEventListener('pointerleave', () => (hold = false));
+    view.addEventListener('focusin', () => (hold = true));
+    view.addEventListener('focusout', () => (hold = false));
+    setInterval(() => {
+      if (document.hidden || reduce || hold) return;
+      s.set(s.get() >= s.max() ? 0 : s.get() + 1);
+    }, ms);
+  };
+  autoplay(sS, $('#sSlider'), 4000);
+  autoplay(pS, $('#pSlider'), 5500);
 
   /* ---------- sectors ---------- */
   const rows = $$('.srow'),

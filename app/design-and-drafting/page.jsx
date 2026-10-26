@@ -60,7 +60,7 @@ export default function Page() {
             </div>
           </div>
           <div className="i-media" id="iMedia">
-            <img src="/images/civil-detailed.jpg" alt="Drafting and measuring tools on a desk" loading="lazy" />
+            <img src="/images/real/soil-sampling-roadside.jpg" alt="Geoporte engineers bagging soil samples beside a road on site" loading="lazy" />
             <span className="lab">
               <b>Geoporte</b> · Design &amp; Drafting
             </span>

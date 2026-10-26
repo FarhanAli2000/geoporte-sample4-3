@@ -64,7 +64,7 @@ export default function Page() {
             </div>
           </div>
           <div className="i-media" id="iMedia">
-            <img src="/images/real/aerial-road-rail-bridge.jpg" alt="Aerial view of road and rail bridges over a creek" loading="lazy" />
+            <img src="/images/real/street-site-engineer.jpg" alt="Geoporte engineer in hi-vis and hard hat on a street works site" loading="lazy" />
             <span className="lab">
               <b>Geoporte</b> · Civil Design
             </span>
