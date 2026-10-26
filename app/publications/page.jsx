@@ -63,7 +63,7 @@ export default function Page() {
             </div>
             <p className="rv">Click any page to view it full size.</p>
           </div>
-          <article className="pub" id="pub1">
+          <article className="pub fit" id="pub1">
             <div className="pub-media">
               <button
                 className="doc"

@@ -3,7 +3,7 @@ import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/basic';
 import Contact from '@/components/Contact';
 import EnquiryForm from '@/components/EnquiryForm';
-import { ArrowDown } from '@/components/icons';
+// import { ArrowDown } from '@/components/icons'; // used by the hidden hero button below
 import '@/styles/pages.css';
 import '@/styles/contact.css';
 
@@ -33,12 +33,14 @@ export default function Page() {
               </span>
             </h1>
           </div>
+          {/* Hidden for now: hero side text + "Send an enquiry" button
           <div className="phero-side" id="pSide">
             <p>Tell us what you’re planning and the right engineer will get back to you within one business day.</p>
             <a href="#enquiry" className="pill pill-a magnetic">
               Send an enquiry <ArrowDown />
             </a>
           </div>
+          */}
         </div>
       </section>
       {/* ENQUIRY */}

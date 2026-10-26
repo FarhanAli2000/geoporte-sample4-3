@@ -134,6 +134,7 @@
 .zline{display:flex;white-space:nowrap}
 .zword span{display:inline-block}
 .zword .zo{color:#8cc8ff}
+.zword .zcomma{font-size:.5em;align-self:flex-end;margin-left:.04em;position:relative;top:-.3em}
 .zshine{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%) no-repeat;background-size:250% 100%;background-position:150% 0;animation:shine 5.5s ease-in-out 2.4s infinite}
 @keyframes shine{0%{background-position:150% 0}45%,100%{background-position:-50% 0}}
 /* rows: equal spacers keep the eyebrow/tagline centred on the headline; the bottom row stacks the supporting text and scroll cue */
@@ -185,6 +186,10 @@
 .ctrls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .count-lab{font:300 .9rem var(--f-display);color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
 .count-lab b{color:var(--fg);font-weight:400}
+.s-ctrls{justify-content:center;gap:18px;margin-top:28px}
+.s-ctrls .count-lab{margin:0;min-width:4.2em;text-align:center}
+.s-ctrls .carr{width:46px;height:46px}
+.s-ctrls .carr svg{width:16px;height:16px}
 /* ---------- services ---------- */
 .services{padding-block:100px 70px;position:relative}
 .slider{margin-top:44px;overflow:hidden;cursor:grab;touch-action:pan-y;padding-block:14px 30px;margin-block-end:-30px}

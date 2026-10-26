@@ -123,7 +123,9 @@ export default function Page() {
                       {c}
                     </span>
                   ) : (
-                    <span key={i}>{c === ' ' ? ' ' : c}</span>
+                    <span key={i} className={c === ',' ? 'zcomma' : undefined}>
+                      {c === ' ' ? ' ' : c}
+                    </span>
                   ),
                 )}
               </div>
@@ -223,16 +225,7 @@ export default function Page() {
                 create enduring value.
               </p>
               <div className="ctrls">
-                <span className="count-lab">
-                  <b id="sCur">01</b> / <span id="sTot">08</span>
-                </span>
-                <button className="carr" id="sPrev" aria-label="Previous">
-                  <ChevronLeft />
-                </button>
-                <button className="carr" id="sNext" aria-label="Next">
-                  <ChevronRight />
-                </button>
-                <a href="#contact" className="tlink" style={{ marginLeft: '14px' }}>
+                <a href="#contact" className="tlink">
                   View all services <Arrow />
                 </a>
               </div>
@@ -263,6 +256,17 @@ export default function Page() {
           </div>
           <div className="sbar">
             <i id="sBar" />
+          </div>
+          <div className="ctrls s-ctrls">
+            <button className="carr" id="sPrev" aria-label="Previous service">
+              <ChevronLeft />
+            </button>
+            <span className="count-lab">
+              <b id="sCur">01</b> / <span id="sTot">08</span>
+            </span>
+            <button className="carr" id="sNext" aria-label="Next service">
+              <ChevronRight />
+            </button>
           </div>
         </div>
       </section>
@@ -321,14 +325,6 @@ export default function Page() {
                 <div className="cap">Featured projects</div>
                 <h2 className="split">Real projects. Lasting impact.</h2>
               </div>
-              <div className="ctrls rv">
-                <button className="carr" id="pPrev" aria-label="Previous project">
-                  <ChevronLeft />
-                </button>
-                <button className="carr" id="pNext" aria-label="Next project">
-                  <ChevronRight />
-                </button>
-              </div>
             </div>
             <a href="/projects" className="tlink rv">
               View all projects <Arrow />
@@ -358,6 +354,14 @@ export default function Page() {
           </div>
           <div className="sbar">
             <i id="pBar" />
+          </div>
+          <div className="ctrls s-ctrls">
+            <button className="carr" id="pPrev" aria-label="Previous project">
+              <ChevronLeft />
+            </button>
+            <button className="carr" id="pNext" aria-label="Next project">
+              <ChevronRight />
+            </button>
           </div>
         </div>
       </section>

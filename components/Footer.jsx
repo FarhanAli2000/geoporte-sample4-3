@@ -1,4 +1,4 @@
-import { EMAIL, LEGAL, OFFICES, PHONES, SERVICES, homeLink } from '@/lib/nav';
+import { EMAIL, LEGAL, OFFICES, PHONES, homeLink } from '@/lib/nav';
 import { Mail, Pin } from './icons';
 
 export default function Footer({ home = false }) {
@@ -7,12 +7,13 @@ export default function Footer({ home = false }) {
   return (
     <footer className="footer">
       <div className="wrap">
-        <div className="fgrid">
+        <div className="fgrid three">
           <div className="fcol rv">
             <a href={h()} className="brand"><img src="/images/geoporte-logo.png" alt="Geoporte logo" /><span>GE<em>O</em>PORTE</span></a>
             <p>Geoporte provides design consultancy services mainly in the fields of Civil Engineering, Geotechnical Engineering and Telecom Engineering.</p>
             <a className="fmail" href={'mailto:' + EMAIL}><span className="fic"><Mail /></span><span><b>{EMAIL}</b><small>We reply within 24 hours</small></span></a>
           </div>
+          {/* Hidden for now: Company and Services link columns (restore SERVICES in the import above too)
           <div className="fcol rv">
             <h4>Company</h4>
             <ul>
@@ -30,8 +31,9 @@ export default function Footer({ home = false }) {
               {SERVICES.map(([slug, label]) => <li key={label}><a href={slug ? '/' + slug : h('#services')}>{label}</a></li>)}
             </ul>
           </div>
+          */}
           <div className="fcol rv">
-            <h4>Have any questions?</h4>
+            <h4>Contact Us</h4>
             <ul className="fphones">
               {PHONES.map(([tel, label, country]) => <li key={tel}><a href={'tel:' + tel}><span>{label}</span><small>{country}</small></a></li>)}
             </ul>
