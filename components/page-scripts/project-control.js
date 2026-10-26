@@ -51,33 +51,6 @@ function init() {
       'We employ robust performance monitoring and reporting systems to track project progress, identify variances from baseline plans, and communicate key metrics to stakeholders. Our transparent reporting ensures accountability and enables informed decision-making throughout the project lifecycle.',
     ],
   ];
-  const OFFERED = [
-    [
-      'Cost Estimating and Budgeting',
-      'We provide accurate cost estimates and develop comprehensive project budgets, considering all relevant factors such as materials, labor, equipment, and overhead costs.',
-      '/images/pcs-cost.jpg',
-    ],
-    [
-      'Schedule Development and Optimization',
-      'We develop detailed project schedules that outline key milestones, activities, and dependencies, optimizing resource allocation and sequencing to minimize project duration and maximize efficiency.',
-      '/images/civil-site.jpg',
-    ],
-    [
-      'Risk Management',
-      'We conduct thorough risk assessments to identify potential risks and develop mitigation strategies to minimize their impact on project objectives, including risk identification, analysis, response planning, and monitoring.',
-      '/images/pcs-risk.jpg',
-    ],
-    [
-      'Change Control Management',
-      'We implement effective change control processes to manage project scope changes, assess their impact on cost and schedule, and obtain necessary approvals to ensure project alignment with stakeholder expectations.',
-      '/images/pcs-change.jpg',
-    ],
-    [
-      'Quality Assurance and Control',
-      'We implement rigorous quality assurance and control processes to ensure that project deliverables meet the highest standards of quality, compliance, and client satisfaction.',
-      '/images/pcs-quality.jpg',
-    ],
-  ];
   const CAPS = [
     [
       'Planning &amp; Scheduling',
@@ -114,33 +87,6 @@ function init() {
         `<article class="ccard"><div class="top"><span class="ic">${IC[c[1]]}</span><span class="n">${pad(i + 1)}</span></div><h3>${c[0]}</h3><p>${esc(c[2])}</p><span class="edge"></span></article>`,
     ).join(''),
   );
-  $('#oList').innerHTML = OFFERED.map(
-    (o, i) =>
-      `<li class="o-item${i ? '' : ' on'}" data-i="${i}"><span class="n">${pad(i + 1)}</span><div><h3>${o[0]}</h3><p>${o[1]}</p><div class="m-img"><img src="${o[2]}" alt="${o[0]}" loading="lazy"></div></div></li>`,
-  ).join('');
-  $('#oFrame').innerHTML = OFFERED.map((o, i) => `<img src="${o[2]}" alt="${o[0]}" class="${i ? '' : 'on'}" loading="lazy">`).join('');
-  $('#oTot').textContent = pad(OFFERED.length);
-  const items = $$('.o-item'),
-    frames = $$('#oFrame img');
-  const showO = (k) => {
-    items.forEach((it, j) => it.classList.toggle('on', j === k));
-    frames.forEach((im, j) => im.classList.toggle('on', j === k));
-    $('#oCur').textContent = pad(k + 1);
-    $('#oName').textContent = OFFERED[k][0];
-    $('#oBar').style.width = ((k + 1) / OFFERED.length) * 100 + '%';
-  };
-  showO(0);
-  const oio = new IntersectionObserver(
-    (es) =>
-      es.forEach((e) => {
-        if (e.isIntersecting) showO(+e.target.dataset.i);
-      }),
-    { rootMargin: '-45% 0px -45% 0px' },
-  );
-  items.forEach((it) => {
-    oio.observe(it);
-    it.addEventListener('mouseenter', () => showO(+it.dataset.i));
-  });
 
   /* ---------- helpers ---------- */
   function split(el) {
@@ -237,7 +183,6 @@ function init() {
       m = document.documentElement.scrollHeight - innerHeight,
       p = m > 0 ? y / m : 0;
     nav.classList.toggle('scrolled', y > 30);
-    nav.classList.toggle('hide', y > lastY && y > 600 && !document.body.classList.contains('menu-open'));
     lastY = y;
     prog.style.transform = `scaleX(${p})`;
     tt.classList.toggle('show', y > 700);
@@ -375,12 +320,6 @@ function init() {
       clearProps: 'transform,opacity',
       scrollTrigger: { trigger: '#compGrid', start: 'top 82%' },
     });
-    gsap.from('#oFrame', {
-      clipPath: 'inset(0 0 100% 0)',
-      duration: 1.3,
-      ease: 'power4.inOut',
-      scrollTrigger: { trigger: '#oFrame', start: 'top 85%' },
-    });
     gsap.fromTo(
       '#bandMedia',
       { yPercent: -8 },
@@ -394,7 +333,7 @@ function init() {
       ease: 'power4.out',
       scrollTrigger: { trigger: '.band', start: 'top 70%' },
     });
-    gsap.from('.office', {
+    if ($('#offices')) gsap.from('.office', {
       x: -40,
       opacity: 0,
       duration: 0.8,

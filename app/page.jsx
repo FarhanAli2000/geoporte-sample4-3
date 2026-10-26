@@ -1,11 +1,13 @@
 import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/home';
-import { Arrow, ChevronLeft, ChevronRight, Close, Mail, Pin } from '@/components/icons';
+import { Arrow, ChevronLeft, ChevronRight, Close } from '@/components/icons';
 import ServiceIcon from '@/components/home/ServiceIcon';
 import EnquiryForm from '@/components/EnquiryForm';
+import Contact from '@/components/Contact';
 import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
 import '@/styles/home.css';
+import '@/styles/home-contact.css';
 
 export const metadata = pageMeta({
   title: 'Geoporte | Geotechnical & Civil Engineering Consultants',
@@ -477,8 +479,8 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* CONTACT */}
-      <section className="contact" id="contact">
+      {/* ENQUIRY FORM */}
+      <section className="contact" id="enquiry">
         <div className="wrap contact-grid">
           <div>
             <div className="sec-head">
@@ -486,68 +488,12 @@ export default function Page() {
               <h2 className="split">Let’s talk about your next project.</h2>
             </div>
             <p className="lead rv">Tell us what you’re planning and the right engineer will get back to you within one business day.</p>
-            <div className="offices" id="offices">
-              <div className="office">
-                <span className="ring">
-                  <Pin />
-                </span>
-                <div>
-                  <b>Melbourne, Australia</b>
-                  <p>Tower 5, Collins Square, 727 Collins Street, Melbourne, VIC, 3008, Australia</p>
-                </div>
-              </div>
-              <div className="office">
-                <span className="ring">
-                  <Pin />
-                </span>
-                <div>
-                  <b>Sydney, Australia</b>
-                  <p>Three International Towers, 300 Barangaroo Ave, Barangaroo NSW, Australia 2000</p>
-                </div>
-              </div>
-              <div className="office">
-                <span className="ring">
-                  <Pin />
-                </span>
-                <div>
-                  <b>Perth, Australia</b>
-                  <p>108 St Georges Terrace, Perth, WA, Australia 6000</p>
-                </div>
-              </div>
-              <div className="office">
-                <span className="ring">
-                  <Pin />
-                </span>
-                <div>
-                  <b>Auckland, New Zealand</b>
-                  <p>110 Carlton Gore Road, New Market, Auckland, New Zealand 1023</p>
-                </div>
-              </div>
-              <div className="office">
-                <span className="ring">
-                  <Mail />
-                </span>
-                <div>
-                  <b>Email</b>
-                  <p>
-                    <a href="mailto:enquiries@geoporte.com.au">enquiries@geoporte.com.au</a> · We reply within 24 hours
-                  </p>
-                  <p>
-                    <a href="tel:+61431554626">+61 (0) 431 55 4626</a> · <a href="tel:+61388217758">+61 (0) 388 21 7758</a> (Australia)
-                  </p>
-                  <p>
-                    <a href="tel:+64212870714">+64 (0) 212 87 0714</a> (New Zealand)
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
           <EnquiryForm />
         </div>
-        <div className="wrap" style={{ marginTop: '44px' }}>
-          <div className="c-map rv" id="officeMap" />
-        </div>
       </section>
+      {/* CONTACT DETAILS + MAP */}
+      <Contact map />
       <PageScript />
     </Site>
   );

@@ -3,7 +3,6 @@ import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/geotechnical';
 import SideNav from '@/components/SideNav';
 import OneTeamBand from '@/components/OneTeamBand';
-import Contact from '@/components/Contact';
 import { Arrow } from '@/components/icons';
 import '@/styles/pages.css';
 
@@ -36,7 +35,7 @@ export default function Page() {
           </div>
           <div className="phero-side" id="pSide">
             <p>Seismic hazard analyses and earthquake geotechnical design.</p>
-            <a href="#contact" className="pill pill-a magnetic">
+            <a href="/contact-us" className="pill pill-a magnetic">
               Contact us <Arrow />
             </a>
           </div>
@@ -104,8 +103,6 @@ export default function Page() {
       </section>
       {/* ONE TEAM */}
       <OneTeamBand />
-      {/* CONTACT */}
-      <Contact />
       <PageScript />
     </Site>
   );

@@ -32,7 +32,6 @@
 /* ---------- nav ---------- */
 .nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:120;transition:background .4s,box-shadow .4s,transform .5s var(--ease),border-color .4s;border-bottom:1px solid transparent}
 .nav.scrolled{background:rgba(10,10,12,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
-.nav.hide{transform:translateY(-110%)}
 .nav-in{display:flex;align-items:center;gap:26px;padding-block:16px;transition:padding .4s}
 .nav.scrolled .nav-in{padding-block:10px}
 .brand{display:flex;align-items:center;gap:10px;flex:none}

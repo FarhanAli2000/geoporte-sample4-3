@@ -1,8 +1,8 @@
 import { EMAIL, OFFICES, PHONES } from '@/lib/nav';
 import { Arrow, Mail, Pin } from './icons';
 
-// Standard contact block used on every page except home; `cta` adds the "Email us" strip (About page),
-// `map` the office map (Contact Us page only).
+// Contact details block, shown on the Home and Contact Us pages only; `cta` adds an "Email us" strip,
+// `map` the office map.
 export default function Contact({ cta = false, map = false }) {
   return (
     <section className="contact" id="contact">

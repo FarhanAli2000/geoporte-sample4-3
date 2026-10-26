@@ -111,7 +111,6 @@ function init() {
       m = document.documentElement.scrollHeight - innerHeight,
       p = m > 0 ? y / m : 0;
     nav.classList.toggle('scrolled', y > 30);
-    nav.classList.toggle('hide', y > lastY && y > 600 && !document.body.classList.contains('menu-open'));
     lastY = y;
     prog.style.transform = `scaleX(${p})`;
     tt.classList.toggle('show', y > 700);
@@ -212,7 +211,7 @@ function init() {
     $$('.sec-head .cap').forEach((c) =>
       gsap.from(c, { x: -20, opacity: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: c, start: 'top 92%' } }),
     );
-    gsap.from('.office', {
+    if ($('#offices')) gsap.from('.office', {
       x: -40,
       opacity: 0,
       duration: 0.8,

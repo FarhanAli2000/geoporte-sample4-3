@@ -2,7 +2,6 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/team';
 import OneTeamBand from '@/components/OneTeamBand';
-import Contact from '@/components/Contact';
 import { Arrow } from '@/components/icons';
 import '@/styles/pages.css';
 
@@ -166,8 +165,6 @@ export default function Page() {
       </section>
       {/* ONE TEAM */}
       <OneTeamBand />
-      {/* CONTACT */}
-      <Contact />
       <PageScript />
     </Site>
   );

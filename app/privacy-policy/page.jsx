@@ -2,7 +2,6 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/basic';
 import SideNav from '@/components/SideNav';
-import Contact from '@/components/Contact';
 import { Arrow } from '@/components/icons';
 import '@/styles/pages.css';
 
@@ -35,7 +34,7 @@ export default function Page() {
           </div>
           <div className="phero-side" id="pSide">
             <p>How Geoporte collects, uses and protects personal information.</p>
-            <a href="#contact" className="pill pill-a magnetic">
+            <a href="/contact-us" className="pill pill-a magnetic">
               Contact us <Arrow />
             </a>
           </div>
@@ -116,8 +115,6 @@ export default function Page() {
           <SideNav group="legal" current="privacy-policy" />
         </div>
       </section>
-      {/* CONTACT */}
-      <Contact />
       <PageScript />
     </Site>
   );

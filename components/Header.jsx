@@ -48,7 +48,7 @@ export default function Header({ home = false, section, current }) {
                 <span className="vsep"></span>
               </>
             )}
-            <a href="#contact" className="pill pill-a magnetic">Get in touch <Arrow /></a>
+            <a href={home ? '#enquiry' : '/contact-us'} className="pill pill-a magnetic">Get in touch <Arrow /></a>
             <button className="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
           </div>
         </div>

@@ -44,33 +44,6 @@ function init() {
       'Our commitment is to provide efficient and timely structural engineering design solutions for our clients.',
     ],
   ];
-  const OFFERED = [
-    [
-      'Conceptual Design',
-      'We provide conceptual design services, developing preliminary layouts, sketches, and renderings to visualize project concepts and facilitate decision-making.',
-      '/images/civil-conceptual.jpg',
-    ],
-    [
-      'Detailed Design',
-      'We specialize in detailed design services, producing comprehensive drawings, plans, and specifications for various civil engineering projects, including site development, transportation, utilities, and infrastructure.',
-      '/images/civil-detailed.jpg',
-    ],
-    [
-      '3D Modeling',
-      'We create detailed 3D models of civil engineering structures and systems, enabling clients to visualize designs in three dimensions and identify potential clashes or conflicts before construction begins.',
-      '/images/civil-3d.jpg',
-    ],
-    [
-      'Site Planning and Grading',
-      'We offer site planning and grading services, optimizing site layouts, earthwork calculations, and drainage designs to maximize site efficiency and minimize environmental impacts.',
-      '/images/civil-site.jpg',
-    ],
-    [
-      'Construction Documentation',
-      'We develop construction documentation packages, including construction drawings, quantity takeoffs, and material specifications, to facilitate the implementation of design solutions during the construction phase.',
-      '/images/civil-docs.jpg',
-    ],
-  ];
   $('#compGrid').insertAdjacentHTML(
     'beforeend',
     COMP.map(
@@ -78,33 +51,6 @@ function init() {
         `<article class="ccard"><div class="top"><span class="ic">${IC[c[1]]}</span><span class="n">${pad(i + 1)}</span></div><h3>${c[0]}</h3><p>${esc(c[2])}</p><span class="edge"></span></article>`,
     ).join(''),
   );
-  $('#oList').innerHTML = OFFERED.map(
-    (o, i) =>
-      `<li class="o-item${i ? '' : ' on'}" data-i="${i}"><span class="n">${pad(i + 1)}</span><div><h3>${o[0]}</h3><p>${o[1]}</p><div class="m-img"><img src="${o[2]}" alt="${o[0]}" loading="lazy"></div></div></li>`,
-  ).join('');
-  $('#oFrame').innerHTML = OFFERED.map((o, i) => `<img src="${o[2]}" alt="${o[0]}" class="${i ? '' : 'on'}" loading="lazy">`).join('');
-  $('#oTot').textContent = pad(OFFERED.length);
-  const items = $$('.o-item'),
-    frames = $$('#oFrame img');
-  const showO = (k) => {
-    items.forEach((it, j) => it.classList.toggle('on', j === k));
-    frames.forEach((im, j) => im.classList.toggle('on', j === k));
-    $('#oCur').textContent = pad(k + 1);
-    $('#oName').textContent = OFFERED[k][0];
-    $('#oBar').style.width = ((k + 1) / OFFERED.length) * 100 + '%';
-  };
-  showO(0);
-  const oio = new IntersectionObserver(
-    (es) =>
-      es.forEach((e) => {
-        if (e.isIntersecting) showO(+e.target.dataset.i);
-      }),
-    { rootMargin: '-45% 0px -45% 0px' },
-  );
-  items.forEach((it) => {
-    oio.observe(it);
-    it.addEventListener('mouseenter', () => showO(+it.dataset.i));
-  });
 
   /* ---------- helpers ---------- */
   function split(el) {
@@ -201,7 +147,6 @@ function init() {
       m = document.documentElement.scrollHeight - innerHeight,
       p = m > 0 ? y / m : 0;
     nav.classList.toggle('scrolled', y > 30);
-    nav.classList.toggle('hide', y > lastY && y > 600 && !document.body.classList.contains('menu-open'));
     lastY = y;
     prog.style.transform = `scaleX(${p})`;
     tt.classList.toggle('show', y > 700);
@@ -343,7 +288,7 @@ function init() {
       ease: 'power4.out',
       scrollTrigger: { trigger: '.band', start: 'top 70%' },
     });
-    gsap.from('.office', {
+    if ($('#offices')) gsap.from('.office', {
       x: -40,
       opacity: 0,
       duration: 0.8,

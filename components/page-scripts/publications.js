@@ -109,7 +109,6 @@ function init() {
       m = document.documentElement.scrollHeight - innerHeight,
       p = m > 0 ? y / m : 0;
     nav.classList.toggle('scrolled', y > 30);
-    nav.classList.toggle('hide', y > lastY && y > 600 && !document.body.classList.contains('menu-open'));
     lastY = y;
     prog.style.transform = `scaleX(${p})`;
     tt.classList.toggle('show', y > 700);
@@ -261,7 +260,7 @@ function init() {
       clearProps: 'transform,opacity,rotate',
       scrollTrigger: { trigger: '#pfMedia', start: 'top 85%' },
     });
-    gsap.from('.office', {
+    if ($('#offices')) gsap.from('.office', {
       x: -40,
       opacity: 0,
       duration: 0.8,

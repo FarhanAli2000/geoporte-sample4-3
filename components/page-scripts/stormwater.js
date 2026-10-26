@@ -53,33 +53,6 @@ function init() {
       'We employ advanced data analysis techniques to interpret complex datasets and derive actionable insights. Through the use of sophisticated visualization tools, we communicate results effectively to stakeholders, enabling informed decision-making.',
     ],
   ];
-  const OFFERED = [
-    [
-      'Flood Hazard Mapping',
-      'We develop accurate flood hazard maps to delineate areas prone to flooding and assess potential impacts on infrastructure and communities.',
-      '/images/civil-detailed.jpg',
-    ],
-    [
-      'Stormwater Management Plans',
-      'We design comprehensive stormwater management plans to mitigate flood risk, improve water quality, and enhance overall drainage infrastructure.',
-      '/images/storm-field.jpg',
-    ],
-    [
-      'Hydraulic Modelling',
-      'Using advanced hydraulic modelling techniques, we simulate flow patterns in rivers, streams, and urban drainage systems to assess flood risk and evaluate infrastructure performance.',
-      '/images/civil-site.jpg',
-    ],
-    [
-      'Climate Change Adaptation',
-      'We help clients anticipate the impacts of climate change on stormwater and flood management, developing adaptive strategies to enhance resilience and minimize vulnerability.',
-      '/images/storm-plans.jpg',
-    ],
-    [
-      'Emergency Response Planning',
-      'We assist clients in developing emergency response plans to effectively manage flood events and minimize damage to property and infrastructure.',
-      '/images/storm-emergency.jpg',
-    ],
-  ];
   $('#compGrid').insertAdjacentHTML(
     'beforeend',
     COMP.map(
@@ -87,33 +60,6 @@ function init() {
         `<article class="ccard"><div class="top"><span class="ic">${IC[c[1]]}</span><span class="n">${pad(i + 1)}</span></div><h3>${c[0]}</h3><p>${esc(c[2])}</p><span class="edge"></span></article>`,
     ).join(''),
   );
-  $('#oList').innerHTML = OFFERED.map(
-    (o, i) =>
-      `<li class="o-item${i ? '' : ' on'}" data-i="${i}"><span class="n">${pad(i + 1)}</span><div><h3>${o[0]}</h3><p>${o[1]}</p><div class="m-img"><img src="${o[2]}" alt="${o[0]}" loading="lazy"></div></div></li>`,
-  ).join('');
-  $('#oFrame').innerHTML = OFFERED.map((o, i) => `<img src="${o[2]}" alt="${o[0]}" class="${i ? '' : 'on'}" loading="lazy">`).join('');
-  $('#oTot').textContent = pad(OFFERED.length);
-  const items = $$('.o-item'),
-    frames = $$('#oFrame img');
-  const showO = (k) => {
-    items.forEach((it, j) => it.classList.toggle('on', j === k));
-    frames.forEach((im, j) => im.classList.toggle('on', j === k));
-    $('#oCur').textContent = pad(k + 1);
-    $('#oName').textContent = OFFERED[k][0];
-    $('#oBar').style.width = ((k + 1) / OFFERED.length) * 100 + '%';
-  };
-  showO(0);
-  const oio = new IntersectionObserver(
-    (es) =>
-      es.forEach((e) => {
-        if (e.isIntersecting) showO(+e.target.dataset.i);
-      }),
-    { rootMargin: '-45% 0px -45% 0px' },
-  );
-  items.forEach((it) => {
-    oio.observe(it);
-    it.addEventListener('mouseenter', () => showO(+it.dataset.i));
-  });
 
   /* ---------- helpers ---------- */
   function split(el) {
@@ -210,7 +156,6 @@ function init() {
       m = document.documentElement.scrollHeight - innerHeight,
       p = m > 0 ? y / m : 0;
     nav.classList.toggle('scrolled', y > 30);
-    nav.classList.toggle('hide', y > lastY && y > 600 && !document.body.classList.contains('menu-open'));
     lastY = y;
     prog.style.transform = `scaleX(${p})`;
     tt.classList.toggle('show', y > 700);
@@ -339,12 +284,6 @@ function init() {
       clearProps: 'transform,opacity',
       scrollTrigger: { trigger: '#compGrid', start: 'top 82%' },
     });
-    gsap.from('#oFrame', {
-      clipPath: 'inset(0 0 100% 0)',
-      duration: 1.3,
-      ease: 'power4.inOut',
-      scrollTrigger: { trigger: '#oFrame', start: 'top 85%' },
-    });
     gsap.fromTo(
       '#bandMedia',
       { yPercent: -8 },
@@ -358,7 +297,7 @@ function init() {
       ease: 'power4.out',
       scrollTrigger: { trigger: '.band', start: 'top 70%' },
     });
-    gsap.from('.office', {
+    if ($('#offices')) gsap.from('.office', {
       x: -40,
       opacity: 0,
       duration: 0.8,

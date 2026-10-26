@@ -2,7 +2,6 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/civil-engineering';
 import OneTeamBand from '@/components/OneTeamBand';
-import Contact from '@/components/Contact';
 import { Arrow } from '@/components/icons';
 import '@/styles/pages.css';
 
@@ -39,7 +38,7 @@ export default function Page() {
               deliver designs that focus on functionality, constructability, and well-planning, while keeping in mind the safety and the
               project being economical.
             </p>
-            <a href="#contact" className="pill pill-a magnetic">
+            <a href="/contact-us" className="pill pill-a magnetic">
               Contact us <Arrow />
             </a>
           </div>
@@ -87,34 +86,8 @@ export default function Page() {
           <ul className="d-grid" id="dGrid" />
         </div>
       </section>
-      {/* SERVICES OFFERED */}
-      <section className="offered" id="offered">
-        <div className="wrap">
-          <div className="sec-head">
-            <div className="cap">Services Offered</div>
-            <h2 className="split">From first concept to construction documents.</h2>
-          </div>
-          <div className="o-grid">
-            <ol className="o-list" id="oList" />
-            <div className="o-stick">
-              <div className="o-frame" id="oFrame" />
-              <div className="o-cap">
-                <span id="oName" />
-                <span className="o-bar">
-                  <i id="oBar" />
-                </span>
-                <span>
-                  <b id="oCur">01</b> / <span id="oTot">05</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* ONE TEAM */}
       <OneTeamBand />
-      {/* CONTACT */}
-      <Contact />
       <PageScript />
     </Site>
   );

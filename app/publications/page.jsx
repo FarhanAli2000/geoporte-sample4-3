@@ -1,7 +1,6 @@
 import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/publications';
-import Contact from '@/components/Contact';
 import { ArrowDown, Close } from '@/components/icons';
 import '@/styles/pages.css';
 
@@ -257,8 +256,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* CONTACT */}
-      <Contact />
       <PageScript />
     </Site>
   );

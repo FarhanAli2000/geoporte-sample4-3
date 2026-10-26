@@ -1,7 +1,6 @@
 import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/about';
-import Contact from '@/components/Contact';
 import { Arrow, ArrowDown } from '@/components/icons';
 import '@/styles/about.css';
 
@@ -254,14 +253,12 @@ export default function Page() {
               shoes. Our vast experience of working with a range of clients and on diverse set of projects across the globe provide us with
               the unique skills and experience to help develop out of the box solutions as part of our client’s team.
             </p>
-            <a href="#contact" className="pill pill-o magnetic">
+            <a href="/contact-us" className="pill pill-o magnetic">
               Work with us <Arrow />
             </a>
           </div>
         </div>
       </section>
-      {/* CONTACT */}
-      <Contact cta />
       <PageScript />
     </Site>
   );

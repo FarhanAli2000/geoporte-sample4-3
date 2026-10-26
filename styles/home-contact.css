@@ -1,0 +1,28 @@
+/* Home page: the shared contact details block (components/Contact.jsx), styled like on the Contact Us page.
+   Scoped to #contact so the home page’s own .office styles don’t leak in. */
+#contact.contact{padding-block:100px;position:relative}
+#contact .c-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:50px;align-items:end}
+#contact .c-top .lead{color:var(--muted);font-size:.92rem;max-width:30rem;margin-top:0}
+#contact .c-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:2px;margin-top:50px}
+#contact .c-card{background:var(--card);padding:30px;min-width:0}
+#contact .c-card h4{margin:0 0 18px;font-size:.6rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--amber)}
+#contact .mail{display:flex;align-items:center;gap:16px}
+#contact .mail b{display:block;font:300 clamp(1.05rem,1.8vw,1.35rem) var(--f-display);word-break:break-word}
+#contact .mail small{display:block;font-size:.76rem;color:var(--muted);margin-top:2px}
+#contact .mail:hover .ring{background:var(--amber);color:#111}
+#contact .phones{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+#contact .phones li{border-bottom:1px solid var(--line)}
+#contact .phones a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 2px;font:300 1.05rem var(--f-display);font-variant-numeric:tabular-nums;transition:color .3s,padding .4s var(--ease)}
+#contact .phones a:hover{color:var(--amber);padding-left:8px}
+#contact .phones small{font:700 .56rem var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+#contact .offices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;margin-top:0}
+#contact .office{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--bg-3);border-left:2px solid transparent;transition:border-color .4s,background .4s;min-width:0}
+#contact .office:hover{border-color:var(--amber);background:#1b1c22}
+#contact .office .ring{width:36px;height:36px}
+#contact .office b{display:block;font:300 1.1rem var(--f-display)}
+#contact .office span.cty{display:block;font-size:.54rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-top:2px}
+#contact .office p{font-size:.82rem;color:var(--muted);margin-top:8px;line-height:1.55}
+#contact .office:hover{translate:none}
+@media (max-width:860px){#contact .c-top,#contact .c-grid{grid-template-columns:1fr;gap:26px}}
+@media (max-width:560px){#contact .offices{grid-template-columns:1fr}#contact .c-card{padding:22px}}
+#enquiry.contact{padding-bottom:30px}
