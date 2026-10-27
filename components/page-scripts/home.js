@@ -171,6 +171,7 @@ function init() {
       .from('#zword span', { yPercent: 60, opacity: 0, duration: 1.2, stagger: 0.03, ease: 'power4.out' }, 0.15)
       .from('#zvid', { scale: 1.25, duration: 2.4, ease: 'power3.out' }, 0)
       .from('#zintro .hero-eyebrow,#zintro p', { y: 16, opacity: 0, duration: 0.8, stagger: 0.15 }, 0.7)
+      .from('#zacts', { y: 16, opacity: 0, duration: 0.8, clearProps: 'transform,opacity' }, 1)
       .from('#zcue', { y: 16, opacity: 0, duration: 0.8 }, 1.1);
   }
 
@@ -497,7 +498,7 @@ function init() {
       },
     });
     ztl
-      .to('#zintro,#zcue,.zshine', { opacity: 0, duration: 0.1 }, 0)
+      .to('#zintro,#zcue,.zshine', { autoAlpha: 0, duration: 0.1 }, 0)
       .fromTo(
         '#zmask',
         { scale: 1, transformOrigin: zOrigin },
@@ -632,7 +633,7 @@ function init() {
   /* ---------- lightbox ---------- */
   const lb = $('#lightbox'),
     lv = $('#lbVideo');
-  $('#openFilm').addEventListener('click', () => {
+  $('#openFilm')?.addEventListener('click', () => {
     lb.classList.add('open');
     lv.currentTime = 0;
     lv.play().catch(() => {});
