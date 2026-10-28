@@ -53,21 +53,22 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* STATS (counted from the project list below) */}
+      {/* STATS (projects and sectors are fixed figures; countries are counted from the project list below) */}
       <section className="stats">
-        <div className="wrap stats-grid">
+        <div className="wrap stats-grid three">
           <div className="stat">
             <b>
-              <span className="count" id="stProjects">
-                27
+              <span className="count" id="stProjects" data-to="200">
+                200
               </span>
+              <em>+</em>
             </b>
             <p>Projects by our specialists</p>
           </div>
           <div className="stat">
             <b>
-              <span className="count" id="stSectors">
-                3
+              <span className="count" id="stSectors" data-to="5">
+                5
               </span>
             </b>
             <p>Project sectors</p>
@@ -79,14 +80,6 @@ export default function Page() {
               </span>
             </b>
             <p>Countries</p>
-          </div>
-          <div className="stat">
-            <b>
-              <span className="count" id="stRegions">
-                5
-              </span>
-            </b>
-            <p>Regions across the world</p>
           </div>
         </div>
       </section>

@@ -107,7 +107,7 @@
 .wcard:hover .big{color:var(--amber);-webkit-text-stroke-color:var(--amber)}
 .wcard .ic{width:34px;height:34px;color:var(--amber);position:absolute;top:34px;right:30px}
 .wcard .ic svg{width:100%;height:100%}
-.wcard h3{font-size:1.65rem;margin-top:auto;padding-top:40px}
+.wcard h3{font-size:1.65rem;padding-top:64px}
 .wcard p{color:var(--muted);font-size:.86rem;margin-top:14px;line-height:1.65}
 .wcard .edge{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease);box-shadow:0 0 14px var(--amber)}
 .wcard:hover .edge{transform:scaleX(1)}

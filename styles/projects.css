@@ -97,6 +97,7 @@
 /* ---------- stats ---------- */
 .stats{padding-block:60px;border-bottom:1px solid var(--line)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (min-width:861px){.stats-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .stat{padding:6px 28px;border-left:1px solid var(--line);min-width:0}
 .stat:first-child{border-left:0;padding-left:0}
 .stat b{display:block;font:200 clamp(2.8rem,5vw,4.2rem)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.03em}

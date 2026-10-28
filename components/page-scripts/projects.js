@@ -66,10 +66,8 @@ function init() {
   const REGIONS = [...new Set(P.map(regionOf))];
   const countIn = (arr, f) => arr.filter(f).length;
 
-  $('#stProjects').dataset.to = P.length;
-  $('#stSectors').dataset.to = SECTORS.length;
+  // Project and sector totals are fixed figures set in the page markup.
   $('#stCountries').dataset.to = new Set(P.map((p) => p[2])).size;
-  $('#stRegions').dataset.to = REGIONS.length;
   $$('.count').forEach((c) => (c.textContent = c.dataset.to));
 
   $('#sectGrid').innerHTML = SECTORS.map(

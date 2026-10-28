@@ -179,6 +179,8 @@
 .team{padding-block:110px 60px}
 .t-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:40px;align-items:end}
 .t-head p{color:var(--muted);font-size:.92rem;max-width:30rem}
+.md-msg p+p{margin-top:14px}
+.t-head .md-sign{color:var(--fg);font-weight:500}
 .t-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;margin-top:50px}
 .tcard{display:block;background:var(--card);position:relative;overflow:hidden;min-width:0}
 .tph{display:block;aspect-ratio:4/5;overflow:hidden;background:#e9e9ec}

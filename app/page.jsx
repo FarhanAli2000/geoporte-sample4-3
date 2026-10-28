@@ -9,6 +9,18 @@ import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data'
 import '@/styles/home.css';
 import '@/styles/home-contact.css';
 
+// Scrolling services strip under the hero; Geotechnical has no page of its own, so it goes to the services section.
+const TICKER = [
+  ['/civil-engineering', 'Civil Engineering'],
+  ['/design-and-drafting', 'Design & Drafting'],
+  ['#services', 'Geotechnical'],
+  ['/structural-engineering', 'Structural'],
+  ['/stormwater-and-flood-modelling', 'Stormwater & Flood'],
+  ['/project-control-services', 'Project Management'],
+  ['/advisory-services', 'Advisory'],
+  ['/telecom-services', 'Telecommunications'],
+];
+
 export const metadata = pageMeta({
   title: 'Geoporte | Geotechnical & Civil Engineering Consultants',
   description:
@@ -191,23 +203,16 @@ export default function Page() {
           Live · Steel truss bridge
         </div>
       </section>
-      <div className="ticker" aria-hidden="true">
+      <div className="ticker">
         <div className="ticker-t">
-          <span>Civil Engineering</span>
-          <span>Design &amp; Drafting</span>
-          <span>Geotechnical</span>
-          <span>Structural</span>
-          <span>Stormwater &amp; Flood</span>
-          <span>Project Management</span>
-          <span>Advisory</span>
-          <span>Telecommunications</span> <span>Civil Engineering</span>
-          <span>Design &amp; Drafting</span>
-          <span>Geotechnical</span>
-          <span>Structural</span>
-          <span>Stormwater &amp; Flood</span>
-          <span>Project Management</span>
-          <span>Advisory</span>
-          <span>Telecommunications</span>
+          {[0, 1].map((copy) =>
+            TICKER.map(([href, label]) => (
+              // The second copy only fills the loop, so it is hidden from screen readers and keyboard.
+              <a key={copy + href + label} href={href} aria-hidden={copy ? true : undefined} tabIndex={copy ? -1 : undefined}>
+                {label}
+              </a>
+            )),
+          )}
         </div>
       </div>
       {/* SERVICES */}
@@ -402,8 +407,8 @@ export default function Page() {
         <div className="wrap stats-grid">
           <div className="stat">
             <b>
-              <span className="count" data-to="1000">
-                1,000
+              <span className="count" data-to="200">
+                200
               </span>
               <em>+</em>
             </b>
@@ -414,12 +419,12 @@ export default function Page() {
           </div>
           <div className="stat">
             <b>
-              <span className="count" data-to="20">
-                20
+              <span className="count" data-to="200">
+                200
               </span>
               <em>+</em>
             </b>
-            <p>Years of combined engineering experience</p>
+            <p>Years of leadership team combined engineering experience</p>
             <div className="t2">
               <i />
             </div>

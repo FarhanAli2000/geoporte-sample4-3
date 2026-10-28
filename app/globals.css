@@ -30,3 +30,6 @@ p{margin:0}
 .fgrid.three{grid-template-columns:minmax(0,1.2fr) minmax(0,.75fr) minmax(0,1.4fr);gap:48px}
 @media (max-width:1100px){.fgrid.three{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}.fgrid.three .fcol:first-child{grid-column:1/-1}.fgrid.three .fcol:last-child{grid-column:auto}}
 @media (max-width:560px){.fgrid.three{grid-template-columns:1fr;gap:34px}}
+
+/* Custom cursor circle + dot turned off site-wide; the normal mouse pointer is used instead. */
+.cursor,.cursor-dot{display:none!important}

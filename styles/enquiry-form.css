@@ -1,0 +1,16 @@
+/* Enquiry form extras (dropdowns, phone code, note, consent) shared by the home and contact pages.
+   Base field/chip rules live in home.css and contact.css. */
+.form .field select{width:100%;border:0;border-bottom:1px solid var(--line-2);background:transparent;padding:22px 26px 9px 2px;font:inherit;font-size:.95rem;color:var(--fg);outline:none;border-radius:0;appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px bottom 11px;background-size:14px}
+.form .field select option{background:var(--card);color:var(--fg)}
+/* Dropdown fields always show a value, so their label stays raised */
+.form .field.sel label{translate:0 -12px;font-size:.64rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.form .field.sel:focus-within label{color:var(--amber)}
+.form .field.sel:focus-within .ul{transform:scaleX(1)}
+.form .phone-row{display:flex;align-items:stretch}
+.form .phone-row select{width:96px;flex:none}
+.form .phone-row input{flex:1;min-width:0;padding-left:12px}
+.form .fnote{grid-column:1/-1;font-size:.8rem;color:var(--muted);margin-top:-6px}
+.form .consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:.8rem;line-height:1.5;color:var(--muted);cursor:pointer}
+.form .consent input{flex:none;width:16px;height:16px;margin-top:2px;accent-color:var(--amber);cursor:pointer}
+.form .consent a{color:var(--amber);text-decoration:underline;text-underline-offset:2px}

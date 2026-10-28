@@ -14,7 +14,6 @@ const PHOTOS = [
   ['/images/real/reviewing-drawings.jpg', 'Reviewing drawings on site'],
   ['/images/real/nz-site-visit.jpg', 'Site visit in New Zealand'],
   ['/images/real/award-ags.jpg', 'Accepting an award at an Australian Geomechanics Society event'],
-  ['/images/real/conference-talk.jpg', 'Presenting at a geotechnical industry event'],
   ['/images/real/drone-wave-car.jpg', 'Geoporte team waving to the drone'],
   ['/images/real/team-creek-site.jpg', 'Geoporte team at a creek bank remediation site'],
 ];

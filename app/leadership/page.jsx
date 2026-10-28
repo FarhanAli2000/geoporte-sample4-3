@@ -2,20 +2,19 @@ import Site from '@/components/Site';
 import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/team';
 import OneTeamBand from '@/components/OneTeamBand';
-import { Arrow } from '@/components/icons';
 import '@/styles/pages.css';
 
 export const metadata = pageMeta({
-  title: 'Our Team | Chartered Engineers & Geologists | Geoporte',
+  title: 'Leadership | Managing Director | Geoporte',
   description:
-    'Meet Geoporte’s chartered geotechnical, structural and civil engineers, engineering geologists and project staff with local and international experience.',
-  path: '/our-team',
+    'Senior engineering leadership on every Geoporte project, from first conversation to final design. Meet Managing Director Qaiser Hayat.',
+  path: '/leadership',
   image: 'https://geoporte.com.au/images/real/walking-geoporte-vests.jpg',
 });
 
 export default function Page() {
   return (
-    <Site section="about" current="our-team">
+    <Site section="about" current="leadership">
       {/* PAGE HERO */}
       <section className="phero" id="top">
         <div className="phero-media" id="pheroMedia">
@@ -25,32 +24,34 @@ export default function Page() {
           <div>
             <h1 id="pTitle">
               <span className="line">
-                <span>
-                  Our <span className="a">Team</span>
-                </span>
+                <span className="a">Leadership</span>
               </span>
             </h1>
           </div>
           <div className="phero-side" id="pSide">
-            <p>Meet the engineers, geologists and project professionals behind Geoporte.</p>
-            <a href="#team" className="pill pill-a magnetic">
-              Meet the team <Arrow />
-            </a>
+            <p>Senior engineering leadership on every project, from first conversation to final design.</p>
           </div>
         </div>
       </section>
-      {/* TEAM GRID */}
-      <section className="team" id="team">
+      {/* MESSAGE FROM THE MANAGING DIRECTOR */}
+      <section className="team" id="message">
         <div className="wrap">
           <div className="t-head">
             <div className="sec-head">
-              <div className="cap">Our Team</div>
-              <h2 className="split">The specialists behind every design.</h2>
+              <div className="cap">Leadership</div>
+              <h2 className="split">Message from the Managing Director</h2>
             </div>
-            <p className="rv">
-              Chartered engineers, geologists and project professionals with experience across Australia, New Zealand, the UK, Europe, the
-              Middle East and Asia.
-            </p>
+            <div className="md-msg rv">
+              <p>
+                When I started Geoporte, the aim was simple: give clients direct access to senior engineering judgement, without the layers
+                and delays that often come with larger firms.
+              </p>
+              <p>
+                Every project starts with understanding the ground and the client’s real objectives. From there, our role is to give clear,
+                practical advice and designs that can be built.
+              </p>
+              <p className="md-sign">Qaiser Hayat, Managing Director</p>
+            </div>
           </div>
         </div>
       </section>
