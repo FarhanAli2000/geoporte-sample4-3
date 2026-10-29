@@ -41,8 +41,18 @@ export default function EnquiryForm() {
     const name = field('name'), email = field('email'), phone = field('phone'), message = field('message');
     const shake = () => gsap.fromTo(form, { x: -8 }, { x: 0, duration: 0.5, ease: 'elastic.out(1,.3)' });
 
-    if (!name || !/^\S+@\S+\.\S+$/.test(email) || !/^[\d\s()+-]{6,20}$/.test(phone) || !message) {
-      setStatus({ type: 'err', text: 'Please add your name, a valid email, a phone number and a few project details.' });
+    // Name only what is missing, and put the cursor in the first one.
+    const missing = [
+      [!name, 'name', 'your name'],
+      [!/^\S+@\S+\.\S+$/.test(email), 'email', 'a valid email'],
+      [!/^[\d\s()+-]{6,20}$/.test(phone), 'phone', 'your phone number'],
+      [!message, 'message', 'a few project details'],
+    ].filter(([bad]) => bad);
+    if (missing.length) {
+      const list = missing.map((m) => m[2]);
+      const text = list.length > 1 ? list.slice(0, -1).join(', ') + ' and ' + list.at(-1) : list[0];
+      setStatus({ type: 'err', text: `Please add ${text}.` });
+      form.elements[missing[0][1]]?.focus();
       shake();
       return;
     }
@@ -99,7 +109,7 @@ export default function EnquiryForm() {
           <select aria-label="Phone country code" value={dial} onChange={(e) => { setDial(e.target.value); setDialTouched(true); }}>
             {COUNTRIES.map((c) => <option key={c.code} value={c.code}>{c.code} {c.dial}</option>)}
           </select>
-          <input id="f-phone" name="phone" type="tel" placeholder=" " autoComplete="tel-national" required />
+          <input id="f-phone" name="phone" type="tel" placeholder="Phone number" autoComplete="tel-national" required />
         </div>
         <label htmlFor="f-phone">Phone</label><span className="ul"></span>
       </div>

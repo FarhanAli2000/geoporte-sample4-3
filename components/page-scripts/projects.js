@@ -21,7 +21,7 @@ function init() {
   // Same order as SECTORS in lib/home-data.js, so home links (?sector=N) land on the matching filter.
   const SECTORS = [
     ['Transportation Projects', '/images/hero-video-poster.jpg'],
-    ['Building Projects', '/images/cable-bridge-wide.jpg'],
+    ['Building Projects', '/images/real/crane-excavation-dewatering.jpg'],
     ['Water Projects', '/images/dam-spillway.jpg'],
     ['Ports & Marine Projects', '/images/coastal-bridge.jpg'],
     ['Energy Infrastructure Projects', '/images/telecom.jpg'],

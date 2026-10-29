@@ -9,7 +9,10 @@
 .form .field.sel:focus-within .ul{transform:scaleX(1)}
 .form .phone-row{display:flex;align-items:stretch}
 .form .phone-row select{width:96px;flex:none}
-.form .phone-row input{flex:1;min-width:0;padding-left:12px}
+/* number box sits beside the code; a divider and visible placeholder make it obvious it is a separate field */
+.form .phone-row input{flex:1;min-width:0;padding-left:14px;border-left:1px solid var(--line-2)}
+.form .phone-row input::placeholder{color:var(--muted);opacity:1}
+.form .phone-row input:focus::placeholder{color:var(--dim)}
 .form .fnote{grid-column:1/-1;font-size:.8rem;color:var(--muted);margin-top:-6px}
 .form .consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:.8rem;line-height:1.5;color:var(--muted);cursor:pointer}
 .form .consent input{flex:none;width:16px;height:16px;margin-top:2px;accent-color:var(--amber);cursor:pointer}
