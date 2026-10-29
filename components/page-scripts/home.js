@@ -220,17 +220,31 @@ function init() {
   setTimeout(() => mv($('#menu > li > a.active')), 400);
   document.fonts.ready.then(() => mv($('#menu > li > a.active'))); // re-measure once the web font has replaced the fallback
   addEventListener('resize', () => mv($('#menu > li > a.active')));
+  // home section -> menu link it belongs to (most menu items point to other pages, not #anchors)
+  const spy = new Map([
+    [$('#home'), '#home'],
+    [$('#services'), '#services'],
+    [$('#experience'), '/about-us'],
+    [$('#projects'), '/projects'],
+    [$('#publications'), '/publications'],
+    [$('#sectors'), '#services'],
+    [$('#stats'), '/about-us'],
+    [$('#band'), '/projects'],
+    [$('#enquiry'), '/contact-us'],
+    [$('footer.footer'), '/contact-us'],
+  ]);
   const sio = new IntersectionObserver(
     (es) =>
       es.forEach((e) => {
         if (e.isIntersecting) {
-          links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+          const href = spy.get(e.target);
+          links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === href));
           mv($('#menu > li > a.active'));
         }
       }),
     { rootMargin: '-45% 0px -50% 0px' },
   );
-  ['home', 'services', 'projects', 'sectors', 'band', 'contact'].forEach((id) => sio.observe(document.getElementById(id)));
+  spy.forEach((_, el) => el && sio.observe(el));
   $('#burger').addEventListener('click', () => document.body.classList.toggle('menu-open'));
 
   /* ---------- search ---------- */

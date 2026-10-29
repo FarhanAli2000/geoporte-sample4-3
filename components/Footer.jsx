@@ -1,5 +1,6 @@
-import { EMAIL, LEGAL, OFFICES, PHONES, homeLink } from '@/lib/nav';
+import { EMAIL, LEGAL, OFFICES, PHONES, SITE, homeLink } from '@/lib/nav';
 import { Mail, Pin } from './icons';
+import OtherLocations from './OtherLocations';
 
 export default function Footer({ home = false }) {
   const h = (hash) => homeLink(home, hash);
@@ -45,6 +46,8 @@ export default function Footer({ home = false }) {
                 <li key={city}><span className="fpin"><Pin /></span><div><b>{city} <small>{country}</small></b><p>{addr}</p></div></li>
               ))}
             </ul>
+            {/* Country sites list only their own offices; the global site already shows them all */}
+            {SITE !== 'global' && <OtherLocations />}
           </div>
         </div>
         <div className="bigword" id="bigword" aria-hidden="true">

@@ -3,6 +3,7 @@ import { pageMeta } from '@/lib/seo';
 import PageScript from '@/components/page-scripts/home';
 import { Arrow, ChevronLeft, ChevronRight, Close } from '@/components/icons';
 import ServiceIcon from '@/components/home/ServiceIcon';
+import Publications from '@/components/home/Publications';
 import EnquiryForm from '@/components/EnquiryForm';
 import Contact from '@/components/Contact';
 import { FEATURED_PROJECTS, SECTORS, SERVICE_CARDS, pad } from '@/lib/home-data';
@@ -284,8 +285,8 @@ export default function Page() {
             <div className="exp-stats">
               <div className="exp-stat">
                 <b>
-                  <span className="count" data-to="100">
-                    100
+                  <span className="count" data-to="200">
+                    200
                   </span>
                   <em>+</em>
                 </b>
@@ -369,6 +370,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+      {/* PUBLICATIONS */}
+      <Publications />
       {/* SECTORS */}
       <section className="sectors" id="sectors">
         <div className="wrap sec-grid">
@@ -387,7 +390,7 @@ export default function Page() {
           <ul className="slist" id="slist">
             {SECTORS.map((s, i) => (
               <li key={s.title}>
-                <button className="srow" data-i={i}>
+                <a className="srow" data-i={i} href={`/projects?sector=${i}#index`}>
                   <span className="n">{pad(i + 1)}</span>
                   <span>
                     <b>{s.title}</b>
@@ -396,7 +399,7 @@ export default function Page() {
                   <span className="ring">
                     <Arrow />
                   </span>
-                </button>
+                </a>
               </li>
             ))}
           </ul>
@@ -493,7 +496,6 @@ export default function Page() {
           <div>
             <div className="sec-head">
               <div className="cap">Get in touch</div>
-              <h2 className="split">Let’s talk about your next project.</h2>
             </div>
             <p className="lead rv">Tell us what you’re planning and the right engineer will get back to you within one business day.</p>
           </div>

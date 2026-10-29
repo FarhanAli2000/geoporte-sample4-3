@@ -28,7 +28,7 @@ export default function Contact({ cta = false, map = false }) {
             </div>
           </div>
         </div>
-        {map && <div className="c-map rv" id="officeMap"></div>}
+        {map && <div className="c-map rv" id="officeMap" data-offices={JSON.stringify(OFFICES)}></div>}
         {cta && (
           <div className="c-cta rv"><p>Tell us about your next project.</p><a href={'mailto:' + EMAIL} className="pill pill-a magnetic">Email us <Arrow /></a></div>
         )}

@@ -4,11 +4,10 @@
   const el=document.getElementById('officeMap');
   if(!el)return;
 
-  const OFFICES=[
-    {city:'Melbourne',country:'Australia',addr:'Tower 5, Collins Square, 727 Collins Street, Melbourne, VIC, 3008, Australia'},
-    {city:'Sydney',country:'Australia',addr:'Three International Towers, 300 Barangaroo Ave, Barangaroo NSW, Australia 2000'},
-    {city:'Perth',country:'Australia',addr:'108 St Georges Terrace, Perth, WA, Australia 6000'}
-  ];
+  // Offices for this website (set in lib/nav.js), passed in by components/Contact.jsx.
+  const OFFICES=JSON.parse(el.dataset.offices||'[]').map(([city,country,addr])=>({city,country,addr}));
+  if(!OFFICES.length)return;
+  const countries=[...new Set(OFFICES.map(o=>o.country))].join(' · ');
 
   const css=`
 .c-map{position:relative;margin-top:2px;background:var(--card);border:1px solid var(--line);overflow:hidden}
@@ -26,7 +25,7 @@
   const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
   const n=OFFICES.length;
-  el.innerHTML=`<div class="map-head"><div class="map-tag"><b>${n}</b> ${n>1?'offices':'office'} · Australia</div><div class="map-chips" role="group" aria-label="Show office on map">${OFFICES.map((o,i)=>`<button type="button" data-k="${i}">${o.city}</button>`).join('')}</div></div><iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
+  el.innerHTML=`<div class="map-head"><div class="map-tag"><b>${n}</b> ${n>1?'offices':'office'} · ${countries}</div><div class="map-chips" role="group" aria-label="Show office on map">${OFFICES.map((o,i)=>`<button type="button" data-k="${i}">${o.city}</button>`).join('')}</div></div><iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
   const frame=el.querySelector('iframe');
   const chips=[...el.querySelectorAll('.map-chips button')];
   const cards=[...document.querySelectorAll('.office')].map(c=>{const b=c.querySelector('b');const k=b?OFFICES.findIndex(o=>b.textContent.trim().startsWith(o.city)):-1;return{c,k}}).filter(x=>x.k>-1);
@@ -45,5 +44,5 @@
     c.addEventListener('click',e=>{if(e.target.closest('a'))return;go()});
     c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
 
-  select(0); // Melbourne head office
+  select(0); // first listed office (Melbourne head office on the AU and global sites)
 })();

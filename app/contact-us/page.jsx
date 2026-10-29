@@ -49,7 +49,6 @@ export default function Page() {
           <div>
             <div className="sec-head">
               <div className="cap">Start a project</div>
-              <h2 className="split">Let’s talk about your next project.</h2>
             </div>
             <p className="lead rv">
               Civil, geotechnical and structural engineering and advisory for councils, developers, contractors and infrastructure owners.

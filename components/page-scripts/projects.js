@@ -18,10 +18,13 @@ function init() {
   const esc = (s) => s.replace(/&/g, '&amp;');
 
   /* ---------- data: geoporte.com.au/projects ---------- */
+  // Same order as SECTORS in lib/home-data.js, so home links (?sector=N) land on the matching filter.
   const SECTORS = [
-    ['Transport Projects', '/images/hero-video-poster.jpg'],
-    ['Built Environment Projects', '/images/cable-bridge-wide.jpg'],
-    ['Energy, Resources & Water Projects', '/images/dam-spillway.jpg'],
+    ['Transportation Projects', '/images/hero-video-poster.jpg'],
+    ['Building Projects', '/images/cable-bridge-wide.jpg'],
+    ['Water Projects', '/images/dam-spillway.jpg'],
+    ['Ports & Marine Projects', '/images/coastal-bridge.jpg'],
+    ['Energy Infrastructure Projects', '/images/telecom.jpg'],
   ];
   const REGION = {
     Australia: 'Australia',
@@ -42,25 +45,25 @@ function init() {
     ['City Rail Link (CRL)', 'Auckland', 'New Zealand', 0, '/images/hero-video-poster.jpg'],
     ['Etihad Rail', 'Abu Dhabi', 'UAE', 0, '/images/real/mountain-rock-cut.jpg'],
     ['Dubai Metro Extension', 'Dubai', 'UAE', 0, '/images/cable-bridge-wide.jpg'],
-    ['Dubai Water Canal', 'Dubai', 'UAE', 0, '/images/real/uae-dewatering-reclamation.jpg'],
+    ['Dubai Water Canal', 'Dubai', 'UAE', 2, '/images/real/uae-dewatering-reclamation.jpg'],
     ['Hyderabad Metro Project', 'Hyderabad', 'India', 0, '/images/hero-bridge.jpg'],
     ['Blackfriars Railway Bridge', 'London', 'United Kingdom', 0, '/images/cable-bridge.jpg'],
     ['Network Rail Osborne Station', 'Kent', 'United Kingdom', 0, '/images/sunset-bridge.jpg'],
     ['London Underground Maintenance Works', 'London', 'United Kingdom', 0, '/images/engineers.jpg'],
     ['Network Rail Silkstream Junction', 'England', 'United Kingdom', 0, '/images/hero-video-poster.jpg'],
     ['Greensborough and Frankston Car Parks', 'Melbourne, Victoria', 'Australia', 1, '/images/cable-bridge-wide.jpg'],
-    ['Osborne Naval Shipbuilding Precinct', 'Adelaide, South Australia', 'Australia', 1, '/images/coastal-bridge.jpg'],
+    ['Osborne Naval Shipbuilding Precinct', 'Adelaide, South Australia', 'Australia', 3, '/images/coastal-bridge.jpg'],
     ['Etihad Museum', 'Dubai', 'UAE', 1, '/images/service-2.jpg'],
-    ['Marsa Al Seef Khor', 'Dubai', 'UAE', 1, '/images/real/uae-reclamation-crane.jpg'],
-    ['Sohar Industrial Port Company (SIPC)', 'Dubai', 'UAE', 1, '/images/real/marine-port-aerial.jpg'],
+    ['Marsa Al Seef Khor', 'Dubai', 'UAE', 3, '/images/real/uae-reclamation-crane.jpg'],
+    ['Sohar Industrial Port Company (SIPC)', 'Dubai', 'UAE', 3, '/images/real/marine-port-aerial.jpg'],
     ['Dammam Industrial City 3', 'Dammam', 'Saudi Arabia', 1, '/images/real/uae-earthworks-loader.jpg'],
-    ['Sarb Artificial Islands', 'Abu Dhabi', 'UAE', 1, '/images/real/breakwater-construction.jpg'],
+    ['Sarb Artificial Islands', 'Abu Dhabi', 'UAE', 3, '/images/real/breakwater-construction.jpg'],
     ['Yas Island Development', 'Abu Dhabi', 'UAE', 1, '/images/real/uae-vibro-rig.jpg'],
-    ['AGL Torrens Island Battery Facility', 'Adelaide, South Australia', 'Australia', 2, '/images/telecom.jpg'],
+    ['AGL Torrens Island Battery Facility', 'Adelaide, South Australia', 'Australia', 4, '/images/telecom.jpg'],
     ['Strategic Tunnel Enhancement Programme (STEP)', 'Abu Dhabi', 'UAE', 2, '/images/geotech-site.jpg'],
-    ['Pakistan Gasport Liquefied Natural Gas Berth', 'Karachi', 'Pakistan', 2, '/images/coastal-bridge.jpg'],
-    ['Das Island Accommodation Project', 'Abu Dhabi', 'UAE', 2, '/images/service-7.jpg'],
-    ['Hamriyah Free Zone Fuel Pipe Protection Works', 'Sharjah', 'UAE', 2, '/images/dam-spillway.jpg'],
+    ['Pakistan Gasport Liquefied Natural Gas Berth', 'Karachi', 'Pakistan', 3, '/images/coastal-bridge.jpg'],
+    ['Das Island Accommodation Project', 'Abu Dhabi', 'UAE', 1, '/images/service-7.jpg'],
+    ['Hamriyah Free Zone Fuel Pipe Protection Works', 'Sharjah', 'UAE', 4, '/images/dam-spillway.jpg'],
   ];
   const regionOf = (p) => REGION[p[2]];
   const REGIONS = [...new Set(P.map(regionOf))];
@@ -224,6 +227,13 @@ function init() {
     render(true);
     go('#index');
   });
+  // Arriving from a home-page sector link (/projects?sector=N#index): apply that filter.
+  const qs = new URLSearchParams(location.search).get('sector');
+  if (qs !== null && SECTORS[+qs]) {
+    fs = +qs;
+    render(false);
+    setTimeout(() => go('#index'), 300);
+  }
 
   /* ---------- nav ---------- */
   const nav = $('#nav'),
