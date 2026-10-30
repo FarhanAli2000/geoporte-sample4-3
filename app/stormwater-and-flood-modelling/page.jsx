@@ -49,7 +49,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">Comprehensive stormwater and flood solutions.</h2>
+              <h2 className="split">Comprehensive stormwater and flood solutions</h2>
             </div>
             <p className="big rv">
               Geoporte provides comprehensive solutions in stormwater and flood modelling. With a dedicated team of experts and cutting-edge

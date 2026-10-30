@@ -31,7 +31,7 @@ export default function Page() {
               </span>
               <span className="line">
                 <span>
-                  <span className="a">trusted</span> team.
+                  <span className="a">trusted</span> team
                 </span>
               </span>
             </h1>
@@ -174,7 +174,7 @@ export default function Page() {
           <div>
             <div className="sec-head">
               <div className="cap">Our team</div>
-              <h2 className="split">The specialists behind every design.</h2>
+              <h2 className="split">The specialists behind every design</h2>
             </div>
             <p className="rv">One multidisciplinary team covering the ground, the structure and the water around it.</p>
           </div>

@@ -46,7 +46,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">Structural solutions for civil infrastructure.</h2>
+              <h2 className="split">Structural solutions for civil infrastructure</h2>
             </div>
             <p className="big rv">
               Our experts with local and international experience deliver solutions to the <em>latest standards and codes</em>. We are
@@ -73,7 +73,7 @@ export default function Page() {
             <div className="c-headcell">
               <div className="sec-head">
                 <div className="cap">Why Geoporte</div>
-                <h2 className="split">What our clients can count on.</h2>
+                <h2 className="split">What our clients can count on</h2>
               </div>
             </div>
           </div>

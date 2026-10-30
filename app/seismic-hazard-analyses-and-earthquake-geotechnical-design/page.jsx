@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Earthquake geotechnical engineering</div>
-              <h2 className="split">Liquefaction and seismic design.</h2>
+              <h2 className="split">Liquefaction and seismic design</h2>
             </div>
             <p className="rv">
               Our earthquake geotechnical engineers provide advices related to liquefaction of site as well as carried out earthquake design

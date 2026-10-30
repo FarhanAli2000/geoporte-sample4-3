@@ -50,7 +50,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">High-quality design, economically delivered.</h2>
+              <h2 className="split">High-quality design, economically delivered</h2>
             </div>
             <p className="big rv">
               Geoporte’s Civil design team have vast expertise and a comprehensive range of experience across{' '}

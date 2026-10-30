@@ -46,7 +46,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">Comprehensive solutions, tailored to every client.</h2>
+              <h2 className="split">Comprehensive solutions, tailored to every client</h2>
             </div>
             <p className="big rv">
               With a dedicated team of skilled professionals and cutting-edge technology, we offer comprehensive solutions tailored to meet
@@ -85,7 +85,7 @@ export default function Page() {
         <div className="wrap">
           <div className="sec-head">
             <div className="cap">Services Offered</div>
-            <h2 className="split">From first concept to construction documents.</h2>
+            <h2 className="split">From first concept to construction documents</h2>
           </div>
           <div className="o-grid">
             <ol className="o-list" id="oList" />

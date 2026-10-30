@@ -45,7 +45,7 @@ export default function Page() {
               </span>
               <span className="line">
                 <span>
-                  &amp; <span className="a">papers.</span>
+                  &amp; <span className="a">papers</span>
                 </span>
               </span>
             </h1>
@@ -64,17 +64,16 @@ export default function Page() {
           <div className="pubs-head">
             <div className="sec-head">
               <div className="cap">Publications</div>
-              <h2 className="split">Sharing what we learn on the ground.</h2>
+              <h2 className="split">Sharing what we learn on the ground</h2>
             </div>
             <p className="rv">Click any page to view it full size.</p>
           </div>
-          <article className="pub fit" id="pub1">
+          <article className="pub" id="pub1">
             <div className="pub-media">
               <button
                 className="doc"
                 data-view="images/pub-digital-transformation.jpg"
                 data-cap="Challenges to Digital Transformation in Geotechnical Engineering"
-                style={{ '--cover': 'url(/images/pub-digital-transformation.jpg)' }}
               >
                 <img
                   src="/images/pub-digital-transformation.jpg"

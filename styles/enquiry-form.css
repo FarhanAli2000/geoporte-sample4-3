@@ -12,6 +12,8 @@
 .form .phone-row{display:flex;align-items:stretch}
 /* Phone code picker (components/DialPicker.jsx): flag + code button with a searchable list */
 .form .dial{position:relative;flex:none}
+/* Fields get their own layer from the reveal animation, so lift the one with an open list above the fields after it */
+.form .field:has(.dial-pop){z-index:40}
 .form .dial-btn{display:flex;align-items:center;gap:8px;height:100%;min-width:104px;border:0;border-bottom:1px solid var(--line-2);background:transparent;padding:22px 26px 9px 2px;font:inherit;font-size:.95rem;color:var(--fg);cursor:pointer;outline:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px bottom 11px;background-size:14px}
 .form .dial .flag{width:20px;height:15px;flex:none;object-fit:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
@@ -33,3 +35,6 @@
 .form .consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:.8rem;line-height:1.5;color:var(--muted);cursor:pointer}
 .form .consent input{flex:none;width:16px;height:16px;margin-top:2px;accent-color:var(--amber);cursor:pointer}
 .form .consent a{color:var(--amber);text-decoration:underline;text-underline-offset:2px}
+/* Project location suggestions (components/LocationField.jsx) reuse the phone code list styles */
+.form .loc-pop{width:100%}
+.form .loc-pop .dial-list li[aria-selected="true"] .dial-name{color:var(--fg)}

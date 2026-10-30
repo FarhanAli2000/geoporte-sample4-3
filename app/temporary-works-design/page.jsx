@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Our approach</div>
-              <h2 className="split">Tailored to every project and site.</h2>
+              <h2 className="split">Tailored to every project and site</h2>
             </div>
             <p className="rv">
               It is also an area of high risk, with failure of temporary access platforms observed far too often. Improper temporary works

@@ -9,7 +9,7 @@ export default function Publications() {
           <div className="lft">
             <div className="sec-head">
               <div className="cap">Publications</div>
-              <h2 className="split">Sharing what we learn on the ground.</h2>
+              <h2 className="split">Sharing what we learn on the ground</h2>
             </div>
           </div>
           <a href="/publications" className="tlink rv">
@@ -19,7 +19,7 @@ export default function Publications() {
         <div className="hpub-grid">
           {PUBLICATIONS.map((p, i) => (
             <a key={p.id} href={'/publications#' + p.id} className="hpub rv">
-              <div className="img" style={{ '--cover': `url(${p.img})` }}>
+              <div className="img">
                 <img src={p.img} alt={p.title} loading="lazy" />
               </div>
               <div className="body">

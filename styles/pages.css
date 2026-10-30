@@ -177,7 +177,11 @@
 .lg-body a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
 /* ---------- team ---------- */
 .team{padding-block:110px 60px}
-.t-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:40px;align-items:end}
+/* Leadership label sits above; the heading and the message start on the same line */
+.t-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:14px 40px;align-items:start}
+.t-head .sec-head{display:contents}
+.t-head .cap,.t-head h2{grid-column:1}
+.t-head .md-msg{grid-column:2;grid-row:2}
 .t-head p{color:var(--muted);font-size:.92rem;max-width:30rem}
 .md-msg p+p{margin-top:14px}
 .t-head .md-sign{color:var(--fg);font-weight:500}
@@ -206,7 +210,7 @@
 .p-spec li{padding:9px 14px;border:1px solid var(--line-2);font-size:.8rem;line-height:1.4;color:rgba(242,240,236,.86);transition:border-color .3s,color .3s}
 .p-spec li:hover{border-color:var(--amber);color:var(--amber)}
 @media (max-width:1100px){.t-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:860px){.t-head{grid-template-columns:1fr;gap:20px}.t-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.prof{grid-template-columns:1fr;gap:30px;padding-block:50px}.p-ph{position:relative;top:0;max-width:340px}}
+@media (max-width:860px){.t-head{grid-template-columns:1fr;gap:20px}.t-head .md-msg{grid-column:1;grid-row:auto}.t-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.prof{grid-template-columns:1fr;gap:30px;padding-block:50px}.p-ph{position:relative;top:0;max-width:340px}}
 /* desktop: profile photo stretches to the full height of the text beside it */
 @media (min-width:861px){.prof{align-items:stretch}.p-ph{position:relative;top:0;aspect-ratio:auto;min-height:420px}.p-ph img{position:absolute;inset:0;object-position:50% 15%}}
 @media (max-width:420px){.tmeta{padding:14px 12px 16px}.tmeta b{font-size:1rem}}
@@ -422,10 +426,5 @@
 .foffices p{font-size:.76rem;color:var(--muted);margin-top:2px;line-height:1.5;max-width:none}
 @media (max-width:1100px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.fgrid .fcol:first-child,.fgrid .fcol:last-child{grid-column:1/-1}.foffices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.fgrid{grid-template-columns:1fr}.foffices{grid-template-columns:1fr}}
-/* Publication with a landscape slide: shown in the same portrait frame as the paper pages, slide uncropped and centred,
-   with a blurred copy of it filling the space above and below */
-.pub.fit .doc{aspect-ratio:724/1024;display:flex;align-items:center;justify-content:center;padding:18px;isolation:isolate;background:var(--bg)}
-.pub.fit .doc::before{content:"";position:absolute;inset:-24px;z-index:-1;background:var(--cover) center/cover no-repeat;filter:blur(20px) brightness(.55) saturate(1.1)}
-.pub.fit .doc img{position:relative;max-height:100%;object-fit:contain;filter:drop-shadow(0 12px 28px rgba(0,0,0,.5))}
 /* Start the text a little below the top of the page image */
 @media (min-width:861px){.pub .pub-copy{padding-top:96px}}

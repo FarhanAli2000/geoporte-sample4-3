@@ -75,7 +75,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Our approach</div>
-              <h2 className="split">Cost-effective, sustainable earthworks.</h2>
+              <h2 className="split">Cost-effective, sustainable earthworks</h2>
             </div>
             <p className="rv a-note">
               Earthworks design identifies and specifies the required works to address these problems and to provide cost-effective and

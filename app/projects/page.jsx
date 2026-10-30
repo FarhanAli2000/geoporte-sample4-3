@@ -33,11 +33,11 @@ export default function Page() {
           <div>
             <h1 id="pTitle">
               <span className="line">
-                <span>Projects by</span>
+                <span>Projects By</span>
               </span>
               <span className="line">
                 <span>
-                  our <span className="a">specialists.</span>
+                  Our <span className="a">Specialists</span>
                 </span>
               </span>
             </h1>
@@ -133,11 +133,11 @@ export default function Page() {
           <div>
             <h2 id="bandTitle">
               <span className="line">
-                <span>Local knowledge.</span>
+                <span>Local knowledge</span>
               </span>
               <span className="line">
                 <span>
-                  <span className="a">Global</span> experience.
+                  <span className="a">Global</span> experience
                 </span>
               </span>
             </h2>

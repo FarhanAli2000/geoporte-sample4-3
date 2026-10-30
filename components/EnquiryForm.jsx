@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { Arrow } from './icons';
 import DialPicker from './DialPicker';
+import LocationField from './LocationField';
 import { EMAIL } from '@/lib/nav';
 import { COUNTRIES, REGIONS, countryByCode, siteCountry } from '@/lib/countries';
 import '@/styles/enquiry-form.css';
@@ -21,8 +22,8 @@ export default function EnquiryForm() {
   const [sectors, setSectors] = useState([]);
   const [country, setCountry] = useState('AU');
   const [dial, setDial] = useState('AU');
-  const [dialTouched, setDialTouched] = useState(false);
   const [region, setRegion] = useState('');
+  const [location, setLocation] = useState('');
   const [status, setStatus] = useState({ type: '', text: '' });
   const [sending, setSending] = useState(false);
 
@@ -35,10 +36,12 @@ export default function EnquiryForm() {
 
   const regions = REGIONS[country];
   const toggleSector = (s) => setSectors((cur) => (cur.includes(s) ? cur.filter((x) => x !== s) : [...cur, s]));
+  // Choosing a country always sets the matching phone code and flag; the code can still be changed by hand afterwards.
   function changeCountry(c) {
     setCountry(c);
     setRegion('');
-    if (!dialTouched) setDial(c);
+    setLocation('');
+    setDial(c);
   }
 
   async function onSubmit(e) {
@@ -82,7 +85,7 @@ export default function EnquiryForm() {
           organisation: field('organisation'),
           country: countryByCode(country).name,
           region,
-          location: field('location'),
+          location: location.trim(),
           enquiryType: field('enquiryType'),
           sectors,
           message,
@@ -98,6 +101,7 @@ export default function EnquiryForm() {
       growTextarea(form.elements.message);
       setSectors([]);
       setRegion('');
+      setLocation('');
     } catch {
       setStatus({ type: 'err', text: `Sorry, your enquiry could not be sent. Please email ${EMAIL} directly.` });
     } finally {
@@ -114,7 +118,7 @@ export default function EnquiryForm() {
       <div className="field"><input id="f-email" name="email" type="email" placeholder=" " autoComplete="email" required /><label htmlFor="f-email">Email</label><span className="ul"></span></div>
       <div className="field sel phone">
         <div className="phone-row">
-          <DialPicker value={dial} onChange={(c) => { setDial(c); setDialTouched(true); }} />
+          <DialPicker value={dial} onChange={setDial} />
           <input id="f-phone" name="phone" type="tel" placeholder="Phone number" autoComplete="tel-national" required />
         </div>
         <label htmlFor="f-phone">Phone</label><span className="ul"></span>
@@ -137,7 +141,7 @@ export default function EnquiryForm() {
       ) : (
         <div className="field"><input id="f-region" value={region} onChange={(e) => setRegion(e.target.value)} placeholder=" " autoComplete="address-level1" /><label htmlFor="f-region">State / Province / Region</label><span className="ul"></span></div>
       )}
-      <div className="field"><input id="f-location" name="location" placeholder=" " autoComplete="address-level2" /><label htmlFor="f-location">Project location (suburb or city)</label><span className="ul"></span></div>
+      <LocationField value={location} onChange={setLocation} country={country} region={region} onRegion={setRegion} />
       <div className="field sel">
         <select id="f-type" name="enquiryType" defaultValue="">
           <option value="">Select…</option>

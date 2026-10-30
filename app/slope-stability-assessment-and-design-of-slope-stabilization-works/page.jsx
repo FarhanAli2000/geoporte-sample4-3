@@ -77,7 +77,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Planning &amp; approvals</div>
-              <h2 className="split">Building on sloping ground.</h2>
+              <h2 className="split">Building on sloping ground</h2>
             </div>
             <p className="rv">
               If you are building or planning a new residence, or renovation to an existing property on sloping ground, local planning

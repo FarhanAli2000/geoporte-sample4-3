@@ -46,7 +46,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">Expert guidance from conception to completion.</h2>
+              <h2 className="split">Expert guidance from conception to completion</h2>
             </div>
             <p className="big rv">
               With a team of experienced civil engineers and consultants, we provide expert guidance and support throughout all stages of

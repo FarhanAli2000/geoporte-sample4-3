@@ -74,7 +74,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Subgrade assessment</div>
-              <h2 className="split">Strength and stiffness parameters for pavement design.</h2>
+              <h2 className="split">Strength and stiffness parameters for pavement design</h2>
             </div>
             <p className="rv">
               At Geoporte, our specialists provide services related to scoping of ground investigations to assess pavement subgrade

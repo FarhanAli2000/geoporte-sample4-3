@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Our approach</div>
-              <h2 className="split">Optimizing design and constructability.</h2>
+              <h2 className="split">Optimizing design and constructability</h2>
             </div>
             <p className="rv a-note">
               Again, practical experience and commercial understanding are used in conjunction with the{' '}
@@ -90,7 +90,7 @@ export default function Page() {
             </p>
             <div className="sec-head a-sub">
               <div className="cap">Techniques</div>
-              <h2 className="split">Ground improvement techniques we design.</h2>
+              <h2 className="split">Ground improvement techniques we design</h2>
             </div>
             <p className="rv">
               A number of ground improvement techniques are available depending on the type of development and the nature of the weak ground

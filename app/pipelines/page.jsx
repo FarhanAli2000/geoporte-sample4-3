@@ -70,7 +70,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Load impact assessment</div>
-              <h2 className="split">Protecting existing water and fuel pipelines.</h2>
+              <h2 className="split">Protecting existing water and fuel pipelines</h2>
             </div>
             <p className="rv a-note">
               We utilise <em>state of the art numerical techniques</em> to assess load impact on existing water and fuel pipelines due to

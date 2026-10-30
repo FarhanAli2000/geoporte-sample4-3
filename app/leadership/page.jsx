@@ -39,7 +39,7 @@ export default function Page() {
           <div className="t-head">
             <div className="sec-head">
               <div className="cap">Leadership</div>
-              <h2 className="split">Message from the Managing Director</h2>
+              <h2 className="split">Message From The Managing Director</h2>
             </div>
             <div className="md-msg rv">
               <p>

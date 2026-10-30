@@ -629,6 +629,8 @@ function init() {
       duration: 0.6,
       stagger: 0.05,
       ease: 'power3.out',
+      // Clear the transform afterwards so the fields don't paint over the open phone code / location lists
+      clearProps: 'transform,opacity',
       scrollTrigger: { trigger: '#form', start: 'top 80%' },
     });
     gsap.from('#bigword span', {

@@ -46,7 +46,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">In-building and outdoor mobile networks.</h2>
+              <h2 className="split">In-building and outdoor mobile networks</h2>
             </div>
             <p className="big rv">
               We specialize in surveys, design, build and testing of mobile communications systems across <em>In-building</em> (DAS/ Small
