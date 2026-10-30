@@ -89,7 +89,7 @@ export default function Page() {
           <div className="sect-head">
             <div className="sec-head">
               <div className="cap">Projects by sector</div>
-              <h2 className="split">Five sectors. One standard of care.</h2>
+              <h2 className="split">Five Sectors<br />One Standard Of Care</h2>
             </div>
             <p className="rv">Select a sector to filter the project index below.</p>
           </div>

@@ -1,5 +1,7 @@
 /* Enquiry form extras (dropdowns, phone code, note, consent) shared by the home and contact pages.
    Base field/chip rules live in home.css and contact.css. */
+/* "Get in touch" links to #form; keep it clear of the fixed header */
+#form{scroll-margin-top:100px}
 .form .field select{width:100%;border:0;border-bottom:1px solid var(--line-2);background:transparent;padding:22px 26px 9px 2px;font:inherit;font-size:.95rem;color:var(--fg);outline:none;border-radius:0;appearance:none;-webkit-appearance:none;cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px bottom 11px;background-size:14px}
 .form .field select option{background:var(--card);color:var(--fg)}
@@ -8,7 +10,21 @@
 .form .field.sel:focus-within label{color:var(--amber)}
 .form .field.sel:focus-within .ul{transform:scaleX(1)}
 .form .phone-row{display:flex;align-items:stretch}
-.form .phone-row select{width:96px;flex:none}
+/* Phone code picker (components/DialPicker.jsx): flag + code button with a searchable list */
+.form .dial{position:relative;flex:none}
+.form .dial-btn{display:flex;align-items:center;gap:8px;height:100%;min-width:104px;border:0;border-bottom:1px solid var(--line-2);background:transparent;padding:22px 26px 9px 2px;font:inherit;font-size:.95rem;color:var(--fg);cursor:pointer;outline:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px bottom 11px;background-size:14px}
+.form .dial .flag{width:20px;height:15px;flex:none;object-fit:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.form .dial-pop{position:absolute;top:calc(100% + 6px);left:0;z-index:30;width:300px;max-width:calc(100vw - 32px);background:var(--card);border:1px solid var(--line-2);border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.45);overflow:hidden}
+.form .dial-pop .dial-search{width:100%;border:0;border-bottom:1px solid var(--line-2);background:transparent;padding:12px 14px;font:inherit;font-size:.88rem;color:var(--fg);outline:none}
+.form .dial-pop .dial-search::placeholder{color:var(--muted);opacity:1}
+.form .dial-list{list-style:none;margin:0;padding:6px 0;max-height:260px;overflow-y:auto;overscroll-behavior:contain}
+.form .dial-list li{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:.88rem;cursor:pointer}
+.form .dial-list li.on{background:rgba(255,255,255,.06)}
+.form .dial-list li[aria-selected="true"] .dial-name{color:var(--amber)}
+.form .dial-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.form .dial-code{color:var(--muted);font-variant-numeric:tabular-nums}
+.form .dial-list .dial-none{color:var(--muted);cursor:default}
 /* number box sits beside the code; a divider and visible placeholder make it obvious it is a separate field */
 .form .phone-row input{flex:1;min-width:0;padding-left:14px;border-left:1px solid var(--line-2)}
 .form .phone-row input::placeholder{color:var(--muted);opacity:1}

@@ -269,12 +269,13 @@
 /* ---------- stats ---------- */
 .stats{padding-block:70px}
 .stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.stat{padding:6px 28px;border-left:1px solid var(--line);min-width:0;position:relative}
+.stat{padding:6px 28px;border-left:1px solid var(--line);min-width:0;position:relative;display:flex;flex-direction:column}
 .stat:first-child{border-left:0;padding-left:0}
 .stat b{display:block;font:200 clamp(2.8rem,5vw,4.2rem)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
 .stat b em{font-style:normal;color:var(--amber)}
-.stat p{font-size:.8rem;color:var(--muted);margin-top:10px}
-.stat .t2{height:1px;background:var(--line-2);margin-top:18px;position:relative}
+/* Captions wrap to different line counts; this pins every underline to the same baseline */
+.stat p{font-size:.8rem;color:var(--muted);margin-top:10px;margin-bottom:18px;flex:1}
+.stat .t2{height:1px;background:var(--line-2);position:relative}
 .stat .t2 i{position:absolute;left:0;top:-1px;height:3px;width:100%;background:var(--amber);transform:scaleX(0);transform-origin:left;box-shadow:0 0 10px var(--amber)}
 /* ---------- band ---------- */
 .band{position:relative;min-height:460px;display:flex;align-items:center;overflow:hidden;isolation:isolate}
@@ -305,7 +306,8 @@
 .field{position:relative;min-width:0}
 .field.full{grid-column:1/-1}
 .field input,.field textarea{width:100%;border:0;border-bottom:1px solid var(--line-2);background:transparent;padding:22px 2px 9px;font:inherit;font-size:.95rem;color:var(--fg);outline:none;border-radius:0;resize:vertical}
-.field textarea{min-height:100px}
+/* Starts one line tall like the inputs so text sits on the underline; EnquiryForm grows it as you type */
+.field textarea{display:block;min-height:0;resize:none;overflow:hidden;line-height:1.5}
 .field label{position:absolute;left:2px;top:18px;font-size:.88rem;color:var(--muted);pointer-events:none;transition:translate .3s var(--ease),font-size .3s,color .3s}
 .field .ul{position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);box-shadow:0 0 10px var(--amber)}
 .field input:focus~.ul,.field textarea:focus~.ul{transform:scaleX(1)}
@@ -437,8 +439,10 @@
 .hpub-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:44px}
 .hpub{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden;transition:border-color .4s}
 .hpub:hover{border-color:var(--amber)}
-.hpub .img{background:#fff;overflow:hidden;min-height:220px}
-.hpub .img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:scale 1.2s var(--ease)}
+/* Covers mix portrait posters and landscape slides: show the whole page, with a blurred copy filling the spare space */
+.hpub .img{position:relative;isolation:isolate;background:var(--bg);overflow:hidden;min-height:220px;display:flex;align-items:center;justify-content:center;padding:18px}
+.hpub .img::before{content:"";position:absolute;inset:-20px;z-index:-1;background:var(--cover) center/cover no-repeat;filter:blur(18px) brightness(.55) saturate(1.1)}
+.hpub .img img{position:relative;width:100%;height:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.45));transition:scale 1.2s var(--ease)}
 .hpub:hover .img img{scale:1.06}
 .hpub .body{padding:26px 26px 70px;min-width:0}
 .hpub .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.54rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}

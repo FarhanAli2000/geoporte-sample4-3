@@ -9,7 +9,7 @@ export const metadata = pageMeta({
   description:
     'Conference presentations and technical papers by Geoporte specialists on digital transformation in geotechnics and tunnelling projects in Melbourne.',
   path: '/publications',
-  image: 'https://geoporte.com.au/images/real/soil-nail-wall.jpg',
+  image: 'https://geoporte.com.au/images/real/publications-presentation.jpg',
 });
 
 export default function Page() {
@@ -30,7 +30,12 @@ export default function Page() {
       {/* PAGE HERO */}
       <section className="phero" id="top">
         <div className="phero-media" id="pheroMedia">
-          <img src="/images/real/soil-nail-wall.jpg" alt="Geoporte engineer at a soil-nailed excavation wall" />
+          {/* Kept high so the speaker's head stays in frame on wide screens */}
+          <img
+            src="/images/real/publications-presentation.jpg"
+            alt="Geoporte engineer presenting at the State Library Victoria"
+            style={{ objectPosition: '55% 22%' }}
+          />
         </div>
         <div className="wrap phero-in">
           <div>
@@ -69,6 +74,7 @@ export default function Page() {
                 className="doc"
                 data-view="images/pub-digital-transformation.jpg"
                 data-cap="Challenges to Digital Transformation in Geotechnical Engineering"
+                style={{ '--cover': 'url(/images/pub-digital-transformation.jpg)' }}
               >
                 <img
                   src="/images/pub-digital-transformation.jpg"

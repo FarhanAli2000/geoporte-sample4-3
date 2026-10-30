@@ -422,14 +422,10 @@
 .foffices p{font-size:.76rem;color:var(--muted);margin-top:2px;line-height:1.5;max-width:none}
 @media (max-width:1100px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.fgrid .fcol:first-child,.fgrid .fcol:last-child{grid-column:1/-1}.foffices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.fgrid{grid-template-columns:1fr}.foffices{grid-template-columns:1fr}}
-/* Publication with a landscape slide: on wide screens the cover runs the full height of the text beside it.
-   The image column is widened so little or no trimming is needed; ::before keeps the slide's own aspect as a minimum.
-   Below 1200px the text wraps too much to match without heavy cropping, so the slide keeps its natural size. */
-@media (min-width:1200px){
-  .pub.fit{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:stretch}
-  .pub.fit .pub-media{display:flex}
-  .pub.fit .doc::before{content:"";display:block;padding-top:70.7%}
-  .pub.fit .doc img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:60% 50%}
-}
-/* Portrait paper (second publication): start the text a little below the top of the page image */
-@media (min-width:861px){.pub.rev .pub-copy{padding-top:96px}}
+/* Publication with a landscape slide: shown in the same portrait frame as the paper pages, slide uncropped and centred,
+   with a blurred copy of it filling the space above and below */
+.pub.fit .doc{aspect-ratio:724/1024;display:flex;align-items:center;justify-content:center;padding:18px;isolation:isolate;background:var(--bg)}
+.pub.fit .doc::before{content:"";position:absolute;inset:-24px;z-index:-1;background:var(--cover) center/cover no-repeat;filter:blur(20px) brightness(.55) saturate(1.1)}
+.pub.fit .doc img{position:relative;max-height:100%;object-fit:contain;filter:drop-shadow(0 12px 28px rgba(0,0,0,.5))}
+/* Start the text a little below the top of the page image */
+@media (min-width:861px){.pub .pub-copy{padding-top:96px}}

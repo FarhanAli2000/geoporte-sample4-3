@@ -48,7 +48,8 @@ export default function Header({ home = false, section, current }) {
                 <span className="vsep"></span>
               </>
             )}
-            <a href={home ? '#enquiry' : '/contact-us'} className="pill pill-a magnetic">Get in touch <Arrow /></a>
+            {/* Lands straight on the enquiry form: in-page on home and contact, otherwise on the contact page's form */}
+            <a href={home || section === 'contact' ? '#form' : '/contact-us#form'} className="pill pill-a magnetic">Get in touch <Arrow /></a>
             <button className="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
           </div>
         </div>

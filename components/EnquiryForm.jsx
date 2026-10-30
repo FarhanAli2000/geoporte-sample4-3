@@ -3,12 +3,19 @@
 import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { Arrow } from './icons';
+import DialPicker from './DialPicker';
 import { EMAIL } from '@/lib/nav';
 import { COUNTRIES, REGIONS, countryByCode, siteCountry } from '@/lib/countries';
 import '@/styles/enquiry-form.css';
 
 const SECTOR_CHIPS = ['Transport', 'Buildings', 'Water', 'Ports & Marine', 'Energy', 'Mining', 'Other'];
 const ENQUIRY_TYPES = ['New project', 'Request a fee proposal', 'General enquiry', 'Careers'];
+// Project details box grows with its text so typing always sits just above the underline.
+const growTextarea = (el) => {
+  const t = el.currentTarget || el;
+  t.style.height = 'auto';
+  t.style.height = t.scrollHeight + t.offsetHeight - t.clientHeight + 'px';
+};
 // Submissions go to /api/enquiry, which emails them to the admin inbox (see app/api/enquiry/route.js).
 export default function EnquiryForm() {
   const [sectors, setSectors] = useState([]);
@@ -88,6 +95,7 @@ export default function EnquiryForm() {
       if (!res.ok || !data.ok) throw new Error('not sent');
       setStatus({ type: 'ok', text: `Thank you, ${name.split(' ')[0]}. The right engineer will reply within one business day.` });
       form.reset();
+      growTextarea(form.elements.message);
       setSectors([]);
       setRegion('');
     } catch {
@@ -106,9 +114,7 @@ export default function EnquiryForm() {
       <div className="field"><input id="f-email" name="email" type="email" placeholder=" " autoComplete="email" required /><label htmlFor="f-email">Email</label><span className="ul"></span></div>
       <div className="field sel phone">
         <div className="phone-row">
-          <select aria-label="Phone country code" value={dial} onChange={(e) => { setDial(e.target.value); setDialTouched(true); }}>
-            {COUNTRIES.map((c) => <option key={c.code} value={c.code}>{c.code} {c.dial}</option>)}
-          </select>
+          <DialPicker value={dial} onChange={(c) => { setDial(c); setDialTouched(true); }} />
           <input id="f-phone" name="phone" type="tel" placeholder="Phone number" autoComplete="tel-national" required />
         </div>
         <label htmlFor="f-phone">Phone</label><span className="ul"></span>
@@ -144,7 +150,7 @@ export default function EnquiryForm() {
           <button key={s} type="button" className={sectors.includes(s) ? 'chip on' : 'chip'} aria-pressed={sectors.includes(s)} onClick={() => toggleSector(s)}>{s}</button>
         ))}
       </div>
-      <div className="field full"><textarea id="f-msg" name="message" placeholder=" " required></textarea><label htmlFor="f-msg">Project details</label><span className="ul"></span></div>
+      <div className="field full"><textarea id="f-msg" name="message" placeholder=" " rows={1} onInput={growTextarea} required></textarea><label htmlFor="f-msg">Project details</label><span className="ul"></span></div>
       <p className="fnote">Have site plans or reports? We’ll send you a secure link to upload them once we’ve been in touch.</p>
       <label className="consent">
         <input type="checkbox" name="consent" required />
