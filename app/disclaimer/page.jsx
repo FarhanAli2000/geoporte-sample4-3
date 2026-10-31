@@ -46,13 +46,13 @@ export default function Page() {
           <div className="a-body lg-body">
             <p className="lg-upd">Last updated: 23 October 2026</p>
             <p className="lg-lead">The information on this website is provided by Geoporte as general information only.</p>
-            <h2 className="lg-h">General information only</h2>
+            <h2 className="lg-h">General Information Only</h2>
             <p>
               Content on this website, including service descriptions, project summaries, publications and images, is general in nature. It
               is not engineering, geotechnical or other professional advice, and it should not be relied on for any design, construction or
               investment decision.
             </p>
-            <h2 className="lg-h">Seek specific advice</h2>
+            <h2 className="lg-h">Seek Specific Advice</h2>
             <p>
               Every site and project is different. Before acting on any information, you should obtain advice specific to your circumstances
               from a suitably qualified professional. Geoporte provides advice only under a written engagement.
@@ -68,7 +68,7 @@ export default function Page() {
               To the extent permitted by law, Geoporte excludes all liability for any loss or damage arising from the use of, or reliance
               on, information on this website.
             </p>
-            <h2 className="lg-h">Project references</h2>
+            <h2 className="lg-h">Project References</h2>
             <p>
               Some projects listed on this website were delivered by Geoporte’s specialist staff, including through previous roles and in
               collaboration with other organisations. Names of clients, projects and third parties are used for identification only and do
@@ -79,7 +79,7 @@ export default function Page() {
               If you have questions about this disclaimer, please contact us at{' '}
               <a href="mailto:enquiries@geoporte.com.au">enquiries@geoporte.com.au</a>.
             </p>
-            <h2 className="lg-h">Contact us</h2>
+            <h2 className="lg-h">Contact Us</h2>
             <p>
               Geoporte
               <br />

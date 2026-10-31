@@ -40,7 +40,7 @@ export default function Footer({ home = false }) {
             </ul>
           </div>
           <div className="fcol rv">
-            <h4>Office locations</h4>
+            <h4>Office Locations</h4>
             <ul className="foffices">
               {OFFICES.map(([city, country, addr]) => (
                 <li key={city}><span className="fpin"><Pin /></span><div><b>{city} <small>{country}</small></b><p>{addr}</p></div></li>

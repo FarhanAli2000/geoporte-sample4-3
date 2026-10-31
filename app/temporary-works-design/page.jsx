@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Our approach</div>
-              <h2 className="split">Tailored to every project and site</h2>
+              <h2 className="split">Tailored To Every Project And Site</h2>
             </div>
             <p className="rv">
               It is also an area of high risk, with failure of temporary access platforms observed far too often. Improper temporary works
@@ -92,7 +92,7 @@ export default function Page() {
             </p>
             <div className="sec-head a-sub">
               <div className="cap">Capabilities</div>
-              <h2 className="split">Our capabilities relating to temporary works includes:</h2>
+              <h2 className="split">Our Capabilities Relating To Temporary Works Includes:</h2>
             </div>
             <ul className="a-list rv">
               <li>

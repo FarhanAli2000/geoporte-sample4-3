@@ -33,7 +33,7 @@ function init() {
       'Our team utilizes state-of-the-art modelling techniques and software to simulate stormwater runoff, flood inundation, and drainage systems. We employ a range of models, including hydrological, hydraulic, and GIS-based models, to accurately predict water flow and identify potential flood risks.',
     ],
     [
-      'Risk Assessment and Mitigation',
+      'Risk Assessment And Mitigation',
       'risk',
       'We conduct comprehensive risk assessments to evaluate the potential impact of flooding on infrastructure, communities, and the environment. By identifying vulnerabilities & implementing appropriate mitigation measures, we help clients minimize risk & enhance resilience to extreme weather events.',
     ],
@@ -48,7 +48,7 @@ function init() {
       'Our team has extensive experience navigating regulatory frameworks governing stormwater & flood management. We assist clients in achieving compliance with local, state, & federal regulations, ensuring that projects meet all necessary permits & approvals.',
     ],
     [
-      'Data Analysis and Visualization',
+      'Data Analysis And Visualization',
       'data',
       'We employ advanced data analysis techniques to interpret complex datasets and derive actionable insights. Through the use of sophisticated visualization tools, we communicate results effectively to stakeholders, enabling informed decision-making.',
     ],

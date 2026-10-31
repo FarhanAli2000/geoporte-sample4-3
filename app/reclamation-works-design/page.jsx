@@ -47,7 +47,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Geotechnical Engineering</div>
-              <h2 className="split">Reclamation works design</h2>
+              <h2 className="split">Reclamation Works Design</h2>
             </div>
             <p className="big rv">
               Geoporte provides specialist services for design of <em>land and marine reclamation works</em> including scoping of
@@ -74,7 +74,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Scope of services</div>
-              <h2 className="split">Land and marine reclamation</h2>
+              <h2 className="split">Land And Marine Reclamation</h2>
             </div>
             <ul className="a-list rv">
               <li>

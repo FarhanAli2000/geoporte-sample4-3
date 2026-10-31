@@ -47,7 +47,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Geotechnical Engineering</div>
-              <h2 className="split">Seismic hazard analyses</h2>
+              <h2 className="split">Seismic Hazard Analyses</h2>
             </div>
             <p className="big rv">
               Geoporte provides seismic hazard analysis for{' '}
@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Earthquake geotechnical engineering</div>
-              <h2 className="split">Liquefaction and seismic design</h2>
+              <h2 className="split">Liquefaction And Seismic Design</h2>
             </div>
             <p className="rv">
               Our earthquake geotechnical engineers provide advices related to liquefaction of site as well as carried out earthquake design

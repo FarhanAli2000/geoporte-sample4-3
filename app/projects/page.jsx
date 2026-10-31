@@ -133,11 +133,11 @@ export default function Page() {
           <div>
             <h2 id="bandTitle">
               <span className="line">
-                <span>Local knowledge</span>
+                <span>Local Knowledge</span>
               </span>
               <span className="line">
                 <span>
-                  <span className="a">Global</span> experience
+                  <span className="a">Global</span> Experience
                 </span>
               </span>
             </h2>

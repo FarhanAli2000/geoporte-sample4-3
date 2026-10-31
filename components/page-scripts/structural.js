@@ -29,7 +29,7 @@ function init() {
   };
   const COMP = [
     [
-      'Innovative &amp; Cost-effective',
+      'Innovative &amp; Cost-Effective',
       'tech',
       'Geoporte provides innovative structural engineering designs solutions for the Civil infrastructure sector. Leveraging our team’s extensive experience, we offer customized, innovative and cost-effective solutions.',
     ],

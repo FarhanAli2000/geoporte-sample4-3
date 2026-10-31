@@ -28,7 +28,7 @@ export default function Page() {
                 <span>Terms</span>
               </span>
               <span className="line">
-                <span className="a">of Use</span>
+                <span className="a">Of Use</span>
               </span>
             </h1>
           </div>
@@ -48,32 +48,32 @@ export default function Page() {
             <p className="lg-lead">
               By accessing or using this website you agree to these terms. If you do not agree, please do not use the website.
             </p>
-            <h2 className="lg-h">Use of this website</h2>
+            <h2 className="lg-h">Use Of This Website</h2>
             <p>
               You may view and download content from this website for your own information and non-commercial use. You must not use the
               website in a way that breaches any law, interferes with its operation, or attempts to gain unauthorised access to it.
             </p>
-            <h2 className="lg-h">Intellectual property</h2>
+            <h2 className="lg-h">Intellectual Property</h2>
             <p>
               Unless stated otherwise, all content on this website, including text, photographs, graphics, logos and the Geoporte name, is
               owned by or licensed to Geoporte and is protected by copyright and trade mark laws. You must not reproduce, publish or modify
               any content without our prior written permission.
             </p>
-            <h2 className="lg-h">No professional advice</h2>
+            <h2 className="lg-h">No Professional Advice</h2>
             <p>
               Information on this website is general in nature and is not engineering or professional advice. It does not create a client
               relationship. Please see our <a href="/disclaimer">Disclaimer</a> for more detail.
             </p>
-            <h2 className="lg-h">Enquiries and communications</h2>
+            <h2 className="lg-h">Enquiries And Communications</h2>
             <p>
               Sending us an enquiry does not create a contract. Any engagement for services is governed by a separate written agreement
               between you and Geoporte.
             </p>
-            <h2 className="lg-h">Third-party links</h2>
+            <h2 className="lg-h">Third-Party Links</h2>
             <p>
               This website may link to third-party websites. We are not responsible for their content, availability or privacy practices.
             </p>
-            <h2 className="lg-h">Limitation of liability</h2>
+            <h2 className="lg-h">Limitation Of Liability</h2>
             <p>
               To the extent permitted by law, Geoporte is not liable for any loss or damage arising from your use of, or reliance on, this
               website. Nothing in these terms excludes any rights you have under the Australian Consumer Law that cannot be excluded.
@@ -82,7 +82,7 @@ export default function Page() {
             <p>
               Our handling of personal information is described in our <a href="/privacy-policy">Privacy Policy</a>.
             </p>
-            <h2 className="lg-h">Governing law</h2>
+            <h2 className="lg-h">Governing Law</h2>
             <p>
               These terms are governed by the laws of Victoria, Australia, and you submit to the non-exclusive jurisdiction of the courts of
               Victoria.
@@ -92,7 +92,7 @@ export default function Page() {
               We may update these terms at any time by publishing a new version on this page. Your continued use of the website means you
               accept the updated terms.
             </p>
-            <h2 className="lg-h">Contact us</h2>
+            <h2 className="lg-h">Contact Us</h2>
             <p>
               Geoporte
               <br />

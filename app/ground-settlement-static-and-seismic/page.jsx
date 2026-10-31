@@ -47,7 +47,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Geotechnical Engineering</div>
-              <h2 className="split">Ground Settlement (Static and Seismic)</h2>
+              <h2 className="split">Ground Settlement (Static And Seismic)</h2>
             </div>
             <p className="big rv">
               In geotechnical engineering, settlement is defined as the <em>vertical movement of the ground</em>, generally caused by
@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Settlement &amp; subsidence</div>
-              <h2 className="split">Why the ground moves</h2>
+              <h2 className="split">Why The Ground Moves</h2>
             </div>
             <p className="rv">
               Subsidence is a term often used to describe ‘caving in’ or sinking of the ground, that may not be associated with changes in
@@ -88,7 +88,7 @@ export default function Page() {
             </p>
             <div className="sec-head a-sub">
               <div className="cap">Our approach</div>
-              <h2 className="split">Ground models, risk and solutions</h2>
+              <h2 className="split">Ground Models, Risk And Solutions</h2>
             </div>
             <p className="rv">
               Development of an appropriate ground model requires investigation that extends to an adequate depth, identifies any voids,

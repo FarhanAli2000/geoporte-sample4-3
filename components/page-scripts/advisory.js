@@ -31,12 +31,12 @@ function init() {
   };
   const COMP = [
     [
-      'Project Planning and Feasibility Studies',
+      'Project Planning And Feasibility Studies',
       'plan',
       'Our team conducts thorough feasibility studies and project assessments to help clients make informed decisions about the viability of their civil engineering projects.',
     ],
     [
-      'Design and Engineering',
+      'Design And Engineering',
       'cad',
       'Our experienced engineers provide innovative and sustainable design solutions for a wide range of civil infrastructure projects, including roads, bridges, buildings, water supply systems, and wastewater treatment facilities.',
     ],
@@ -61,7 +61,7 @@ function init() {
       'We offer comprehensive construction management services, including project scheduling, budgeting, quality control, and safety compliance, to ensure successful project delivery.',
     ],
     [
-      'Geotechnical and Foundation Engineering',
+      'Geotechnical And Foundation Engineering',
       'geo',
       'Our geotechnical engineers provide specialized expertise in soil mechanics, foundation design, & subsurface investigations to address challenges related to soil stability & foundation performance.',
     ],

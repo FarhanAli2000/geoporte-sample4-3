@@ -29,7 +29,7 @@ export default function Page() {
                 <span>Proof Engineering</span>
               </span>
               <span className="line">
-                <span className="a">of geotechnical design</span>
+                <span className="a">Of Geotechnical Design</span>
               </span>
             </h1>
           </div>
@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Our approach</div>
-              <h2 className="split">Independent review that adds value</h2>
+              <h2 className="split">Independent Review That Adds Value</h2>
             </div>
             <p className="rv">
               Working collaboratively, we draw on our past detailed design, temporary works and complex geotechnical experience, always

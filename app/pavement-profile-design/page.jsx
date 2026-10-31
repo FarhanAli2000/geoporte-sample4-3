@@ -74,7 +74,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Scope of services</div>
-              <h2 className="split">Design, analysis and compliance</h2>
+              <h2 className="split">Design, Analysis And Compliance</h2>
             </div>
             <ul className="a-list rv">
               <li>

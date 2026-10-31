@@ -74,7 +74,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Causes of damage</div>
-              <h2 className="split">Different types of damage can occur in a geotechnical structure or a foundation due to:</h2>
+              <h2 className="split">Different Types Of Damage Can Occur In A Geotechnical Structure Or A Foundation Due To:</h2>
             </div>
             <ul className="a-list rv">
               <li>

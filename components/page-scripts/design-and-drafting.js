@@ -70,7 +70,7 @@ function init() {
       '/images/civil-3d.jpg',
     ],
     [
-      'Site Planning and Grading',
+      'Site Planning And Grading',
       'We offer site planning and grading services, optimizing site layouts, earthwork calculations, and drainage designs to maximize site efficiency and minimize environmental impacts.',
       '/images/civil-site.jpg',
     ],

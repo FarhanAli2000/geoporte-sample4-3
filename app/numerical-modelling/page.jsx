@@ -78,7 +78,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Our approach</div>
-              <h2 className="split">Numerical analysis, used with care</h2>
+              <h2 className="split">Numerical Analysis, Used With Care</h2>
             </div>
             <p className="rv a-note">
               At Geoporte, we utilise Numerical Analysis in conjunction with other methods to represent{' '}

@@ -27,11 +27,11 @@ export default function Page() {
           <div>
             <h1 id="pTitle">
               <span className="line">
-                <span>We are a</span>
+                <span>We Are A</span>
               </span>
               <span className="line">
                 <span>
-                  <span className="a">trusted</span> team
+                  <span className="a">Trusted</span> Team
                 </span>
               </span>
             </h1>
@@ -53,7 +53,7 @@ export default function Page() {
           <div className="why-head">
             <div className="sec-head">
               <div className="cap">Features and benefits</div>
-              <h2 className="split">Why choose us</h2>
+              <h2 className="split">Why Choose Us</h2>
             </div>
             <p className="rv">Three principles shape every Geoporte design, from the first ground model to the final check.</p>
           </div>
@@ -130,7 +130,7 @@ export default function Page() {
           <div className="t-copy">
             <div className="sec-head">
               <div className="cap">Geoporte</div>
-              <h2 className="split">Tailored solutions for unique requirements</h2>
+              <h2 className="split">Tailored Solutions For Unique Requirements</h2>
             </div>
             <p className="lead rv">
               Our company specializes in providing tailored solutions for each customer’s unique requirements. The dedicated and skilled
@@ -174,7 +174,7 @@ export default function Page() {
           <div>
             <div className="sec-head">
               <div className="cap">Our team</div>
-              <h2 className="split">The specialists behind every design</h2>
+              <h2 className="split">The Specialists Behind Every Design</h2>
             </div>
             <p className="rv">One multidisciplinary team covering the ground, the structure and the water around it.</p>
           </div>
@@ -209,7 +209,7 @@ export default function Page() {
               </div>
             </div>
             <div className="p-block rv">
-              <h4>Sectors we serve</h4>
+              <h4>Sectors We Serve</h4>
               <div className="chips">
                 <span className="chip">Building</span>
                 <span className="chip">Transportation</span>
@@ -239,11 +239,11 @@ export default function Page() {
         <div className="wrap band-in">
           <h2 id="bandTitle">
             <span className="line">
-              <span>Working together</span>
+              <span>Working Together</span>
             </span>
             <span className="line">
               <span>
-                as <span className="a">one team!</span>
+                As <span className="a">One Team!</span>
               </span>
             </span>
           </h2>

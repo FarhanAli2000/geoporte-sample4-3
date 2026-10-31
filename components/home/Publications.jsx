@@ -9,7 +9,7 @@ export default function Publications() {
           <div className="lft">
             <div className="sec-head">
               <div className="cap">Publications</div>
-              <h2 className="split">Sharing what we learn on the ground</h2>
+              <h2 className="split">Sharing What We Learn On The Ground</h2>
             </div>
           </div>
           <a href="/publications" className="tlink rv">

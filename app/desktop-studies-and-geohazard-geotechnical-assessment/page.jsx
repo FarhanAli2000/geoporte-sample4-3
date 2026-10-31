@@ -47,7 +47,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Geotechnical Engineering</div>
-              <h2 className="split">Desktop Studies and Geohazard Geotechnical Assessment</h2>
+              <h2 className="split">Desktop Studies And Geohazard Geotechnical Assessment</h2>
             </div>
             <p className="big rv">
               Geoporte carries out <em>Desktop Geotechnical, Geological &amp; Geomorphological Studies</em> including development of
@@ -73,7 +73,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Desktop studies</div>
-              <h2 className="split">Geohazard assessment from the start</h2>
+              <h2 className="split">Geohazard Assessment From The Start</h2>
             </div>
             <p className="rv">
               A detailed geohazard assessment is carried out as part of the desktop study and recommendations are provided related to
@@ -81,7 +81,7 @@ export default function Page() {
             </p>
             <div className="sec-head a-sub">
               <div className="cap">Geohazards</div>
-              <h2 className="split">Changing and unstable geologic conditions</h2>
+              <h2 className="split">Changing And Unstable Geologic Conditions</h2>
             </div>
             <p className="rv">
               Bridges, dams, landfills, tunnels, transmission lines, pipelines and other large structures often stretch across many types of
@@ -99,7 +99,7 @@ export default function Page() {
             </p>
             <div className="sec-head a-sub">
               <div className="cap">Our approach</div>
-              <h2 className="split">Identify, characterize, classify</h2>
+              <h2 className="split">Identify, Characterize, Classify</h2>
             </div>
             <p className="rv">
               We identify, characterize, and classify threats to determine whether and where mitigation and monitoring are needed. This

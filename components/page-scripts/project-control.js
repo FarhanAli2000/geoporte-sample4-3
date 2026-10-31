@@ -31,22 +31,22 @@ function init() {
       'We employ advanced project control systems and methodologies to effectively manage all aspects of civil engineering projects, including scheduling, cost management, risk assessment, & quality control. Our integrated approach ensures alignment between project objectives, resources, & deliverables.',
     ],
     [
-      'Cost Estimation and Management',
+      'Cost Estimation And Management',
       'cost',
       'Our team has extensive experience in cost estimation and management, providing accurate cost forecasts, monitoring project expenditures, and implementing cost-saving measures to optimize project budgets and enhance financial performance.',
     ],
     [
-      'Schedule Development and Optimization',
+      'Schedule Development And Optimization',
       'time',
       'We develop detailed project schedules using industry-leading software, taking into account critical path analysis, resource allocation, and milestone tracking. Through proactive schedule management, we identify potential delays and implement strategies to mitigate risks and maintain project timelines.',
     ],
     [
-      'Risk Identification and Mitigation',
+      'Risk Identification And Mitigation',
       'risk',
       'We conduct comprehensive risk assessments to identify potential risks and uncertainties that may impact project outcomes. By developing proactive risk mitigation strategies and contingency plans, we minimize the likelihood of disruptions and ensure project success.',
     ],
     [
-      'Performance Monitoring and Reporting',
+      'Performance Monitoring And Reporting',
       'data',
       'We employ robust performance monitoring and reporting systems to track project progress, identify variances from baseline plans, and communicate key metrics to stakeholders. Our transparent reporting ensures accountability and enables informed decision-making throughout the project lifecycle.',
     ],

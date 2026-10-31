@@ -47,7 +47,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Geotechnical Engineering</div>
-              <h2 className="split">Road Subgrade Assessment and Design</h2>
+              <h2 className="split">Road Subgrade Assessment And Design</h2>
             </div>
             <p className="big rv">
               Pavement analysis and design are often carried out for the construction of new roads within new residential and industrial
@@ -74,7 +74,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Subgrade assessment</div>
-              <h2 className="split">Strength and stiffness parameters for pavement design</h2>
+              <h2 className="split">Strength And Stiffness Parameters For Pavement Design</h2>
             </div>
             <p className="rv">
               At Geoporte, our specialists provide services related to scoping of ground investigations to assess pavement subgrade

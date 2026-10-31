@@ -50,7 +50,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">High-quality design, economically delivered</h2>
+              <h2 className="split">High-Quality Design, Economically Delivered</h2>
             </div>
             <p className="big rv">
               Geoporte’s Civil design team have vast expertise and a comprehensive range of experience across{' '}
@@ -77,7 +77,7 @@ export default function Page() {
           <div className="d-head">
             <div className="sec-head">
               <div className="cap">What we deliver</div>
-              <h2 className="split">Our team can effectively deliver projects such as:</h2>
+              <h2 className="split">Our Team Can Effectively Deliver Projects Such As:</h2>
             </div>
             <p className="rv">
               Twenty project types, from temporary works and earthworks through to waterway rehabilitation and stormwater infrastructure.

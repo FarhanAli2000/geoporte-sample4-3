@@ -46,7 +46,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Our Services</div>
-              <h2 className="split">Optimize performance, mitigate risk</h2>
+              <h2 className="split">Optimize Performance, Mitigate Risk</h2>
             </div>
             <p className="big rv">
               We offer comprehensive solutions to optimize project performance, mitigate risks, and ensure the{' '}
@@ -84,7 +84,7 @@ export default function Page() {
         <div className="wrap">
           <div className="sec-head">
             <div className="cap">Capabilities</div>
-            <h2 className="split">Planning, cost and earned value control</h2>
+            <h2 className="split">Planning, Cost And Earned Value Control</h2>
           </div>
           <div className="k-grid" id="kGrid" />
         </div>

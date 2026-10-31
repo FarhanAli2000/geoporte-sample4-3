@@ -67,6 +67,8 @@ function init() {
   ];
   const regionOf = (p) => REGION[p[2]];
   const REGIONS = [...new Set(P.map(regionOf))];
+  // Regions shown in the "Local knowledge" list with a fixed project count, as their projects aren't in the list above.
+  const EXTRA_REGIONS = [['Canada', 2]];
   const countIn = (arr, f) => arr.filter(f).length;
 
   // Project and sector totals are fixed figures set in the page markup.
@@ -84,7 +86,9 @@ function init() {
     ).join('');
   $('#fregs').innerHTML =
     `<button class="tab on" data-r="">All</button>` + REGIONS.map((r) => `<button class="tab" data-r="${r}">${r}</button>`).join('');
-  $('#regions').innerHTML = REGIONS.map((r) => `<li><b>${r}</b><span>${pad(countIn(P, (p) => regionOf(p) === r))}</span></li>`).join('');
+  $('#regions').innerHTML = [...REGIONS.map((r) => [r, countIn(P, (p) => regionOf(p) === r)]), ...EXTRA_REGIONS]
+    .map(([r, n]) => `<li><b>${r}</b><span>${pad(n)}</span></li>`)
+    .join('');
   $('#floatImg').innerHTML = P.map((p) => `<img src="${p[4]}" alt="">`).join('');
 
   /* ---------- filtering ---------- */

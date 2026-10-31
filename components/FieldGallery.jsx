@@ -47,7 +47,7 @@ export default function FieldGallery() {
       <div className="wrap gal-head">
         <div className="sec-head">
           <div className="cap">In the field</div>
-          <h2 className="split">On site, in the room, on stage</h2>
+          <h2 className="split">On Site, In The Room, On Stage</h2>
         </div>
         <p className="rv">Our engineers on site investigations, in the office and at industry events. Click any photo to view it full size.</p>
       </div>

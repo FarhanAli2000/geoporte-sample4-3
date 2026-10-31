@@ -222,7 +222,7 @@ export default function Page() {
           <div className="head-row">
             <div className="sec-head">
               <div className="cap">What we do</div>
-              <h2 className="split">Expertise across the built environment</h2>
+              <h2 className="split">Expertise Across The Built Environment</h2>
             </div>
             <div className="side rv">
               <p>
@@ -328,7 +328,7 @@ export default function Page() {
             <div className="lft">
               <div className="sec-head">
                 <div className="cap">Featured projects</div>
-                <h2 className="split">Real projects. Lasting impact</h2>
+                <h2 className="split">Real Projects. Lasting Impact</h2>
               </div>
             </div>
             <a href="/projects" className="tlink rv">
@@ -378,7 +378,7 @@ export default function Page() {
           <div>
             <div className="sec-head">
               <div className="cap">Sectors</div>
-              <h2 className="split">Where our engineering makes an impact</h2>
+              <h2 className="split">Where Our Engineering Makes An Impact</h2>
             </div>
             <p className="rv">Five sectors, one integrated team. Hover a sector to see the work behind it.</p>
             <div className="sec-preview" id="secPreview">
@@ -474,11 +474,11 @@ export default function Page() {
         <div className="wrap band-in">
           <h2 id="bandTitle">
             <span className="line">
-              <span>Complex challenges</span>
+              <span>Complex Challenges</span>
             </span>
             <span className="line">
               <span>
-                Considered <span className="a">solutions</span>
+                Considered <span className="a">Solutions</span>
               </span>
             </span>
           </h2>

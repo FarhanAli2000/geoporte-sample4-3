@@ -47,7 +47,7 @@ export default function Page() {
           <div className="i-copy">
             <div className="sec-head">
               <div className="cap">Geotechnical Engineering</div>
-              <h2 className="split">Site Investigation Planning and Reporting</h2>
+              <h2 className="split">Site Investigation Planning And Reporting</h2>
             </div>
             <p className="big rv">
               Our geotechnical engineers and geologists have extensive experience in planning and executing site investigations. It is
@@ -74,7 +74,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Methods</div>
-              <h2 className="split">The methods we use to obtain this information include:</h2>
+              <h2 className="split">The Methods We Use To Obtain This Information Include:</h2>
             </div>
             <ul className="a-list rv">
               <li>

@@ -45,7 +45,7 @@ export default function Page() {
               </span>
               <span className="line">
                 <span>
-                  &amp; <span className="a">papers</span>
+                  &amp; <span className="a">Papers</span>
                 </span>
               </span>
             </h1>
@@ -64,7 +64,7 @@ export default function Page() {
           <div className="pubs-head">
             <div className="sec-head">
               <div className="cap">Publications</div>
-              <h2 className="split">Sharing what we learn on the ground</h2>
+              <h2 className="split">Sharing What We Learn On The Ground</h2>
             </div>
             <p className="rv">Click any page to view it full size.</p>
           </div>
@@ -100,7 +100,7 @@ export default function Page() {
                 <span className="pdate">26 October 2022</span>
               </div>
               <span className="event">2022 AGS Victoria Symposium · Digital Geotechnics</span>
-              <h3>Challenges to Digital Transformation in Geotechnical Engineering</h3>
+              <h3>Challenges To Digital Transformation In Geotechnical Engineering</h3>
               <div className="authors">
                 <span className="author">
                   <i>QH</i>Qaiser Hayat
@@ -152,7 +152,7 @@ export default function Page() {
                 <span className="pdate">Melbourne, Australia</span>
               </div>
               <span className="event">Tunnels · Urban development</span>
-              <h3>Technical Assessment of New Developments’ Impact on Historical and Recent Tunnels in Melbourne</h3>
+              <h3>Technical Assessment Of New Developments’ Impact On Historical And Recent Tunnels In Melbourne</h3>
               <div className="authors">
                 <span className="author">
                   <i>LY</i>L. Yang

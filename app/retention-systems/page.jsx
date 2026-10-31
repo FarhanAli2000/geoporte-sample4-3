@@ -74,7 +74,7 @@ export default function Page() {
           <div className="a-body">
             <div className="sec-head">
               <div className="cap">Design &amp; proof engineering</div>
-              <h2 className="split">Safe, cost-effective retention systems</h2>
+              <h2 className="split">Safe, Cost-Effective Retention Systems</h2>
             </div>
             <p className="rv">
               We design safe and cost-effective retention systems based on robust analyses and sound judgment. We provide design and proof

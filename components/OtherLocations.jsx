@@ -93,7 +93,7 @@ export default function OtherLocations() {
           <div className="wmap-head">
             <div>
               <span className="wcap">Geoporte worldwide</span>
-              <h3 id="wmapTitle">Our offices around the world</h3>
+              <h3 id="wmapTitle">Our Offices Around The World</h3>
             </div>
             <button type="button" className="wx" ref={closeBtn} onClick={close} aria-label="Close world map"><Close /></button>
           </div>

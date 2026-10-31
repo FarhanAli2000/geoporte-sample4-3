@@ -49,13 +49,13 @@ export default function Page() {
               This policy explains how Geoporte handles personal information in line with the <em>Privacy Act 1988 (Cth)</em> and the
               Australian Privacy Principles, and the <em>Privacy Act 2020</em> in New Zealand.
             </p>
-            <h2 className="lg-h">Who we are</h2>
+            <h2 className="lg-h">Who We Are</h2>
             <p>
               Geoporte (“Geoporte”, “we”, “us”) provides civil, geotechnical, structural and telecom engineering consultancy services from
               offices in Melbourne, Sydney, Perth and Auckland. Our head office is at Tower 5, Collins Square, 727 Collins Street, Melbourne
               VIC 3008, Australia.
             </p>
-            <h2 className="lg-h">Information we collect</h2>
+            <h2 className="lg-h">Information We Collect</h2>
             <p>We only collect personal information that is reasonably necessary for our business. This may include:</p>
             <ul>
               <li>
@@ -66,7 +66,7 @@ export default function Page() {
               <li>Information included in job applications, such as your CV and qualifications.</li>
             </ul>
             <p>This website does not use analytics or advertising tracking, and we do not ask you to create an account.</p>
-            <h2 className="lg-h">How we use it</h2>
+            <h2 className="lg-h">How We Use It</h2>
             <ul>
               <li>To respond to enquiries and provide quotes and services.</li>
               <li>To manage and deliver projects and communicate with clients and project partners.</li>
@@ -81,27 +81,27 @@ export default function Page() {
               outside Australia or New Zealand. Where this happens, we take reasonable steps to ensure the information is handled in line
               with this policy.
             </p>
-            <h2 className="lg-h">Third-party services on this website</h2>
+            <h2 className="lg-h">Third-Party Services On This Website</h2>
             <p>
               To display this website, your browser loads fonts, scripts and map tiles from third-party providers, including Google Fonts,
               Cloudflare (cdnjs), jsDelivr and Esri (ArcGIS map tiles). These providers receive standard technical information such as your
               IP address and browser type. Their own privacy policies apply to that information.
             </p>
-            <h2 className="lg-h">Security and retention</h2>
+            <h2 className="lg-h">Security And Retention</h2>
             <p>
               We take reasonable steps to protect personal information from misuse, loss and unauthorised access. We keep information only
               for as long as it is needed for the purposes above or as required by law, and then securely destroy or de-identify it.
             </p>
-            <h2 className="lg-h">Access, correction and complaints</h2>
+            <h2 className="lg-h">Access, Correction And Complaints</h2>
             <p>
               You can ask to access or correct the personal information we hold about you, or make a privacy complaint, by emailing{' '}
               <a href="mailto:enquiries@geoporte.com.au">enquiries@geoporte.com.au</a>. We will respond within a reasonable time, usually 30
               days. If you are not satisfied with our response, you can contact the Office of the Australian Information Commissioner
               (oaic.gov.au) or, in New Zealand, the Office of the Privacy Commissioner (privacy.org.nz).
             </p>
-            <h2 className="lg-h">Changes to this policy</h2>
+            <h2 className="lg-h">Changes To This Policy</h2>
             <p>We may update this policy from time to time. The current version will always be published on this page.</p>
-            <h2 className="lg-h">Contact us</h2>
+            <h2 className="lg-h">Contact Us</h2>
             <p>
               Geoporte
               <br />
